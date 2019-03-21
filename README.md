@@ -8,8 +8,9 @@ If you add a new page, please list it on the contents below.
 
 ## Contents
 
-* [Tools for working with BODS](tools)
-* [Translations](translations)
+* [Tools for working with BODS](tools.md)
+* [Translations](translations.md)
+* [Compiling Schema](compiling_schema.md)
 
 ## Not contents
 
