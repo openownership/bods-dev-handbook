@@ -2,12 +2,12 @@
 
 The Standard is given release numbers.
 
-These are applied in the repository https://github.com/openownership/data-standard
+These are applied in the repository [github.com/openownership/data-standard](https://github.com/openownership/data-standard)
 
 Each release is a branch (NOT a tag), for example:
 
-  *  https://github.com/openownership/data-standard/tree/v0-0-3
-  *  https://github.com/openownership/data-standard/tree/v0-1
+  *  [github.com/openownership/data-standard/tree/v0-0-3](https://github.com/openownership/data-standard/tree/v0-0-3)
+  *  [github.com/openownership/data-standard/tree/v0-1](https://github.com/openownership/data-standard/tree/v0-1)
 
 That branch is then enabled in ReadTheDocs and the "latest" tag in ReadTheDocs is changed to be the new version.
 
