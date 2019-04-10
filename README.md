@@ -12,6 +12,7 @@ If you add a new page, please list it on the contents below.
 * [CoVE Translations](cove_translations.md)
 * [Translations](translations.md)
 * [Compiling Schema](compiling_schema.md)
+* [This handbook](this_handbook.md)
 
 ## Not contents
 
