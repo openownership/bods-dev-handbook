@@ -7,8 +7,9 @@ BODS docs are published on readthedocs.
 ## BODSkit
 
 ## Locally building CoVE for schema development
-* This is a hacky way of doing things. Please edit with any improved process *
-Goal: run command line validation and additional checks of example data against dev version of schema.  
+_This is a hacky way of doing things. Please edit with any improved process_
+
+**Goal:** run command line validation and additional checks of example data against dev version of schema.  
 
 * have some kind of virtual environment for doing BODS things in;
 * git clone and install [lib-cove-bods]() using `pip -r requirements.txt`;
