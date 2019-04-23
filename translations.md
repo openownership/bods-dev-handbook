@@ -13,7 +13,7 @@ Tasks:
 Therefore they need:
 
 Skills:
-* To be native speakers of the target language (Russian) and fluent in English (the source language).
+* To be native speakers of the target language and fluent in English (the source language).
 * To have extensive experience of talking and writing about beneficial ownership in the target language.
 * To be confident in using, or learning to use, Google sheets.
 
