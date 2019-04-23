@@ -8,6 +8,8 @@ If you add a new page, please list it on the contents below.
 
 ## Contents
 
+* Principles for working with BODS
+** [Style Guide](style_guide.md)
 * [Tools for working with BODS](tools.md)
 * [CoVE Translations](cove_translations.md)
 * [Translations](translations.md)
