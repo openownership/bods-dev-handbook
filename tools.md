@@ -2,7 +2,7 @@
 
 ## Documentation
 
-BODS docs are published on readthedocs.
+BODS docs are published on [readthedocs](http://standard.openownership.org).
 
 ## BODSkit
 
