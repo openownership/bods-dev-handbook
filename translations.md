@@ -1,5 +1,5 @@
 # Translations
-
+The processes, roles and mechanisms detailed below implement the [BODS Language Support Policy](https://docs.google.com/document/d/1E15uIOO_JRU2_hFvetaMu4L66hJSrJMuK1U0lenDiyA).
 
 ## Process
 
