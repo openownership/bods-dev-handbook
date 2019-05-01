@@ -5,6 +5,10 @@
 BODS docs are published on [readthedocs](http://standard.openownership.org).
 
 ## BODSkit
+BODSkit provides command line tools for common development tasks.
+
+[ [Documentation](https://bodskit.readthedocs.io/en/master/cli.html) | [Repository](https://github.com/openownership/bodskit) ]
+
 
 ## Locally building CoVE for schema development
 _This is a hacky way of doing things. Please edit with any improved process_
