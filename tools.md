@@ -1,6 +1,6 @@
 # Tools for working with BODS
 
-## Documentation
+## BODS Documentation
 
 BODS docs are published on [readthedocs](http://standard.openownership.org).
 
@@ -9,6 +9,10 @@ BODSkit provides command line tools for common development tasks.
 
 [ [BODSkit documentation](https://bodskit.readthedocs.io/en/master/cli.html) | [Repository](https://github.com/openownership/bodskit) ]
 
+## Flatten Tool for BODS
+Flatten-Tool enables a dataset to be round-tripped between structured JSON and tabular data packages, CSV files, or spreadsheets.
+
+[ [Flatten Tool documentation](https://flatten-tool.readthedocs.io/en/latest/usage-bods/) | [Repository](https://github.com/OpenDataServices/flatten-tool) ]
 
 ## Locally building CoVE for schema development
 _This is a hacky way of doing things. Please edit with any improved process_
