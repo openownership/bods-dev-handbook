@@ -13,7 +13,7 @@ If you add a new page, please list it on the contents below.
 * [Tools for working with BODS](tools.md)
 * [CoVE Translations](cove_translations.md)
 * [Translations](translations.md)
-* [Compiling Schema](compiling_schema.md)
+* [Maintenance and compilation of the BODS schema](compiling_schema.md)
 * [Standard Releases](standard_releases.md)
 * [This handbook](this_handbook.md)
 
