@@ -21,11 +21,15 @@ If you just put a link in some text like this:
 
     Please go to http://example.com/
 
-It will appear as a clickable link in the preview but NOT in github pages. To make the link clickable in Github pages, you must always use the bracket notation.
+It will appear as a clickable link in the preview but NOT in github pages. To make the link clickable in Github pages, use angle bracket markdown:
+    
+    Please go to <http://example.com/>
+
+Or use the bracket notation:
 
     Please go to [http://example.com/](http://example.com/)
 
-Or
+Or more readable-
 
     Please go to [example.com](http://example.com/)
 
