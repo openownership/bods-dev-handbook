@@ -2,7 +2,7 @@
 
 This handbook has it's source files at [github.com/openownership/bods-dev-handbook](https://github.com/openownership/bods-dev-handbook)
 
-You can browse it at [openownership.github.io/bods-dev-handbook/](https://openownership.github.io/bods-dev-handbook/)
+You can browse it at <https://openownership.github.io/bods-dev-handbook/>
 
 It will be in English only (no translations).
 
