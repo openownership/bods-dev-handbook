@@ -110,7 +110,7 @@ Once you've got all your translations, you need to actually publish them. The pr
 * Go to Admin > Versions to activate any of the branches you need other than master. These should probably be the same ones as you have active in the main BODS readthedocs project, so the menus are consistent when the user switches language.
 * Go to Builds to make sure the branch you need builds correctly. If it fails on a branch that the English version passes this is likely an indication that some translation files are missing. You can also preview it by clicking 'view docs'.
 * Go back to the main (English) [BODS project](https://readthedocs.org/projects/beneficial-ownership-data-standard/). In Admin > Translations, choose the new project you just created from the Project dropdown:
-  * ![Screenshot: add a readthedocs subproject](screenshots/translation/rtd_addproject.png)
+  * ![Screenshot: add a readthedocs subproject](screenshots/translation/rtd_addtranslation.png)
 * The new language should now appear as an option in the readthedocs flyout menu for all versions of the HTML documentation.
 
 These instructions were summarised from [Localization of Documentation](https://docs.readthedocs.io/en/stable/localization.html) in the readthedocs docs.
