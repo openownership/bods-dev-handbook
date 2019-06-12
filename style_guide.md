@@ -14,8 +14,6 @@ This style guide is a draft to be discussed and not yet implemented across the B
 
 *Markup within descriptions?*
 
-*IncludingCodelist info?*
-
 ## BODS documentation
 
 restructuredText (.rst) files are used to document BODS. 
