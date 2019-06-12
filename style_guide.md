@@ -10,6 +10,8 @@ This style guide is a draft to be discussed and not yet implemented across the B
 
 - In descriptions, properties should be referred to by their property name in backquotes. E.g. \`id\` is required. 
 
+*Codelist codes? Currently most multi-word codes are camelCase (e.g. placeOfBirth). However in the unspecifiedReason and interestType codelists - and poss others - hyphens are used (e.g. information-unknown-to-publisher). We need to introduce some consistency.
+
 *Markup within descriptions?*
 
 *IncludingCodelist info?*
@@ -23,5 +25,7 @@ restructuredText (.rst) files are used to document BODS.
 - Objects to be referred to by their title, e.g. '... the Interested Party object has a number of required properties...'
 
 - Statements to be referred to by their titles. e.g. "The details of the company are entered into an Entity Statement"
+
+*How should a code be referred to? By its code or by its title? If by code, this wouldn't be translated. Perhaps use single quotes (e.g. "...use 'placeOfBirth' to refer to an address...") Then translation guidance could instruct translators to retain the code in the text but follow it with the translated code title (e.g. "... utilise 'placeOfBirth' (lieu de naissance) pour faire référence à une adresse...". Similar guidance would work for dealing with property names in translation (see above).* 
 
 *Should we use 'object' or 'block' or even 'component' to refer to JSON objects?*
