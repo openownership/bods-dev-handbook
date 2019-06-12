@@ -10,7 +10,7 @@ This style guide is a draft to be discussed and not yet implemented across the B
 
 - In descriptions, properties should be referred to by their property name in backquotes. E.g. \`id\` is required. 
 
-*Codelist codes? Currently most multi-word codes are camelCase (e.g. placeOfBirth). However in the unspecifiedReason and interestType codelists - and poss others - hyphens are used (e.g. information-unknown-to-publisher). We need to introduce some consistency.
+*Codelist codes? Currently most multi-word codes are camelCase (e.g. placeOfBirth). However in the unspecifiedReason and interestType codelists - and poss others - hyphens are used (e.g. information-unknown-to-publisher). We need to introduce some consistency.*
 
 *Markup within descriptions?*
 
