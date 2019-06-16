@@ -24,6 +24,8 @@ restructuredText (.rst) files are used to document BODS.
 
 - Statements to be referred to by their titles. e.g. "The details of the company are entered into an Entity Statement"
 
+*How should a codelist be referred to? I suggest by its inferred title, capitalised. e.g. "...choose an item from the Unspecified Reason codelist...". And it would be translated for internationalisation.*
+
 *How should a code be referred to? By its code or by its title? If by code, this wouldn't be translated. Perhaps use single quotes (e.g. "...use 'placeOfBirth' to refer to an address...") Then translation guidance could instruct translators to retain the code in the text but follow it with the translated code title (e.g. "... utilise 'placeOfBirth' (lieu de naissance) pour faire référence à une adresse...". Similar guidance would work for dealing with property names in translation (see above).* 
 
 *Should we use 'object' or 'block' or even 'component' to refer to JSON objects?*
