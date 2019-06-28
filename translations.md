@@ -123,8 +123,10 @@ When work is in progress on a branch, you can build this branch in readthedocs t
 * Go to the readthedocs project for the particular language version of the docs you want to preview.
 * If you have never built this branch before, you need to nudge readthedocs into seeing it; build any other branch, eg. latest:
   * ![Screenshot: building an existing branch](screenshots/translation/rtd_preview_build1.png)
-* Go to Admin > Versions. Find your branch on the list and check 'Active' and set the dropdown to 'Protected' (this means the URL will work for sharing, but it won't appear in the versions menu):
+* Go to Versions on the main menu. Find your branch on the list of inactive branchs and click Edit on the right. 
   * ![Screenshot: activating a new branch](screenshots/translation/rtd_preview_build2.png)
+* Check 'Active' and set the dropdown to 'Protected' (this means the URL will work for sharing, but it won't appear in the versions menu):
+  * ![Screenshot: activating a new branch](screenshots/translation/rtd_preview_build3.png)
 * Go to Builds. Your new branch should have already built automatically and appear at the top of the list, but if it hasn't you can choose it from the dropdown and click 'Build'. You can see the results by clicking on the latest build:
   * ![Screenshot: the results of a readthedocs build](screenshots/translation/rtd_preview_built.png)
 * You can preview it by clicking the green 'view docs' button in the top right.
