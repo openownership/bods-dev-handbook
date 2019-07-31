@@ -1,4 +1,33 @@
-# Standard Releases
+# Git Branches, Version Numbers and Standard Releases
+
+
+## Normal Standard Development
+
+All development is done on the "master" branch.
+
+When doing work, a branch should be taken from the master branch. The branch name should start with the number of the issue, for example "136-use-externallinks".
+
+Branches should be a self contained piece of work, and merged back to "master" as soon as possible. 
+The longer branches exist, the harder it can be to merge them back as the possibilities of there being merge conflicts increases.
+
+Branches should be merged back to "master" as soon as possible via a pull request. A review is needed.
+
+### Freezes on the "master" branch
+
+When the "master" branch is almost ready to be released, a "freeze" may be declared for certain types of content.
+
+eg As the Russian translation is being done, no pull requests that change the content of strings on the site would be allowed.
+
+In these cases code reviewers should be informed of the "freeze" and they can enforce the freeze whilst reviewing pull requests - some pull requests may be put on hold for a while.
+
+### Working on the release after the next release
+
+This means that anything on the master branch will be included in the next release.
+
+If you are working on things for the release after the next release these can not be merged to master yet.
+For example, if 0.1 is the current release, 0.2 is the next release and 0.3 the release after, only work for 0.2 should be merged to master.
+
+## Versioned Releases
 
 The Standard is given release numbers.
 
