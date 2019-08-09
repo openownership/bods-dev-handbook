@@ -1,7 +1,7 @@
 # Maintenance and compilation of the BODS schema
 
 ## Codelists
-_[We maintain codelists as csv files so that we can included metadata for codelist items. We should document here what the workflow is around updating them and embedding codelist items as enums in the schema]_
+_[We maintain codelists as csv files so that we can included metadata for codelist items. We should document here what the workflow is around updating them and embedding codelist items as enums in the schema. OCDSkit has 'set-closed-codelist-enums' (Sets the enum in a JSON Schema to match the codes in the CSV files of closed codelists). Does BODSkits have sthg similar, should it? And should compilation (below) call on that operation?]_
 
 
 ## Compilation
