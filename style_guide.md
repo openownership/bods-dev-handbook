@@ -29,3 +29,37 @@ restructuredText (.rst) files are used to document BODS.
 *How should a code be referred to? By its code or by its title? If by code, this wouldn't be translated. Perhaps use single quotes (e.g. "...use 'placeOfBirth' to refer to an address...") Then translation guidance could instruct translators to retain the code in the text but follow it with the translated code title (e.g. "... utilise 'placeOfBirth' (lieu de naissance) pour faire référence à une adresse...". Similar guidance would work for dealing with property names in translation (see above).* 
 
 *Should we use 'object' or 'block' or even 'component' to refer to JSON objects?*
+
+### Embeddeding schema objects
+
+We use various plugins to embed schema and codelist elements in dynamic ways.
+
+[JSONValue](https://github.com/openownership/data-standard/blob/3766d9a55b61d2b1b5f27c37dfd5fd24f1cc9884/docs/conf.py#L186) (in the docs `conf.py`) to pull out the value of one key in the JSON, e.g.:
+
+```
+.. json-value:: ../_build_schema/components.json
+   :pointer: /definitions/Address/description
+```
+
+![Screenshot: Address description from the schema rendered as a paragraph](screenshots/docs/embed_jsonpointer.png)
+
+[JSONSchema](https://github.com/OpenDataServices/sphinxcontrib-jsonschema) (a Sphinx extension) to make a table of multiple key-value pairs from the JSON, e.g.:
+
+```
+.. jsonschema:: ../_build_schema/components.json
+   :pointer: /definitions/Address
+   :externallinks: {"type":{"url":"#addresstype","text":"Codelists"}}
+```
+
+![Screenshot: Address attributes and properties from the schema rendered as a table](screenshots/docs/embed_jsonschema.png)
+
+[CSVTable](http://docutils.sourceforge.net/docs/ref/rst/directives.html#csv-table) (a builtin Sphinx directive) to make a table from codelist csv files, e.g.:
+
+```
+.. csv-table::
+   :header-rows: 1
+   :class: codelist-table
+   :file: ../_build_schema/codelists/addressType.csv
+```
+
+![Screenshot: addressTypes codelist rendered as a table](screenshots/docs/embed_codelist.png)
