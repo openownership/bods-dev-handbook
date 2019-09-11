@@ -63,3 +63,16 @@ We use various plugins to embed schema and codelist elements in dynamic ways.
 ```
 
 ![Screenshot: addressTypes codelist rendered as a table](screenshots/docs/embed_codelist.png)
+
+
+### RST usage
+
+**DO NOT** use this directive to embed HTML elements in the docs. (Encompassed strings will not be picked up for translation.)
+
+```
+.. raw:: html
+
+    <h2>
+        Background
+    </h2>
+```
