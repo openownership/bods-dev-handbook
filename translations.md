@@ -4,17 +4,137 @@ The processes, roles and mechanisms detailed below implement the [BODS Language 
 
 Note: This process is still in development, and improvements or clarifications are welcome.
 
+The following instructions cover the translation of:
+
+  * A version of the Beneficial Ownership Data Standard (BODS) schema, including its codelists
+  * The corresponding documentation website 
+  * The documentation website’s theme
+
+## Locations of source files to be translated
+
+BODS schema and codelists both exist under the [schema folder within the BODS Github repository](https://github.com/openownership/data-standard/tree/master/schema).
+The content for the BODS documentation website exists under the [docs folder within the same BODS Github repository](https://github.com/openownership/data-standard/tree/master/schema).
+The documentation website’s theme has its own Github repository - [data-standard-sphinx-theme](https://github.com/openownership/data-standard-sphinx-theme).
+
+By translating the three components listed above the publicly available website at http://standard.openownership.org can be published in translation. This is the aim of the translation work.
+
+## Scope of translation work
+
 Things that are in scope for translation are:
 
-* All prose in the documentation.
-* Text like menu items and footers in the documentation theme.
-* The *values* of schema fields `title` and `description`.
-* The *values* of codelist fields `title`, `description` and `technical note`.
-* The SVG diagrams in the documentation.
+  * All prose in the documentation.
+  * Text like menu items and footers in the documentation theme.
+  * The *values* of schema fields `title` and `description`.
+  * The *values* of codelist fields `title`, `description` and `technical note`.
+  * The SVG diagrams in the documentation.
 
 Things that need to become part of the translation workflow but are not yet:
 
-* The example data in the [data-standard repo](https://github.com/openownership/data-standard).
+  * The example data in the [data-standard repo](https://github.com/openownership/data-standard).
+
+## Overview of the translation workflow
+
+The workflow for doing the translation is:
+
+  * extract the strings that need to be translated from the repositories 
+  * push the strings up to their Transifex project 
+  * have the strings translated, reviewed and proofread 
+  * pull the translated strings down from Transifex 
+  * upload them to their respective repositories and 
+  * make them live on the website.
+
+The diagram below provides an extremely high-level overview of the workflow. It excludes the final step of making the translation live.
+
+![Translation Workflow](https://github.com/openownership/bods-dev-handbook/blob/master/screenshots/translation/translation_workflow_overview.png)
+
+## Setting up your local machine
+
+Complete the following steps to get your system set up to undergo the workflow outlined above (assumes Ubuntu 18.04.2 LTS or similar):
+
+  * setting up an account and joining the ODSC organization in Transifex
+  * creating and configuring a new project in Transifex
+  * cloning the repositories to manage the workflow 
+  * installing and configuring the Transifex client
+
+### Signing up and joining the Open Data Services Co-operative organization
+
+The organization is the home of all the translation projects that an organization runs on Transifex.
+
+Open Data Services Co-operative is already set up as an organization in Transifex and all of our projects and teams are managed from within it. A list of our translation projects is visible at the [Open Data Services Co-operative public page](https://www.transifex.com/OpenDataServices/public/).
+
+![ODSC Organisation in Transifex](https://github.com/openownership/bods-dev-handbook/blob/master/screenshots/translation/transifex_odsc_organisation.png)
+
+Once you have signed up to Transifex you should ask an administrator of ODSC to make you an administrator too. We don't maintain a list of those administrators here, but there is a considerable overlap with the [people who contribute towards the BODS Standard repository](https://github.com/openownership/data-standard/graphs/contributors).
+
+### creating and configuring a new project in Transifex
+
+  * [Add a new project on Transifex](https://www.transifex.com/OpenDataServices/add/).
+  * Name it according to the version of BODS, ie `bods-v02` for BODS version 0.2.
+  * Choose 'public project' and **make sure to check the 'My project is a non-commercial Open Source project checkbox'** and enter the github repo URL.
+  * ![Screenshot: tick the My project is a non-commercial Open Source project checkbox when creating a new project](screenshots/translation/transifex_noncommercial.png)
+  * Assign the project to the BODS team.
+
+### cloning the repositories to manage the workflow
+
+Follow the instructions in the [BODS data-standard-sphinx-theme README.md](https://github.com/openownership/data-standard-sphinx-theme).
+
+### installing and configuring the Transifex client
+
+#### Installing Transifex
+
+Transifex offers a number of different options for uploading content to be translated. In this documentation we will describe the process for setting up the Command Line Interface (CLI) Client. 
+
+The commands for installing the Transifex CLI client on Ubuntu are:
+
+$ sudo apt-get install python-pip
+$ sudo pip install transifex-client
+
+#### Configuring Transifex
+
+Transifex configuration involves the creation of two files:
+
+~/.transifexrc, which stores your Transifex host configuration in your home directory, including your API key
+.tx/config, which stores the mappings between your local files and Transifex in a .tx folder in your repo’s root directory.
+~/.transifexrc
+
+Transifex’s own documentation for initialising the client involves running the tx init command. We are going to edit the files more directly.
+Creating and storing your API key
+You will need to create and store a Transifex api key.  While you are logged in to Transifex, navigate to https://www.transifex.com/user/settings/api/
+
+
+
+Click on the “Generate a token” button on the right hand side
+
+
+
+Click on “Copy and Close”. 
+
+
+
+Your API token has been created. At the moment it is still quite fragile as it only exists in your clipboard, if you lose it you will not be able to retrieve it from Transifex.
+
+From your home directory, create a new file called ‘.transifexrc’
+
+:~$ sudo gedit .transifexrc
+
+Again, we have used Gedit in the above example, but you can use any text editor of your own choice.
+
+If you haven’t installed and configured Transifex before you should open an empty document. 
+
+[https://www.transifex.com]
+api_hostname = https://api.transifex.com
+hostname = https://www.transifex.com
+password = YOUR-API-KEY-SHOULD-GO-HERE
+username = api
+
+Enter the lines as shown above, replacing YOUR-API-KEY-SHOULD-GO-HERE with your api key. 
+
+This sets you up with access to add and retrieve files to and from Transifex. 
+.tx/config
+Although it is possible to pre-configure your .tx/config file in advance there are number of ways in which the configuration can change, right up until the moment that you extract and push your projects’ strings up to Transifex.
+
+For that reason, we recreate the .tx/config file as part of the workflow.
+
 
 ## Roles
 
