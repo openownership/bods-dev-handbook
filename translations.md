@@ -66,7 +66,7 @@ Open Data Services Co-operative is already set up as an organization in Transife
 
 Once you have signed up to Transifex you should ask an administrator of ODSC to make you an administrator too. We don't maintain a list of those administrators here, but there is a considerable overlap with the [people who contribute towards the BODS Standard repository](https://github.com/openownership/data-standard/graphs/contributors).
 
-### creating and configuring a new project in Transifex
+### Creating and configuring a new project in Transifex
 
   * [Add a new project on Transifex](https://www.transifex.com/OpenDataServices/add/).
   * Name it according to the version of BODS, ie `bods-v02` for BODS version 0.2.
@@ -74,11 +74,11 @@ Once you have signed up to Transifex you should ask an administrator of ODSC to 
   * ![Screenshot: tick the My project is a non-commercial Open Source project checkbox when creating a new project](screenshots/translation/transifex_noncommercial.png)
   * Assign the project to the BODS team.
 
-### cloning the repositories to manage the workflow
+### Cloning the repositories to manage the workflow
 
 Follow the instructions in the [BODS data-standard-sphinx-theme README.md](https://github.com/openownership/data-standard-sphinx-theme).
 
-### installing and configuring the Transifex client
+### Installing and configuring the Transifex client
 
 #### Installing Transifex
 
@@ -98,39 +98,27 @@ Transifex configuration involves the creation of two files:
 ~/.transifexrc
 
 Transifex’s own documentation for initialising the client involves running the tx init command. We are going to edit the files more directly.
-Creating and storing your API key
+
+##### Creating and storing your API key
+
 You will need to create and store a Transifex api key.  While you are logged in to Transifex, navigate to https://www.transifex.com/user/settings/api/
 
-
-
-Click on the “Generate a token” button on the right hand side
-
-
-
-Click on “Copy and Close”. 
-
-
-
-Your API token has been created. At the moment it is still quite fragile as it only exists in your clipboard, if you lose it you will not be able to retrieve it from Transifex.
+Click on the “Generate a token” button on the right hand side. Click on “Copy and Close”. Your API token has been created. At the moment it is still quite fragile as it only exists in your clipboard, if you lose it you will not be able to retrieve it from Transifex.
 
 From your home directory, create a new file called ‘.transifexrc’
 
-:~$ sudo gedit .transifexrc
-
-Again, we have used Gedit in the above example, but you can use any text editor of your own choice.
-
-If you haven’t installed and configured Transifex before you should open an empty document. 
-
+Enter the lines as shown below, replacing YOUR-API-KEY-SHOULD-GO-HERE with your newly generated api key.
+```
 [https://www.transifex.com]
 api_hostname = https://api.transifex.com
 hostname = https://www.transifex.com
 password = YOUR-API-KEY-SHOULD-GO-HERE
 username = api
-
-Enter the lines as shown above, replacing YOUR-API-KEY-SHOULD-GO-HERE with your api key. 
-
+```
 This sets you up with access to add and retrieve files to and from Transifex. 
-.tx/config
+
+##### .tx/config
+
 Although it is possible to pre-configure your .tx/config file in advance there are number of ways in which the configuration can change, right up until the moment that you extract and push your projects’ strings up to Transifex.
 
 For that reason, we recreate the .tx/config file as part of the workflow.
