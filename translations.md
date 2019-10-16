@@ -10,11 +10,11 @@ Things that are in scope for translation are:
 * Text like menu items and footers in the documentation theme.
 * The *values* of schema fields `title` and `description`.
 * The *values* of codelist fields `title`, `description` and `technical note`.
+* The SVG diagrams in the documentation.
 
 Things that need to become part of the translation workflow but are not yet:
 
 * The example data in the [data-standard repo](https://github.com/openownership/data-standard).
-* The SVG diagrams in the documentation.
 
 ## Roles
 
