@@ -12,9 +12,9 @@ The following instructions cover the translation of:
 
 ## Locations of source files to be translated
 
-BODS schema and codelists both exist under the [schema folder within the BODS Github repository](https://github.com/openownership/data-standard/tree/master/schema).
-The content for the BODS documentation website exists under the [docs folder within the same BODS Github repository](https://github.com/openownership/data-standard/tree/master/schema).
-The documentation website’s theme has its own Github repository - [data-standard-sphinx-theme](https://github.com/openownership/data-standard-sphinx-theme).
+BODS **schema** and **codelists** exist under the [schema folder within the BODS Github repository](https://github.com/openownership/data-standard/tree/master/schema).
+The content for the BODS **documentation** website exists under the [docs folder within the same BODS Github repository](https://github.com/openownership/data-standard/tree/master/schema).
+The documentation website’s **theme** has its own Github repository - [data-standard-sphinx-theme](https://github.com/openownership/data-standard-sphinx-theme).
 
 By translating the three components listed above the publicly available website at http://standard.openownership.org can be published in translation. This is the aim of the translation work.
 
@@ -22,11 +22,11 @@ By translating the three components listed above the publicly available website 
 
 Things that are in scope for translation are:
 
-  * All prose in the documentation.
-  * Text like menu items and footers in the documentation theme.
-  * The *values* of schema fields `title` and `description`.
-  * The *values* of codelist fields `title`, `description` and `technical note`.
-  * The SVG diagrams in the documentation.
+  * All prose in the **documentation**.
+  * Text like menu items and footers in the **documentation theme**.
+  * The *values* of **schema** fields `title` and `description`.
+  * The *values* of **codelist** fields `title`, `description` and `technical note`.
+  * The SVG diagrams in the **documentation**.
 
 Things that need to become part of the translation workflow but are not yet:
 
@@ -56,7 +56,9 @@ Complete the following steps to get your system set up to undergo the workflow o
   * cloning the repositories to manage the workflow 
   * installing and configuring the Transifex client
 
-### Signing up and joining the Open Data Services Co-operative organization
+### Setting up an account and joining the ODSC organization in Transifex
+
+Create a free Transifex account on their [sign up page](https://www.transifex.com/signup/).
 
 The organization is the home of all the translation projects that an organization runs on Transifex.
 
@@ -80,7 +82,7 @@ Follow the instructions in the [BODS data-standard-sphinx-theme README.md](https
 
 ### Installing and configuring the Transifex client
 
-#### Installing Transifex
+#### Installing the Transifex client
 
 Transifex offers a number of different options for uploading content to be translated. In this documentation we will describe the process for setting up the Command Line Interface (CLI) Client. 
 
@@ -89,7 +91,7 @@ The commands for installing the Transifex CLI client on Ubuntu are:
 $ sudo apt-get install python-pip
 $ sudo pip install transifex-client
 
-#### Configuring Transifex
+#### Configuring the Transifex client
 
 Transifex configuration involves the creation of two files:
 
@@ -101,13 +103,12 @@ Transifex’s own documentation for initialising the client involves running the
 
 ##### Creating and storing your API key
 
-You will need to create and store a Transifex api key.  While you are logged in to Transifex, navigate to https://www.transifex.com/user/settings/api/
+You'll need a [Transifex API key](https://www.transifex.com/user/settings/api/) to push to and pull from the BODS project. You only need this locally; don't commit it or share it or store it anywhere public. 
 
-Click on the “Generate a token” button on the right hand side. Click on “Copy and Close”. Your API token has been created. At the moment it is still quite fragile as it only exists in your clipboard, if you lose it you will not be able to retrieve it from Transifex.
+Click on the “Generate a token” button on the right hand side. Click on “Copy and Close”. Your API token has been created. 
 
-From your home directory, create a new file called ‘.transifexrc’
+So you don't have to enter it at the commandine every time you can store it in `.transifexrc` in your home directory (`~/`), which looks like:
 
-Enter the lines as shown below, replacing YOUR-API-KEY-SHOULD-GO-HERE with your newly generated api key.
 ```
 [https://www.transifex.com]
 api_hostname = https://api.transifex.com
@@ -115,35 +116,32 @@ hostname = https://www.transifex.com
 password = YOUR-API-KEY-SHOULD-GO-HERE
 username = api
 ```
-This sets you up with access to add and retrieve files to and from Transifex. 
+Enter the lines as shown above, replacing YOUR-API-KEY-SHOULD-GO-HERE with your newly generated api key.
+
+This sets you up with access to add and retrieve files to and from Transifex. See [Transifex client configuration](https://docs.transifex.com/client/client-configuration) for more details.
 
 ##### .tx/config
 
-Although it is possible to pre-configure your .tx/config file in advance there are number of ways in which the configuration can change, right up until the moment that you extract and push your projects’ strings up to Transifex.
+The config file is used to map files in a local repo/directory to resources in Transifex. This file is stored in the .tx folder in the repo’s root directory.
 
-For that reason, we recreate the .tx/config file as part of the workflow.
+Although it is possible to pre-configure your .tx/config file in advance there are number of ways in which the configuration can change, right up until the moment that you extract and push your projects’ strings up to Transifex. In particular:
 
+  * the project that you are pushing/pulling strings extracted from files to/from is specified in this file
+  * our tooling automates the process of specifying the files that strings are extracted from (see [data-standard](https://github.com/openownership/data-standard)). This can be dependant upon the branch of the repo that you have checked out
 
-## Roles
+For that reason, we often recreate the .tx/config file as part of the workflow.
 
-### Subject matter expert
+The diagram below shows the state of the .tx/config file after extracting the strings from the 0.3 dev branch of the data-standard repo, ready to push those strings up to the BODS v0.3 project on Transifex.
+  
+![Github-Transifex config](https://github.com/openownership/bods-dev-handbook/blob/translation/screenshots/translation/github_transifex_config.png)
 
-Tasks:
-* Translate beneficial ownership terms from the glossary's source language into the target language, in an online spreadsheet (a Google sheet).
-* Make notes in that same spreadsheet about the selection or use of any particular terms. (For use by translators.)
-* Answer terminological queries from translators, if they come up.
-Therefore they need:
-
-Skills:
-* To be native speakers of the target language and fluent in English (the source language).
-* To have extensive experience of talking and writing about beneficial ownership in the target language.
-* To be confident in using, or learning to use, Google sheets.
+To create an initial .tx/config file follow the instructions in the [data-standard repo](https://github.com/openownership/data-standard)
 
 ## Integrating translations
 
-Whenever any strings are changed that are in scope for translation (see list above) they need to be 'extracted', pushed to Transifex, translated, and the translated strings pulled back down. Updates the documentation and schema should not be deployed until the necessary translations are in place.
+Whenever any strings are changed that are in scope for translation (see list above) they need to be 'extracted', pushed to Transifex, translated, and the translated strings pulled back down. Updates to the documentation and schema should not be deployed until the necessary translations are in place.
 
-The steps for doing this should be done by the person making the changes to the schema and docs, and are documented in the [data standard README](https://github.com/openownership/data-standard/blob/master/README.md). There are separate steps for the docs, schema and codelists, and you only need to carry out the steps applicable to the changes you made. For example, if you only updated the schema, you don't need execute commands to extract strings from the docs or codelists.
+The steps for doing this should be done by the person making the changes to the schema and docs, and are documented in the [data standard README](https://github.com/openownership/data-standard/blob/master/README.md). There are separate steps for the docs, schema and codelists, and you only need to carry out the steps applicable to the changes you made. For example, if you only updated the schema, you don't need to execute commands to extract strings from the docs or codelists.
 
 The steps for the Sphinx theme are in the [sphinx theme README](https://github.com/openownership/data-standard-sphinx-theme#translations).
 
@@ -159,23 +157,38 @@ So make sure the latest version of the theme is being installed in case expected
 
 ## BODS on Transifex
 
-BODS translations currently live under the Open Data Services Transifex account. The BODS docs and schema live in versioned projects, ie. v0.1 'project' is [bods-v01](https://www.transifex.com/OpenDataServices/bods-v01/dashboard/). The project contains 'resources', each of which correspond to a page of documentation (an individual RST file) plus one each for the schema and codelists.
+BODS translations currently live under the Open Data Services Transifex account. The BODS docs and schema live in versioned projects, ie. v0.1 'project' is [bods-v01](https://www.transifex.com/OpenDataServices/bods-v01/dashboard/). The project contains 'resources', each of which correspond to a page of documentation (an individual RST file) plus one each for the schema, codelists and .svg files.
 
 The documentation sphinx theme translations live under [bods-theme](https://www.transifex.com/OpenDataServices/bods-theme/dashboard/), which contains only one resource for all the strings in the theme templates.
 
-### Access for devs/analysts
+### Teams and Roles
 
-You'll need a [Transifex API key](https://www.transifex.com/user/settings/api/) to push to and pull from the BODS project. You only need this locally; don't commit it or share it or store it anywhere public. So you don't have to enter it at the commandine every time you can store it in `.transifexrc` in your home directory (`~/`), which looks like:
+Teams are the groups of people who do the translations. Each project has just one team allocated to it, although a team can be allocated to more than one project. To illustrate this, below is a diagram showing the first ten projects listed under Open Data Services Co-operative (as at 2019-06-19) and the teams that are allocated to them. 
 
-```
-[https://www.transifex.com]
-api_hostname = https://api.transifex.com
-hostname = https://www.transifex.com
-password = {your api key here}
-username = api
-```
+![Transifex: projects and teams](https://github.com/openownership/bods-dev-handbook/blob/translation/screenshots/translation/transifex_projects_and_teams.png)
 
-See [Transifex client configuration](https://docs.transifex.com/client/client-configuration) for more details.
+A team can consist of the following roles:
+
+  * A team manager
+  * A team coordinator
+  * Translators
+  * Reviewers
+
+The BODS team consists of a team manager, translators and reviewers, with the team manager taking on the role of coordinator.
+
+
+#### Subject matter expert
+
+Tasks:
+* Translate beneficial ownership terms from the glossary's source language into the target language, in an online spreadsheet (a Google sheet).
+* Make notes in that same spreadsheet about the selection or use of any particular terms. (For use by translators.)
+* Answer terminological queries from translators, if they come up.
+Therefore they need:
+
+Skills:
+* To be native speakers of the target language and fluent in English (the source language).
+* To have extensive experience of talking and writing about beneficial ownership in the target language.
+* To be confident in using, or learning to use, Google sheets.
 
 ### Access for translators
 
