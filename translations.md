@@ -51,10 +51,10 @@ The diagram below provides an extremely high-level overview of the workflow. It 
 
 Complete the following steps to get your system set up to undergo the workflow outlined above (assumes Ubuntu 18.04.2 LTS or similar):
 
-  * setting up an account and joining the ODSC organization in Transifex
-  * creating and configuring a new project in Transifex
-  * cloning the repositories to manage the workflow 
-  * installing and configuring the Transifex client
+  * set up an account and join the ODSC organization in Transifex
+  * create and configuring a new project in Transifex
+  * clone the repositories to manage the workflow 
+  * install and configure the Transifex client
 
 ### Setting up an account and joining the ODSC organization in Transifex
 
@@ -174,7 +174,15 @@ A team can consist of the following roles:
   * Translators
   * Reviewers
 
-The BODS team consists of a team manager, translators and reviewers, with the team manager taking on the role of coordinator.
+The BODS team consists of a team manager, translators and reviewers, with the team manager taking on the role of coordinator. We also use subject matter experts to maintain the glossary. They do not have to use Transifex. Their work can be done in a spreadsheet that is uploaded to Transifex by the team manager. In the future we intend to host the glossary in the data-standard repository.
+
+The BODS team manager allocates the translators and reviewers to a specific language. As at the time of writing we have only set up a team consisting of the [Members translating to Russian](https://www.transifex.com/OpenDataServices/teams/95583/ru/).
+
+![Transifex: BODS Team](https://github.com/openownership/bods-dev-handbook/blob/translation/screenshots/translation/transifex_BODS_Team.png)
+
+
+#### Team manager
+
 
 
 #### Subject matter expert
