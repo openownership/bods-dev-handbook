@@ -88,24 +88,23 @@ Transifex offers a number of different options for uploading content to be trans
 
 The commands for installing the Transifex CLI client on Ubuntu are:
 
+```
 $ sudo apt-get install python-pip
 $ sudo pip install transifex-client
+```
 
 #### Configuring the Transifex client
 
 Transifex configuration involves the creation of two files:
 
-~/.transifexrc, which stores your Transifex host configuration in your home directory, including your API key
-.tx/config, which stores the mappings between your local files and Transifex in a .tx folder in your repo’s root directory.
-~/.transifexrc
+`~/.transifexrc`, which stores your Transifex host configuration in your home directory, including your API key.
+`.tx/config`, which stores the mappings between your local files and Transifex in a .tx folder in your repo’s root directory.
 
 Transifex’s own documentation for initialising the client involves running the tx init command. We are going to edit the files more directly.
 
 ##### Creating and storing your API key
 
-You'll need a [Transifex API key](https://www.transifex.com/user/settings/api/) to push to and pull from the BODS project. You only need this locally; don't commit it or share it or store it anywhere public. 
-
-Click on the “Generate a token” button on the right hand side. Click on “Copy and Close”. Your API token has been created. 
+You'll need a [Transifex API key](https://www.transifex.com/user/settings/api/) to push to and pull from the BODS project. Click on the “Generate a token” button on the right hand side. Click on “Copy and Close”. Your API token has been created.  You only need this locally; don't commit it or share it or store it anywhere public. 
 
 So you don't have to enter it at the commandine every time you can store it in `.transifexrc` in your home directory (`~/`), which looks like:
 
@@ -122,9 +121,9 @@ This sets you up with access to add and retrieve files to and from Transifex. Se
 
 ##### .tx/config
 
-The config file is used to map files in a local repo/directory to resources in Transifex. This file is stored in the .tx folder in the repo’s root directory.
+The `.tx/config` file is used to map files in a local repo/directory to resources in Transifex. This file is stored in the .tx folder in the repo’s root directory.
 
-Although it is possible to pre-configure your .tx/config file in advance there are number of ways in which the configuration can change, right up until the moment that you extract and push your projects’ strings up to Transifex. In particular:
+Although it is possible to pre-configure your `.tx/config` file in advance there are number of ways in which the configuration can change, right up until the moment that you extract and push your projects’ strings up to Transifex. In particular:
 
   * the project that you are pushing/pulling strings extracted from files to/from is specified in this file
   * our tooling automates the process of specifying the files that strings are extracted from (see [data-standard](https://github.com/openownership/data-standard)). This can be dependant upon the branch of the repo that you have checked out
@@ -135,7 +134,7 @@ The diagram below shows the state of the .tx/config file after extracting the st
   
 ![Github-Transifex config](https://github.com/openownership/bods-dev-handbook/blob/translation/screenshots/translation/github_transifex_config.png)
 
-To create an initial .tx/config file follow the instructions in the [data-standard repo](https://github.com/openownership/data-standard)
+To create an initial `.tx/config` file follow the instructions in the [data-standard repo](https://github.com/openownership/data-standard)
 
 ## Integrating translations
 
@@ -183,20 +182,54 @@ The BODS team manager allocates the translators and reviewers to a specific lang
 
 #### Team manager
 
+Tasks:
+  * Create the project
+  * Co-ordinate the freeze on further development of the branch being translated
+  * Push strings to be translated up to Transifex
+  * Co-ordinate the work of the translators and reviewers
+  * Pull translated and quality tested strings down from Transifex
+  * Publish translated website using Read The Docs
+  
+Therefore they need:
 
+Skills:
+  * To have an understanding of how Github works
+  * To understand how the translation process works in Transifex
+  * To understand how organisations and teams work in Transifex
+  * To understand how to extract the strings
+  * To understand how to add and update a translation of the website in Transifex
+
+#### Translator
+  * Translate the strings in Transifex from the source language (by default, English) into the target language
+
+Therefore they need:
+
+Skills:
+  * To be native speakers of the target language and fluent in English (the source language)
+  * To be confident in using, or learning to use, Transifex.
+
+#### Reviewer
+  * Review the translated strings in Transifex
+
+Therefore they need:
+
+Skills:
+  * To be native speakers of the target language and fluent in English (the source language)
+  * To have extensive experience of talking and writing about beneficial ownership in the target language
+  * To be confident in using, or learning to use, Transifex
 
 #### Subject matter expert
 
 Tasks:
-* Translate beneficial ownership terms from the glossary's source language into the target language, in an online spreadsheet (a Google sheet).
-* Make notes in that same spreadsheet about the selection or use of any particular terms. (For use by translators.)
-* Answer terminological queries from translators, if they come up.
+  * Translate beneficial ownership terms from the glossary's source language into the target language, in an online spreadsheet (a Google sheet).
+  * Make notes in that same spreadsheet about the selection or use of any particular terms. (For use by translators.)
+  * Answer terminological queries from translators, if they come up.
 Therefore they need:
 
 Skills:
-* To be native speakers of the target language and fluent in English (the source language).
-* To have extensive experience of talking and writing about beneficial ownership in the target language.
-* To be confident in using, or learning to use, Google sheets.
+  * To be native speakers of the target language and fluent in English (the source language).
+  * To have extensive experience of talking and writing about beneficial ownership in the target language.
+  * To be confident in using, or learning to use, Google sheets.
 
 ### Access for translators
 
