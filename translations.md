@@ -75,6 +75,8 @@ Once you have signed up to Transifex you should ask an administrator of ODSC to 
   * Choose 'public project' and **make sure to check the 'My project is a non-commercial Open Source project checkbox'** and enter the github repo URL.
   * ![Screenshot: tick the My project is a non-commercial Open Source project checkbox when creating a new project](screenshots/translation/transifex_noncommercial.png)
   * Assign the project to the BODS team.
+  
+TO DO: Decide upon and document a policy for using (or not) the Translation Memory functionality.
 
 ### Cloning the repositories to manage the workflow
 
@@ -194,12 +196,15 @@ Therefore they need:
 
 Skills:
   * To have an understanding of how Github works
-  * To understand how the translation process works in Transifex
-  * To understand how organisations and teams work in Transifex
-  * To understand how to extract the strings
-  * To understand how to add and update a translation of the website in Transifex
+  * To understand and be able to manage the translation process in Transifex
+  * To understand and be able to manage organisations and teams in Transifex
+  * To be able to use the tooling to extract strings from the repositories
+  * To be able to push and pull extracted strings to and from Transifex
+  * To be able to add and update a translation of the website in Transifex
 
 #### Translator
+
+Tasks:
   * Translate the strings in Transifex from the source language (by default, English) into the target language
 
 Therefore they need:
@@ -209,7 +214,9 @@ Skills:
   * To be confident in using, or learning to use, Transifex.
 
 #### Reviewer
-  * Review the translated strings in Transifex
+
+Tasks:
+  * Review the translated strings in Transifex and provide feedback to translators and the team manager
 
 Therefore they need:
 
@@ -217,6 +224,7 @@ Skills:
   * To be native speakers of the target language and fluent in English (the source language)
   * To have extensive experience of talking and writing about beneficial ownership in the target language
   * To be confident in using, or learning to use, Transifex
+  * To have a pragmatic approach to translation, taking into account the wider context in which it may be used
 
 #### Subject matter expert
 
@@ -224,6 +232,7 @@ Tasks:
   * Translate beneficial ownership terms from the glossary's source language into the target language, in an online spreadsheet (a Google sheet).
   * Make notes in that same spreadsheet about the selection or use of any particular terms. (For use by translators.)
   * Answer terminological queries from translators, if they come up.
+
 Therefore they need:
 
 Skills:
@@ -233,13 +242,19 @@ Skills:
 
 ### Access for translators
 
-Translators should be given access to translate main BODS project (documentation, schema, codelists), as well as the theme.
+Translators should be given access to translate the main BODS project (documentation, schema, codelists), as well as the theme.
 
-See also: [Transifex docs for translators](https://docs.transifex.com/getting-started-1/translators).
+Translators and reviewers can follow the instructions here to sign up to Transifex: [Transifex docs for translators](https://docs.transifex.com/getting-started-1/translators).
 
-TODO: detailed information about access control on Transifex.
+Once a translator or reviewer has signed up to Transifex then an admiinistrator can add them to the BODS Team through the [BODS team > Members translating to Russian](https://www.transifex.com/OpenDataServices/teams/95583/ru/) page. Clicking on "Add translators" or "Add reviewers" will bring up this form
 
-TODO: information about translating and reviewing. Who does what, when?
+![Add collaborator](https://github.com/openownership/bods-dev-handbook/blob/translation/screenshots/translation/collaborate.png)
+
+which can be completed to add the person to the project
+
+#### The translation and review process
+
+
 
 ### Changing schema version
 
