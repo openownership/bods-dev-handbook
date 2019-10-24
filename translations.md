@@ -181,6 +181,7 @@ The BODS team manager allocates the translators and reviewers to a specific lang
 
 ![Transifex: BODS Team](https://github.com/openownership/bods-dev-handbook/blob/translation/screenshots/translation/transifex_BODS_Team.png)
 
+NOTE: The [OCDS handbook](https://ocds-standard-development-handbook.readthedocs.io/en/latest/standard/translation/workflow.html) specifies different roles. It separates out the "team manager" role into a "Release Manager" and a 'coordinator'. We should review these two different ways of working to see if we can agree a common standard. It also details a proofreader role which is not supported under our the Transifex free plan.
 
 #### Team manager
 
@@ -254,7 +255,42 @@ which can be completed to add the person to the project
 
 #### The translation and review process
 
+NOTE: This section describes a process that is different to how we have worked to date. As such it should be seen as a suggestion that is open to discussion.
 
+##### Translators
+
+Once the strings for the schema release have been uploaded to Transifex, the translator should be given access to the project and asked to begin the translation. 
+
+Translators should be aware that they will be required to take part in the review of their work. Details of this are in the following section.
+
+###### Reviewers
+
+There are two inter-linked tasks for a reviewer. A reviewer can choose to do these separately or together as they work through the project.
+
+1. Review all of the translated strings in the project
+2. Check all of the warnings* against the translated strings in the project
+
+*Transifex will warn users when certain translation checks fail. This includes cases when a term in the source file is translated to something other than the translation in the glossary.
+
+Reviewers should make comments against the translation that are then resolved between them and the reviewer. 
+
+Comments are made against a string. Because a string can consist of an entire paragraph it is necessary to quote the part of the string that a comment is made against. Because a reviewer might query more than one part of the string it is necessary to create a reference for the comment.
+
+A comment template is as follows:
+
+#1 "selection-of-text-being-commented-on"
+- Description of the problem that the reviewer sees in the translation
+- Suggestion how this can be resolved
+
+The translator can then accept the suggestion by editing the translated string or they can reply to the reviewer with an alternative suggestion or a request for clarification. 
+
+A template for a response to a comment is as follows
+
+#1 "selection-of-text-being-commented-on"
+- Response to the comment
+
+##### Resolving differences
+Where agreement cannot be reached by the translator and the reviewer it is the Team Manager's role to decide what should be done. They may take a decision themselves, or seek external advice.
 
 ### Changing schema version
 
