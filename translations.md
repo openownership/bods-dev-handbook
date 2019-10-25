@@ -296,29 +296,6 @@ A template for a response to a comment is as follows
 ##### Resolving differences
 Where agreement cannot be reached by the translator and the reviewer it is the Team Manager's role to decide what should be done. They may take a decision themselves, or seek external advice.
 
-### Changing schema version
-
-BODS publishes documentation for each version of the schema, so when there's a version update we need a fresh Transifex project so earlier translations are not overwritten or removed.
-
-* [Add a new project on Transifex](https://www.transifex.com/OpenDataServices/add/).
-  * Name it according to the version of BODS, ie `bods-v02` for BODS version 0.2.
-  * Under the 'General' tab choose 'public project' and **make sure to check the 'My project is a non-commercial Open Source project checkbox'** and enter the github repo URL.
-  * ![Screenshot: tick the My project is a non-commercial Open Source project checkbox when creating a new project](screenshots/translation/transifex_noncommercial.png)
-  * Under the 'Workflow' tab choose "Translation Memory Fill-up" under "Pre-translation".
-  * ![Screenshot: tick the  "Translation Memory Fill-up" under "Pre-translation" when creating a new project](https://github.com/openownership/bods-dev-handbook/blob/translation/screenshots/translation/transifex_translation_memory.png)
-  * Assign the project to the BODS team.
-* With your local branch for the new BODS version, after extracting the strings, run the commands for updating the Transifex config which are part of the usual flow whenever you add, remove or rename any files, but with the new Transifex project slug:
-
-```
-rm -f .tx/config
-sphinx-intl create-txconfig
-sphinx-intl update-txconfig-resources --pot-dir docs/_build/gettext --locale-dir docs/locale --transifex-project-name NEW-PROJECT-NAME-HERE
-```
-
-All the other steps for extracting strings and pulling down translations are as usual.
-
-TODO: check the method for prepopulating the new project with existing translations from the previous project (see https://ocds-standard-development-handbook.readthedocs.io/en/latest/standard/translation/technical.html)
-
 ## Adding new languages on readthedocs
 
 Once you've got all your translations, you need to actually publish them. The process for adding a new language version of the docs on readthedocs is a bit convoluted.
