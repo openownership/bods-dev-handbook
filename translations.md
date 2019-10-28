@@ -6,9 +6,9 @@ Note: This process is still in development, and improvements or clarifications a
 
 The following instructions cover the translation of:
 
-  * A version of the Beneficial Ownership Data Standard (BODS) schema, including its codelists
-  * The corresponding documentation website 
-  * The documentation website’s theme
+  * A version of the Beneficial Ownership Data Standard (BODS) **schema**, including its **codelists**
+  * The corresponding **documentation** website 
+  * The documentation website’s **theme**
 
 ## Locations of source files to be translated
 
@@ -52,7 +52,7 @@ The diagram below provides an extremely high-level overview of the workflow. It 
 Complete the following steps to get your system set up to undergo the workflow outlined above (assumes Ubuntu 18.04.2 LTS or similar):
 
   * set up an account and join the ODSC organization in Transifex
-  * create and configuring a new project in Transifex
+  * create and configure a new project in Transifex
   * clone the repositories to manage the workflow 
   * install and configure the Transifex client
 
@@ -75,12 +75,12 @@ Once you have signed up to Transifex you should ask an administrator of ODSC to 
   * Choose 'public project' and **make sure to check the 'My project is a non-commercial Open Source project checkbox'** and enter the github repo URL.
   * ![Screenshot: tick the My project is a non-commercial Open Source project checkbox when creating a new project](screenshots/translation/transifex_noncommercial.png)
   * Assign the project to the BODS team.
-  
-TO DO: Decide upon and document a policy for using (or not) the Translation Memory functionality.
+  * Under the 'Workflow' tab choose "Translation Memory Fill-up" under "Pre-translation".
+  * ![Screenshot: tick the  "Translation Memory Fill-up" under "Pre-translation" when creating a new project](https://github.com/openownership/bods-dev-handbook/blob/translation/screenshots/translation/transifex_translation_memory.png)
 
 ### Cloning the repositories to manage the workflow
 
-Follow the instructions in the [BODS data-standard-sphinx-theme README.md](https://github.com/openownership/data-standard-sphinx-theme).
+Follow the instructions in the [BODS data-standard-sphinx-theme README.md](https://github.com/openownership/data-standard-sphinx-theme). These instructions will clone both the data-standard-sphinx-theme and data-standard repositories to your local machine.
 
 ### Installing and configuring the Transifex client
 
@@ -125,10 +125,10 @@ This sets you up with access to add and retrieve files to and from Transifex. Se
 
 The `.tx/config` file is used to map files in a local repo/directory to resources in Transifex. This file is stored in the .tx folder in the repo’s root directory.
 
-Although it is possible to pre-configure your `.tx/config` file in advance there are number of ways in which the configuration can change, right up until the moment that you extract and push your projects’ strings up to Transifex. In particular:
+Although it is possible to pre-configure your `.tx/config` file in advance there are number of ways in which the configuration can change, right up until the moment that you extract and push your projects’ strings up to Transifex. In particular, the `.tx/config` file maps:
 
-  * the project that you are pushing/pulling strings extracted from files to/from is specified in this file
-  * our tooling automates the process of specifying the files that strings are extracted from (see [data-standard](https://github.com/openownership/data-standard)). This can be dependant upon the branch of the repo that you have checked out
+  * the Transifex project that you are pushing strings to and then pulling the translated strings from
+  * the files in the repositories that strings are extracted from (see [data-standard](https://github.com/openownership/data-standard)). This can be dependant upon the branch of the repo that you have checked out. 
 
 For that reason, we often recreate the .tx/config file as part of the workflow.
 
@@ -181,7 +181,7 @@ The BODS team manager allocates the translators and reviewers to a specific lang
 
 ![Transifex: BODS Team](https://github.com/openownership/bods-dev-handbook/blob/translation/screenshots/translation/transifex_BODS_Team.png)
 
-NOTE: The [OCDS handbook](https://ocds-standard-development-handbook.readthedocs.io/en/latest/standard/translation/workflow.html) specifies different roles. It separates out the "team manager" role into a "Release Manager" and a 'coordinator'. We should review these two different ways of working to see if we can agree a common standard. It also details a proofreader role which is not supported under our the Transifex free plan.
+NOTE: The [OCDS handbook](https://ocds-standard-development-handbook.readthedocs.io/en/latest/standard/translation/workflow.html) specifies different roles. It separates out the "team manager" role into a "Release Manager" and a 'coordinator'. We should review these two different ways of working to see if we can agree a common standard. It also details a proofreader role which is not supported under the Transifex free plan.
 
 #### Team manager
 
@@ -263,7 +263,7 @@ Once the strings for the schema release have been uploaded to Transifex, the tra
 
 Translators should be aware that they will be required to take part in the review of their work. Details of this are in the following section.
 
-###### Reviewers
+##### Reviewers
 
 There are two inter-linked tasks for a reviewer. A reviewer can choose to do these separately or together as they work through the project.
 
