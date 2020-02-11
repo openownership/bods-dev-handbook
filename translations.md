@@ -69,7 +69,7 @@ Open Data Services Co-operative is already set up as an organization in Transife
 Once you have signed up to Transifex you should ask an administrator of ODSC to make you an administrator too. We don't maintain a list of those administrators here, but there is a considerable overlap with the [people who contribute towards the BODS Standard repository](https://github.com/openownership/data-standard/graphs/contributors).
 
 ### Creating and configuring a new project in Transifex
-
+*[This section will be updated before any release of BODS subsequent to v0.2. It will then include details of how to set up a new project (for an updated version of the Standard) so that it only highlights for translation those strings which have been edited since the last BODS version.]*
   * [Add a new project on Transifex](https://www.transifex.com/OpenDataServices/add/).
   * Name it according to the version of BODS, ie `bods-v02` for BODS version 0.2.
   * Choose 'public project' and **make sure to check the 'My project is a non-commercial Open Source project checkbox'** and enter the github repo URL.
