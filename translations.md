@@ -13,7 +13,7 @@ The following instructions cover the translation of:
 ## Locations of source files to be translated
 
 BODS **schema** and **codelists** exist under the [schema folder within the BODS Github repository](https://github.com/openownership/data-standard/tree/master/schema).
-The content for the BODS **documentation** website exists under the [docs folder within the same BODS Github repository](https://github.com/openownership/data-standard/tree/master/schema).
+The content for the BODS **documentation** website exists under the [docs folder within the same BODS Github repository](https://github.com/openownership/data-standard/tree/master/docs).
 The documentation website’s **theme** has its own Github repository - [data-standard-sphinx-theme](https://github.com/openownership/data-standard-sphinx-theme).
 
 By translating the three components listed above the publicly available website at http://standard.openownership.org can be published in translation. This is the aim of the translation work.
