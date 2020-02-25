@@ -10,6 +10,8 @@ This style guide is a draft to be discussed and not yet implemented across the B
 
 - In descriptions, properties should be referred to by their property name in backquotes. E.g. \`id\` is required. 
 
+**WIP notes**
+
 *Codelist codes? Currently most multi-word codes are camelCase (e.g. placeOfBirth). However in the unspecifiedReason and interestType codelists - and poss others - hyphens are used (e.g. information-unknown-to-publisher). We need to introduce some consistency.*
 
 *Markup within descriptions?*
@@ -23,6 +25,8 @@ restructuredText (.rst) files are used to document BODS.
 - Objects to be referred to by their title, e.g. '... the Interested Party object has a number of required properties...'
 
 - Statements to be referred to by their titles. e.g. "The details of the company are entered into an Entity Statement"
+
+**WIP notes**
 
 *How should a codelist be referred to? I suggest by its inferred title, capitalised. e.g. "...choose an item from the Unspecified Reason codelist...". And it would be translated for internationalisation.*
 
