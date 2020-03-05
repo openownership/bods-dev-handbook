@@ -4,10 +4,10 @@
 
 BODS docs are published on [readthedocs](http://standard.openownership.org).
 
-## BODSkit
-BODSkit provides command line tools for common development tasks.
+## OCDSKit
+OCDSkit provides command line tools for common development tasks, which can also be used with BODS.
 
-[ [BODSkit documentation](https://bodskit.readthedocs.io/en/master/cli.html) | [Repository](https://github.com/openownership/bodskit) ]
+[ [OCDSkit documentation](https://ocdskit.readthedocs.io/en/master/cli.html) | [Repository](https://github.com/openownership/ocdskit) ]
 
 ## Flatten Tool for BODS
 Flatten-Tool enables a dataset to be round-tripped between structured JSON and tabular data packages, CSV files, or spreadsheets.
