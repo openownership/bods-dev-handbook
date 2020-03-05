@@ -45,7 +45,7 @@ The workflow for doing the translation is:
 
 The diagram below provides an extremely high-level overview of the workflow. It excludes the final step of making the translation live.
 
-![Translation Workflow](https://github.com/openownership/bods-dev-handbook/blob/master/screenshots/translation/translation_workflow_overview.png)
+![Translation Workflow](/screenshots/translation/translation_workflow_overview.png)
 
 ## Setting up your local machine
 
@@ -64,19 +64,21 @@ The organization is the home of all the translation projects that an organizatio
 
 Open Data Services Co-operative is already set up as an organization in Transifex and all of our projects and teams are managed from within it. A list of our translation projects is visible at the [Open Data Services Co-operative public page](https://www.transifex.com/OpenDataServices/public/).
 
-![ODSC Organisation in Transifex](https://github.com/openownership/bods-dev-handbook/blob/master/screenshots/translation/transifex_odsc_organisation.png)
+![ODSC Organisation in Transifex](/screenshots/translation/transifex_odsc_organisation.png)
 
 Once you have signed up to Transifex you should ask an administrator of ODSC to make you an administrator too. We don't maintain a list of those administrators here, but there is a considerable overlap with the [people who contribute towards the BODS Standard repository](https://github.com/openownership/data-standard/graphs/contributors).
 
 ### Creating and configuring a new project in Transifex
+
 *[This section will be updated before any release of BODS subsequent to v0.2. It will then include details of how to set up a new project (for an updated version of the Standard) so that it only highlights for translation those strings which have been edited since the last BODS version.]*
-  * [Add a new project on Transifex](https://www.transifex.com/OpenDataServices/add/).
-  * Name it according to the version of BODS, ie `bods-v02` for BODS version 0.2.
-  * Choose 'public project' and **make sure to check the 'My project is a non-commercial Open Source project checkbox'** and enter the github repo URL.
-  * ![Screenshot: tick the My project is a non-commercial Open Source project checkbox when creating a new project](screenshots/translation/transifex_noncommercial.png)
-  * Assign the project to the BODS team.
-  * Under the 'Workflow' tab choose "Translation Memory Fill-up" under "Pre-translation".
-  * ![Screenshot: tick the  "Translation Memory Fill-up" under "Pre-translation" when creating a new project](https://github.com/openownership/bods-dev-handbook/blob/translation/screenshots/translation/transifex_translation_memory.png)
+
+* [Add a new project on Transifex](https://www.transifex.com/OpenDataServices/add/).
+* Name it according to the version of BODS, ie `bods-v02` for BODS version 0.2.
+* Choose 'public project' and **make sure to check the 'My project is a non-commercial Open Source project checkbox'** and enter the github repo URL.
+* ![Screenshot: tick the My project is a non-commercial Open Source project checkbox when creating a new project](screenshots/translation/transifex_noncommercial.png)
+* Assign the project to the BODS team.
+* Under the 'Workflow' tab choose "Translation Memory Fill-up" under "Pre-translation".
+* ![Screenshot: tick the  "Translation Memory Fill-up" under "Pre-translation" when creating a new project](/screenshots/translation/transifex_translation_memory.png)
 
 ### Cloning the repositories to manage the workflow
 
@@ -133,8 +135,8 @@ Although it is possible to pre-configure your `.tx/config` file in advance there
 For that reason, we often recreate the .tx/config file as part of the workflow.
 
 The diagram below shows the state of the .tx/config file after extracting the strings from the 0.3 dev branch of the data-standard repo, ready to push those strings up to the BODS v0.3 project on Transifex.
-  
-![Github-Transifex config](https://github.com/openownership/bods-dev-handbook/blob/translation/screenshots/translation/github_transifex_config.png)
+
+![Github-Transifex config](/screenshots/translation/github_transifex_config.png)
 
 To create an initial `.tx/config` file follow the instructions in the [data-standard repo](https://github.com/openownership/data-standard)
 
@@ -166,7 +168,7 @@ The documentation sphinx theme translations live under [bods-theme](https://www.
 
 Teams are the groups of people who do the translations. Each project has just one team allocated to it, although a team can be allocated to more than one project. To illustrate this, below is a diagram showing the first ten projects listed under Open Data Services Co-operative (as at 2019-06-19) and the teams that are allocated to them. 
 
-![Transifex: projects and teams](https://github.com/openownership/bods-dev-handbook/blob/translation/screenshots/translation/transifex_projects_and_teams.png)
+![Transifex: projects and teams](/screenshots/translation/transifex_projects_and_teams.png)
 
 A team can consist of the following roles:
 
@@ -179,7 +181,7 @@ The BODS team consists of a team manager, translators and reviewers, with the te
 
 The BODS team manager allocates the translators and reviewers to a specific language. As at the time of writing we have only set up a team consisting of the [Members translating to Russian](https://www.transifex.com/OpenDataServices/teams/95583/ru/).
 
-![Transifex: BODS Team](https://github.com/openownership/bods-dev-handbook/blob/translation/screenshots/translation/transifex_BODS_Team.png)
+![Transifex: BODS Team](/screenshots/translation/transifex_BODS_Team.png)
 
 NOTE: The [OCDS handbook](https://ocds-standard-development-handbook.readthedocs.io/en/latest/standard/translation/workflow.html) specifies different roles. It separates out the "team manager" role into a "Release Manager" and a 'coordinator'. We should review these two different ways of working to see if we can agree a common standard. It also details a proofreader role which is not supported under the Transifex free plan.
 
@@ -249,7 +251,7 @@ Translators and reviewers can follow the instructions here to sign up to Transif
 
 Once a translator or reviewer has signed up to Transifex then an admiinistrator can add them to the BODS Team through the [BODS team > Members translating to Russian](https://www.transifex.com/OpenDataServices/teams/95583/ru/) page. Clicking on "Add translators" or "Add reviewers" will bring up this form
 
-![Add collaborator](https://github.com/openownership/bods-dev-handbook/blob/translation/screenshots/translation/collaborate.png)
+![Add collaborator](/screenshots/translation/collaborate.png)
 
 which can be completed to add the person to the project
 
