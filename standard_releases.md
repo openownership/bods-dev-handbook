@@ -1,59 +1,216 @@
 # Git Branches, Version Numbers and Standard Releases
 
+## Contents
 
-## Normal Standard Development
+* [Overview](#overview)
+* [Versioning](#versioning)
+* [Translations and releases](#translations-and-releases)
+* [Release processes](#release-processes)
+  * [A new release](#a-new-release)
+  * [A new language to the current release](#a-new-language-to-the-current-release)
+  * [Fixes to an existing release](#fixes-to-an-existing-release)
+  * [Fixes to an existing translation](#fixes-to-an-existing-translation)
+  * [Non-material changes](#non-material-changes)
 
-All development is done on the "master" branch.
 
-When doing work, a branch should be taken from the master branch. The branch name should start with the number of the issue, for example "136-use-externallinks".
+## Overview
 
-Branches should be a self contained piece of work, and merged back to "master" as soon as possible. 
-The longer branches exist, the harder it can be to merge them back as the possibilities of there being merge conflicts increases.
+Development is normally done on the `master` branch. All released versions of the
+standard live in other, specially named, release branches (**not tags**).
 
-Branches should be merged back to "master" as soon as possible via a pull request. A review is needed.
+By default, new work should happen on a branch taken from the master branch and
+be merged back into master, via a pull request, as soon as possible. However, in
+some cases that you may need to branch from a specific release branch and merge
+your changes back into that release branch. It's best to discuss this before
+making changes if you're unsure.
 
-### Freezes on the "master" branch
+Note that the default, merging into master, does not release any changes to the
+world immediately. Changes in master will be incorporated into the next release
+of the standard, which may be some time. If your changes affect the current, or
+older, versions they must be released by bringing the changes into those
+respective release branches. This can introduce complications, so again is best
+confirmed ahead of time.
 
-When the "master" branch is almost ready to be released, a "freeze" may be declared for certain types of content.
+## Versioning
 
-eg As the Russian translation is being done, no pull requests that change the content of strings on the site would be allowed.
+The Standard is given release numbers, following roughly the principles of
+[Semantic Versioning](https://semver.org/), where each part of a version number
+has significance to users and is used by them to understand the differences
+between versions.
 
-In these cases code reviewers should be informed of the "freeze" and they can enforce the freeze whilst reviewing pull requests - some pull requests may be put on hold for a while.
+These version numbers are applied in the main BODS repository
+[github.com/openownership/data-standard](https://github.com/openownership/data-standard)
+as a naming convention for release branches, for example:
 
-### Working on the release after the next release
+* [github.com/openownership/data-standard/tree/v0-0-3](https://github.com/openownership/data-standard/tree/v0-0-3)
+* [github.com/openownership/data-standard/tree/v0-1](https://github.com/openownership/data-standard/tree/v0-1)
 
-This means that anything on the master branch will be included in the next release.
+These releases are published by enabling the release branch in ReadTheDocs, the
+"latest" tag in ReadTheDocs is manually changed to point at the latest version.
 
-If you are working on things for the release after the next release these can not be merged to master yet.
-For example, if 0.1 is the current release, 0.2 is the next release and 0.3 the release after, only work for 0.2 should be merged to master.
+**Note:** our release branch naming scheme is "vMAJOR-MINOR-PATCH"
 
-## Versioned Releases
+**Note:** we always include trailing zeroes in our version numbers. e.g. "v0-1-0" is
+preferred over "v0-1" because someone might interpret the latter as the latest
+version of v0.1.
 
-The Standard is given release numbers.
+## Translations and releases
 
-These are applied in the repository [github.com/openownership/data-standard](https://github.com/openownership/data-standard)
+Our standard assumption for translations is that they are generally
+**asynchronous with development**. That means that changes to the standard or
+documentation do not need to wait for translation before they can be released,
+they should be planned and scheduled as appropriate. For small changes, this
+most likely means batching and performing translations when a suitable number
+are required. For larger changes, particularly new releases, we're more likely
+to want to have all supported translations in place before releasing.
 
-Each release is a branch (NOT a tag), for example:
+## Release processes
 
-  *  [github.com/openownership/data-standard/tree/v0-0-3](https://github.com/openownership/data-standard/tree/v0-0-3)
-  *  [github.com/openownership/data-standard/tree/v0-1](https://github.com/openownership/data-standard/tree/v0-1)
+How exactly we perform a release depends on what is being released and which
+versions the changes affect. The sections below detail specific scenarios, but
+the following general questions always apply:
 
-That branch is then enabled in ReadTheDocs and the "latest" tag in ReadTheDocs is changed to be the new version.
+1. Has the schema or any normative documentation changed?
+2. Does text need translating?
+3. Do the changes affect any existing, released versions?
 
-## To make a new release
+### A new release
 
-* Make sure the master branch is fully ready, with updated version numbers and so on. (TODO expand this?)
-* Create a new branch from the master with the naming scheme "vX-Y-Z", (eg "v0-0-3" or "v0-1-0". Note the included zero in the last example - that does conflict with a previous branch but should be used in the future)
-* Enable the branch in ReadTheDocs
-* Switch the latest tag in ReadTheDocs to the new branch
+Preparing a new release is the most straightforward scenario, though not the
+least work! The general process is:
 
-Note: "v0-1-0" is preferred over "v0-1" because someone might interpret the latter as "The latest version of the v0.1 spec, eg v0.1.5 or something" and so "v0-1-0" is preferred to make clear which version it is.
+* Decide on the set of changes that will be released. Some of these will have
+  likely already been merged in the course of normal development, but they may
+  need additional development, examples adding, etc.
+* Review, test and merge those changes into the `master` branch.
+* Depending on the other ongoing work, either call a "freeze" on the master
+  branch, whereafter merging changes that are not going to be part of the
+  release cannot be merged, or create a new release branch from master. A
+  release freeze is preferred, to reduce the complexity of incorporating any
+  release fixes back into master, but this can be weighed against the impediment
+  to other development on a case-by-case basis.
+* Begin translation of the new release (see [translations](/translations)) and
+  fixing of any snags or bugs. If `master` is frozen, these changes can be merged
+  into master, if using a release branch, merge them there for incorporation
+  into master after the release.
+* Once the release is finalised and everything is ready, release the new version
+  on ReadTheDocs, either by making a new release branch, or simply enabling the
+  existing one. Remember to update the 'latest' branch pointer, and update other
+  release branches to point to it.
+* If fixes and snagging were done on a release branch, now is the time to merge
+  that branch back into master and fix any conflicts with what's been
+  merged in the meantime.
 
-## Releasing non-schema or non-documentation code that gets done after a release
+### A new language to the current release
 
-Each release of the standard is a separate branch (NOT a tag) in git. This means that any non-schema or non-documentation code that we need to do to make ReadTheDocs work, or something like that, can be added easily. The process would be:
+Until such time that we support several stable releases, our assumption is that
+only the current release (and any future ones) will be translated into new
+languages.
 
-  *  Do the work on the master branch, approve it, merge it in. It's done for the future.
-  *  For each old release we want to put the work on, switch to that branch, "git cherry-pick" the commits across, resolve any conflicts, test it, push to github.
+When there are no significant differences between `master` and the current
+release, the process should be to translate master and then copy those
+translations over to the current release 'project' in Transifex.
 
-This is a manual process, but hopefully one that's easy to do.
+* Make a new translation branch from `master` for the translation work, e.g.
+  `spanish-translation`. Remember also that there are translations in the
+  [theme repo](https://github.com/openownership/data-standard-sphinx-theme), and
+  the pinned commit of that package needs to be updated in `requirements.txt`
+  to bring those in.
+* Review, test, snag and finally merge this branch into `master`.
+* Make a new branch from the current release and bring across the changes from
+  your translation branch. `git cherry-pick` is usually easiest.
+* As before, review this branch and fix any snagging issues. It is assumed that
+  normally these fixes will not need to be merged back into master, but if they
+  uncover bugs not previously found, those should be `git cherry-pick`-ed back
+  into `master`.
+* Make new language live on Read The Docs (see [translations](/translations))
+
+When `master` and the current release have diverged significantly (a situation
+we've yet to encounter), it's assumed that the correct process will be to treat
+the translation of each as a separate project. In this case, it's probably most
+helpful to translate the current release first, bring across any fixes and only
+initiate translation of `master` when it's due for release.
+
+### Fixes to an existing release
+
+When a bug is discovered or a correction needs to be made to an existing
+release and it is deemed severe enough to require an immediate fix (i.e.
+it cannot wait for the next naturally-occurring release), then we need
+to make an unplanned release. The process for this is as follows:
+
+* Make an issue in the data-standard repo describing the problem
+* Make a new branch named after the issue, i.e. `1234-description-of-issue`
+  from the current release branch and commit the fix(es) to it
+* Review and test this branch in a pull-request
+* If necessary, perform necessary translation work on this branch once this fix
+  is approved in English. Whether this is necessary depends on the nature of the
+  fix, i.e. whether it changes translated text.
+* At this point, we need to decide on the impact of the changes on users of the
+  standard and the appropriate new version number. Create a new release branch
+  named accordingly, e.g. v0-2-1 or v0-3-0 and merge the fixes into it.
+* Follow the usual release process of enabling, updating to latest, etc, so that
+  this release becomes the new 'current' release. If the issue warrants it,
+  consider adding a notice to the old release documenting the issue and that it
+  should not be used. You may also have to notify existing users of that
+  version.
+* If the fixed issue is also present in `master`, the fix branch should also be
+  merged back into there, in a separate pull-request.
+
+**Note:** until we hit a stable 1.0 release, only very severe bugs that impede real
+world use of the standard, present a security risk or otherwise cause significant
+damage to our aims as an organisation should require this kind of fix. It is also
+assumed that other older pre 1.0 releases are automatically and immediately
+considered end-of-life when a new version is released. This policy is likely to
+change only when we have real world use or commitments mandating a greater level
+of support.
+
+### Fixes to an existing translation
+
+Fixes that solely relate to an existing translation (i.e. not the source text,
+but a particular translation of it) should follow a similar process to other
+fixes to an exiting release. The fix can then be made by editing the translation
+in Transifex and the updated strings pulled down to a local branch named for the
+issue eg 297-concept-translation which should then be pushed up and merged
+directly back into the existing release branch.
+
+This sort of fix does not require a change in version number or a new release branch
+
+### Non-material changes
+
+Changes which do not affect the standard, or normative documentation accompanying
+it, do not need a corresponding change in version number. However, it's still
+important to consider whether any text has been added or changed, and which
+existing versions of the standard you wish the changes to appear in.
+
+**Examples:**
+
+- A change to the visual style of the standard website such as
+  [data-standard-sphinx-theme#57](https://github.com/openownership/data-standard-sphinx-theme/pull/57)
+  requires both new translations of a new piece of text, and merging of the
+  updated theme into all the existing released versions of the standard. Note
+  this also needed updates to the theme and a new pinned version.
+- Adding additional language examples to a released version
+  [data-standard#260](https://github.com/openownership/data-standard/pull/260)
+  which can be merged into `master` **and** the current release.
+- Updating an underlying software library
+  [data-standard#291](https://github.com/openownership/data-standard/pull/291)
+  which can be merged directly into `master` and does not need to update any
+  current or previous versions.
+
+In general, the process for these kinds of changes should be:
+
+* Do the work on a branch based on the master branch, pull-request & approve it,
+  merge it back into `master`
+* For each old release we want to put the work on, create a new branch from that
+  version, `git cherry-pick` or `git merge` the commits across, resolve any
+  conflicts, pull-request and finally merge into that version.
+* If textual changes are made, each branch being merged into existing versions
+  should also consider the translations needed and when/how they will be
+  performed. As with other fixes, the most important is the current release,
+  which should not suffer degradation of translation quality for long/at all if
+  possible. Other, older branches should be evaluated on a best-effort basis.
+
+**Note:** particularly important files which *must* be synced across all releases
+are:
+* LICENSE
+* docs/about (particularly licensing and privacy info)
