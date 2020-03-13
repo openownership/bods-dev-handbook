@@ -56,7 +56,7 @@ version of v0.1.
 
 ## Translations and releases
 
-Our standard assumption for translations is that they are generally
+Our standard assumption for translations is that they can be considered to be
 **asynchronous with development**. That means that changes to the standard or
 documentation do not need to wait for translation before they can be released,
 they should be planned and scheduled as appropriate. For small changes, this
@@ -83,23 +83,31 @@ least work! The general process is:
   likely already been merged in the course of normal development, but they may
   need additional development, examples adding, etc.
 * Review, test and merge those changes into the `master` branch.
-* Depending on the other ongoing work, either call a "freeze" on the master
-  branch, whereafter merging changes that are not going to be part of the
-  release cannot be merged, or create a new release branch from master. A
-  release freeze is preferred, to reduce the complexity of incorporating any
-  release fixes back into master, but this can be weighed against the impediment
-  to other development on a case-by-case basis.
-* Begin translation of the new release (see [translations](/translations)) and
-  fixing of any snags or bugs. If `master` is frozen, these changes can be merged
-  into master, if using a release branch, merge them there for incorporation
-  into master after the release.
-* Once the release is finalised and everything is ready, release the new version
-  on ReadTheDocs, either by making a new release branch, or simply enabling the
-  existing one. Remember to update the 'latest' branch pointer, and update other
-  release branches to point to it.
-* If fixes and snagging were done on a release branch, now is the time to merge
-  that branch back into master and fix any conflicts with what's been
-  merged in the meantime.
+* Call a "freeze" on the master branch. This freeze lasts during the translation
+  process and applies to the schema and docs folders in the repository.
+* Create a new branch from `master` for the translation work. e.g.
+  `v0-2-0-translation`
+* Begin translation of the new release (see [translations](/translations))
+* During translation there may be a need to fix issues that exist on the master
+  branch. If they are outside schema and docs they can be developed on a branch
+  taken from `master` and merged back in when completed.
+  If the changes affect schema and/or docs then they may, in turn, affect the
+  translation. The process for making these changes is:
+  * First create an issue in Github to track the problem.
+  * Then create a new branch that uses the issue number, eg.
+    `297-concept-translation`.
+  * When the branch is ready to be merged into master, pull the strings from
+    Transifex and push them to the translation branch eg `v0-2-0-translation`.
+  * Now merge the branch (297-concept-translation) into master before pushing
+    the updated docs to Transifex.
+  * Check for any changes in Transifex and use the translation branch
+    (`v0-2-0-translation`) to replace any translations that have been
+    overwritten.
+  * Once the translation is finalised, merge the translation branch into
+    `master`.
+* Once the release is finalised and everything is ready, create a branch for the
+  new version (eg, v0-2-0) from `master`.
+* Make the new version live on ReadTheDocs.
 
 ### A new language to the current release
 
@@ -108,8 +116,9 @@ only the current release (and any future ones) will be translated into new
 languages.
 
 When there are no significant differences between `master` and the current
-release, the process should be to translate master and then copy those
-translations over to the current release 'project' in Transifex.
+release, the process should be to use the existing project in Transifex. For
+example, BODS v0-2-0 has a project called "BODS v0.2" in Transifex. New
+languages for translation can be added at any time through the Transifex UI.
 
 * Make a new translation branch from `master` for the translation work, e.g.
   `spanish-translation`. Remember also that there are translations in the
