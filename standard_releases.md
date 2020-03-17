@@ -20,7 +20,7 @@ standard live in other, specially named, release branches (**not tags**).
 
 By default, new work should happen on a branch taken from the master branch and
 be merged back into master, via a pull request, as soon as possible. However, in
-some cases that you may need to branch from a specific release branch and merge
+some cases you may need to branch from a specific release branch and merge
 your changes back into that release branch. It's best to discuss this before
 making changes if you're unsure.
 
@@ -98,7 +98,7 @@ least work! The general process is:
     `297-concept-translation`.
   * When the branch is ready to be merged into master, pull the strings from
     Transifex and push them to the translation branch eg `v0-2-0-translation`.
-  * Now merge the branch (297-concept-translation) into master before pushing
+  * Now merge the branch (`297-concept-translation`) into master before pushing
     the updated docs to Transifex.
   * Check for any changes in Transifex and use the translation branch
     (`v0-2-0-translation`) to replace any translations that have been
@@ -106,7 +106,7 @@ least work! The general process is:
   * Once the translation is finalised, merge the translation branch into
     `master`.
 * Once the release is finalised and everything is ready, create a branch for the
-  new version (eg, v0-2-0) from `master`.
+  new version (eg, `v0-2-0`) from `master`.
 * Make the new version live on ReadTheDocs.
 
 ### A new language to the current release
@@ -132,7 +132,7 @@ languages for translation can be added at any time through the Transifex UI.
   normally these fixes will not need to be merged back into master, but if they
   uncover bugs not previously found, those should be `git cherry-pick`-ed back
   into `master`.
-* Make new language live on Read The Docs (see [translations](/translations))
+* Make the new language live on Read The Docs (see [translations](/translations))
 
 When `master` and the current release have diverged significantly (a situation
 we've yet to encounter), it's assumed that the correct process will be to treat
@@ -156,7 +156,7 @@ to make an unplanned release. The process for this is as follows:
   fix, i.e. whether it changes translated text.
 * At this point, we need to decide on the impact of the changes on users of the
   standard and the appropriate new version number. Create a new release branch
-  named accordingly, e.g. v0-2-1 or v0-3-0 and merge the fixes into it.
+  named accordingly, e.g. `v0-2-1` or `v0-3-0` and merge the fixes into it.
 * Follow the usual release process of enabling, updating to latest, etc, so that
   this release becomes the new 'current' release. If the issue warrants it,
   consider adding a notice to the old release documenting the issue and that it
@@ -177,9 +177,9 @@ of support.
 
 Fixes that solely relate to an existing translation (i.e. not the source text,
 but a particular translation of it) should follow a similar process to other
-fixes to an exiting release. The fix can then be made by editing the translation
-in Transifex and the updated strings pulled down to a local branch named for the
-issue eg 297-concept-translation which should then be pushed up and merged
+fixes to an exiting release. The fix can be made by editing the translation
+in Transifex and pulling down the updated strings to a local branch named for the
+issue eg `297-concept-translation`. This should then be pushed up and merged
 directly back into the existing release branch.
 
 This sort of fix does not require a change in version number or a new release branch
@@ -193,9 +193,9 @@ existing versions of the standard you wish the changes to appear in.
 
 **Examples:**
 
-- A change to the visual style of the standard website such as
+- Making a change to the visual style of the standard website such as
   [data-standard-sphinx-theme#57](https://github.com/openownership/data-standard-sphinx-theme/pull/57)
-  requires both new translations of a new piece of text, and merging of the
+  requires both the translation of a new piece of text and the merging of the
   updated theme into all the existing released versions of the standard. Note
   this also needed updates to the theme and a new pinned version.
 - Adding additional language examples to a released version
