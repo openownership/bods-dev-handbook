@@ -26,3 +26,15 @@ It does **not** contain:
 * How to build the BODS docs - see [BODS Sphinx Theme](https://github.com/openownership/data-standard-sphinx-theme)
 * Deployment information - see [?](#) (internal to Open Data Services Co-op).
 * Any keys, passwords, or configuration files.
+
+## Running this site locally
+
+The site uses jekyll (through github-pages) to turn these markdown files into
+html. You can do so locally too, to preview changes:
+
+* Install Ruby and Bundler. Github pages' [prerequisites section](https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site-with-jekyll#prerequisites)
+  provides documentation on how to do that for Mac, Windows and Linux.
+* `cd` into your local checkout of this repo
+* Install the Ruby gems from this repository with Bundler: `bundle install`
+* Run `bundle exec jekyll serve`
+* Visit `https://localhost:4000`
