@@ -23,10 +23,16 @@ By translating the three components listed above the publicly available website 
 Things that are in scope for translation are:
 
 * All prose in the **documentation**.
-* Text like menu items and footers in the **documentation theme**.
+* Text such as menu items and footers in the **documentation theme**.
 * The *values* of **schema** fields `title` and `description`.
 * The *values* of **codelist** fields `title`, `description` and `technical note`.
 * The SVG diagrams in the **documentation**.
+
+Things that are not in scope for the translation are:
+
+* The *names* of **schema** objects
+* The *values* of **schema** fields `type` and `required`
+* The *names* of **codelist** objects
 
 Things that need to become part of the translation workflow but are not yet:
 
@@ -255,6 +261,12 @@ Once a translator or reviewer has signed up to Transifex then an admiinistrator 
 
 which can be completed to add the person to the project
 
+### Instructions for translators
+
+Translators should be given access to the project on Transifex and also a link to the latest version of the data standard website for context. 
+
+Translators do not have to translate every word in the Transifex project. Any text wrapped in \`s (eg. \`address\`, \`JSON document <https://tools.ietf.org/html/rfc8259>\`) should not be translated. Special attention to this should be paid in the schema, schema-reference and concepts resources where they are used most. In the svg resource the names of objects and codes from a codelist are not to be  translated. As a guide a link to a translated version of the Key Concepts page should be provided (eg. http://standard.openownership.org/es/latest/schema/concepts.html).
+
 #### The translation and review process
 
 NOTE: This section describes a process that is different to how we have worked to date. As such it should be seen as a suggestion that is open to discussion.
@@ -300,7 +312,7 @@ Where agreement cannot be reached by the translator and the reviewer it is the T
 
 ## Adding new languages on readthedocs
 
-Once you've got all your translations, you need to actually publish them. The process for adding a new language version of the docs on readthedocs is a bit convoluted.
+Once you've got all your translations, you need to publish them. The process for adding a new language version of the docs on readthedocs is as follows.
 
 * Go to your [readthedocs dashboard](https://readthedocs.org/dashboard) and click 'Import a Project', then 'Import manually' to the right.
   * You probably want to name it something like "Beneficial Ownership Data Standard (LANG)"
