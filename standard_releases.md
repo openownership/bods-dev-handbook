@@ -42,17 +42,17 @@ These version numbers are applied in the main BODS repository
 [github.com/openownership/data-standard](https://github.com/openownership/data-standard)
 as a naming convention for release branches, for example:
 
-* [github.com/openownership/data-standard/tree/v0-0-3](https://github.com/openownership/data-standard/tree/v0-0-3)
-* [github.com/openownership/data-standard/tree/v0-1](https://github.com/openownership/data-standard/tree/v0-1)
+* [github.com/openownership/data-standard/tree/0.0.3](https://github.com/openownership/data-standard/tree/0.0.3)
+* [github.com/openownership/data-standard/tree/0.1.0](https://github.com/openownership/data-standard/tree/0.1.0)
 
 These releases are published by enabling the release branch in ReadTheDocs, the
 "latest" tag in ReadTheDocs is manually changed to point at the latest version.
 
-**Note:** our release branch naming scheme is "vMAJOR-MINOR-PATCH"
+**Note:** our release branch naming scheme is "MAJOR.MINOR.PATCH"
 
-**Note:** we always include trailing zeroes in our version numbers. e.g. "v0-1-0" is
-preferred over "v0-1" because someone might interpret the latter as the latest
-version of v0.1.
+**Note:** we always include trailing zeroes in our version numbers. e.g. "0.1.0" is
+preferred over "0.1" because someone might interpret the latter as the latest
+version of v0.1
 
 ## Translations and releases
 
@@ -86,7 +86,7 @@ least work! The general process is:
 * Call a "freeze" on the master branch. This freeze lasts during the translation
   process and applies to the schema and docs folders in the repository.
 * Create a new branch from `master` for the translation work. e.g.
-  `v0-2-0-translation`
+  `0.2.0-translation`
 * Begin translation of the new release (see [translations](/translations))
 * During translation there may be a need to fix issues that exist on the master
   branch. If they are outside schema and docs they can be developed on a branch
@@ -97,16 +97,16 @@ least work! The general process is:
   * Then create a new branch that uses the issue number, eg.
     `297-concept-translation`.
   * When the branch is ready to be merged into master, pull the strings from
-    Transifex and push them to the translation branch eg `v0-2-0-translation`.
+    Transifex and push them to the translation branch eg `0.2.0-translation`.
   * Now merge the branch (`297-concept-translation`) into master before pushing
     the updated docs to Transifex.
   * Check for any changes in Transifex and use the translation branch
-    (`v0-2-0-translation`) to replace any translations that have been
+    (`0.2.0-translation`) to replace any translations that have been
     overwritten.
   * Once the translation is finalised, merge the translation branch into
     `master`.
 * Once the release is finalised and everything is ready, create a branch for the
-  new version (eg, `v0-2-0`) from `master`.
+  new version (eg, `0.2.0`) from `master`.
 * Make the new version live on ReadTheDocs.
 
 ### A new language to the current release
@@ -117,7 +117,7 @@ languages.
 
 When there are no significant differences between `master` and the current
 release, the process should be to use the existing project in Transifex. For
-example, BODS v0-2-0 has a project called "BODS v0.2" in Transifex. New
+example, BODS 0.2.0 has a project called "BODS v0.2" in Transifex. New
 languages for translation can be added at any time through the Transifex UI.
 
 * Make a new translation branch from `master` for the translation work, e.g.
@@ -156,7 +156,7 @@ to make an unplanned release. The process for this is as follows:
   fix, i.e. whether it changes translated text.
 * At this point, we need to decide on the impact of the changes on users of the
   standard and the appropriate new version number. Create a new release branch
-  named accordingly, e.g. `v0-2-1` or `v0-3-0` and merge the fixes into it.
+  named accordingly, e.g. `0.2.1` or `0.3.0` and merge the fixes into it.
 * Follow the usual release process of enabling, updating to latest, etc, so that
   this release becomes the new 'current' release. If the issue warrants it,
   consider adding a notice to the old release documenting the issue and that it
