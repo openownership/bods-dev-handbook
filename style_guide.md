@@ -4,15 +4,17 @@ This style guide is a draft to be discussed and not yet implemented across the B
 
 ## BODS Schema
 
-- Object names and definition entry names to be upper camelCase, e.g. InterestedParty
+- Object and property names, and definition entry names to be camelCase, e.g. interestedParty
 
-- Object titles to be uppper case. E.g. 'Interest' or 'Ownership-or-control Statement'.
+- Object and property titles: first word to be uppper case. E.g. 'Interest' or 'Ownership-or-control statement'.
 
-- In descriptions, properties should be referred to by their property name in backquotes. E.g. \`id\` is required. 
+- In descriptions, properties should be referred to by their property name in backquotes. E.g. \`id\` is required.
 
 **WIP notes**
 
 *Codelist codes? Currently most multi-word codes are camelCase (e.g. placeOfBirth). However in the unspecifiedReason and interestType codelists - and poss others - hyphens are used (e.g. information-unknown-to-publisher). We need to introduce some consistency.*
+
+*Adapt and adopt [OCDS style guidance for property descriptions](https://ocds-standard-development-handbook.readthedocs.io/en/latest/meta/schema_style_guide.html#field-and-code-descriptions) ?
 
 *Markup within descriptions?*
 
