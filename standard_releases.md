@@ -54,6 +54,11 @@ These releases are published by enabling the release branch in ReadTheDocs, the
 preferred over "0.1" because someone might interpret the latter as the latest
 version of v0.1
 
+## Changelog
+A [changelog](https://github.com/openownership/data-standard/blob/master/docs/schema/changelog.rst) is kept of changes to the schema and documentation. Before a PR is merged into the `master` branch, you should consider whether an update to the changelog is necessary. (Broadly: is this a change that will materially effect people's use of BODS? Fixing a typo: no, not necessary. Editing a schema property's description for clarity: possibly necessary.) If there is no specific BODS release planned, but material changes need to be noted in the changelog, items can be added under a `## [Unreleased]` heading.
+
+See https://keepachangelog.com/en/0.3.0/ for more on maintaining a good changelog.
+
 ## Translations and releases
 
 Our standard assumption for translations is that they can be considered to be
