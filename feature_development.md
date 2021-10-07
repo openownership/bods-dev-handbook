@@ -2,7 +2,7 @@
 
 ## Overview
 
-[Add SVG]
+![Pipeline from 'user stories' to 'feature released'. Stages are 'Research' (ending in a feature development ticket); 'Propose' (involving an implementatioon proposal ticket); and 'Implement' (involving an implementation plan).](./screenshots/BODSdevelopmentPipeline.svg)
 
 Development of the Beneficial Ownership Data Standard (BODS) responds to the needs of those collecting, sharing and using the data. Those needs are evolving as the field of beneficial ownership transparency grows beyond the foundational policy work. Our new development pipeline aims to highlight the requirements that a feature will meet and how progress on developing the feature proceeds. We hope that this will make it easier for all stakeholders to contribute at the point that best suits them.
 
