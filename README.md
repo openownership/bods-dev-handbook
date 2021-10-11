@@ -8,6 +8,7 @@ If you add a new page, please list it on the contents below.
 
 ## Contents
 
+* [The feature development pipeline](feature_development.md)
 * Principles for working with BODS
   * [Style Guide](style_guide.md)
 * [Tools for working with BODS](tools.md)
