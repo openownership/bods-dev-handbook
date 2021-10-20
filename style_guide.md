@@ -8,7 +8,9 @@ This style guide is a draft to be discussed and not yet implemented across the B
 
 - Object and property titles: first word to be upper case. E.g. 'Interest' or 'Ownership-or-control statement'.
 
-- In descriptions, properties should be referred to by their property name in backquotes. E.g. \`id\` is required.
+- In descriptions, properties should be referred to by their property name in backquotes. E.g. "\`id\` is required". Property values, whether example free text strings or values from a codelist, should appear in single quotes. E.g. "the given name for Johann Sebastian Bach is 'Johann Sebastian'".
+
+- In descriptions or other longer text fields, use plain text only, without markup (eg. no [Markdown](https://en.wikipedia.org/wiki/Markdown) or similar syntax). Where URLs are necessary, they can be placed in brackets by the appropriate word or phrase or at the end of the sentence. 
 
 - Codelists codes to be lowercase when single words, or camelCase when multiple words.
 
