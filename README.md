@@ -23,7 +23,7 @@ If you add a new page, please list it on the contents below.
 It does **not** contain:
 
 * A guide to using the BODS schema - see [BODS documentation](https://standard.openownership.org)
-* Information about BODS governance - see [BODS documentation](http://standard.openownership.org/en/latest/about/index.html)
+* Information about BODS governance - see [BODS documentation](https://standard.openownership.org/en/latest/about/index.html)
 * How to build the BODS docs - see [BODS Sphinx Theme](https://github.com/openownership/data-standard-sphinx-theme)
 * Deployment information - see [?](#) (internal to Open Data Services Co-op).
 * Any keys, passwords, or configuration files.

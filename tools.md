@@ -2,7 +2,7 @@
 
 ## BODS Documentation
 
-BODS docs are published on [readthedocs](http://standard.openownership.org).
+BODS docs are published on [readthedocs](https://standard.openownership.org).
 
 ## BODS docs theme and vagrant box
 If you need to work on the docs and test how they build, you can use the vagrant virtual box here.

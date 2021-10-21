@@ -16,7 +16,7 @@ BODS **schema** and **codelists** exist under the [schema folder within the BODS
 The content for the BODS **documentation** website exists under the [docs folder within the same BODS Github repository](https://github.com/openownership/data-standard/tree/master/docs).
 The documentation website’s **theme** has its own Github repository - [data-standard-sphinx-theme](https://github.com/openownership/data-standard-sphinx-theme).
 
-By translating the three components listed above the publicly available website at http://standard.openownership.org can be published in different languages. This is the aim of the translation work.
+By translating the three components listed above the publicly available website at https://standard.openownership.org can be published in different languages. This is the aim of the translation work.
 
 ## Scope of translation work
 
@@ -265,7 +265,7 @@ which can be completed to add the person to the project
 
 Translators should be given access to the project on Transifex and also a link to the latest version of the data standard website for context. 
 
-Translators do not have to translate every word in the Transifex project. Any text wrapped in \`s (eg. \`address\`, \`JSON document <https://tools.ietf.org/html/rfc8259>\`) should not be translated. Special attention to this should be paid in the schema, schema-reference and concepts resources where they are used most. In the svg resource the names of objects and codes from a codelist are not to be  translated. As a guide a link to a translated version of the Key Concepts page should be provided (eg. http://standard.openownership.org/es/latest/schema/concepts.html).
+Translators do not have to translate every word in the Transifex project. Any text wrapped in \`s (eg. \`address\`, \`JSON document <https://tools.ietf.org/html/rfc8259>\`) should not be translated. Special attention to this should be paid in the schema, schema-reference and concepts resources where they are used most. In the svg resource the names of objects and codes from a codelist are not to be  translated. As a guide a link to a translated version of the Key Concepts page should be provided (eg. https://standard.openownership.org/es/latest/schema/concepts.html).
 
 #### The translation and review process
 
