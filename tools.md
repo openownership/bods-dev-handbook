@@ -5,16 +5,21 @@
 BODS docs are published on [readthedocs](https://standard.openownership.org).
 
 ## BODS docs theme and vagrant box
-If you need to work on the docs and test how they build, you can use the vagrant virtual box here.
+
+The latest version of the BODS docs automatically use the lastest version of the theme from the repo. Older versions of the docs may be pinned to specific commits or branches of the theme.
+
+If you need to work on the docs and test how they build, you can use the vagrant virtual box.
 
 [ [Repository](https://github.com/openownership/data-standard-sphinx-theme) ]
 
 ## OCDSKit
+
 OCDSkit provides command line tools for common development tasks, which can also be used with BODS.
 
 [ [OCDSkit documentation](https://ocdskit.readthedocs.io/en/master/cli.html) | [Repository](https://github.com/openownership/ocdskit) ]
 
 ## Flatten Tool for BODS
+
 Flatten-Tool enables a dataset to be round-tripped between structured JSON and tabular data packages, CSV files, or spreadsheets.
 
 [ [Flatten Tool documentation](https://flatten-tool.readthedocs.io/en/latest/usage-bods/) | [Repository](https://github.com/OpenDataServices/flatten-tool) ]
