@@ -6,11 +6,13 @@ BODS docs are published on [readthedocs](https://standard.openownership.org).
 
 ## BODS docs theme and vagrant box
 
-The latest version of the BODS docs automatically use the lastest version of the theme from the repo. Older versions of the docs may be pinned to specific commits or branches of the theme.
+The latest version of the BODS docs automatically uses the lastest version of the theme from the repo. Older versions of the docs may be pinned to specific commits or branches of the theme.
 
-If you need to work on the docs and test how they build, you can use the vagrant virtual box.
+If you need to work on the docs and test how they build, you can use a Python virtual environment, as outlined in the [data standard ReadMe](https://github.com/openownership/data-standard#build--test-the-docs-locally).
 
-[ [Repository](https://github.com/openownership/data-standard-sphinx-theme) ]
+If you need to work on the docs theme and test changes to it, you can use the vagrant virtual box provided in the theme repository.
+
+[ [Data standard ReadMe](https://github.com/openownership/data-standard#build--test-the-docs-locally)  |  [Theme repository](https://github.com/openownership/data-standard-sphinx-theme) ]
 
 ## OCDSKit
 
