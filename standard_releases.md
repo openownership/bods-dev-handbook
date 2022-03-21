@@ -88,6 +88,7 @@ least work! The general process is:
   likely already been merged in the course of normal development, but they may
   need additional development, examples adding, etc.
 * Review, test and merge those changes into the `master` branch.
+* Go through the [Freeze checklist](#freeze-checklist) (below) and ensure that all elements of the docs and schema have been updated and tested as outlined.
 * Call a "freeze" on the master branch. This freeze lasts during the translation
   process and applies to the schema and docs folders in the repository.
 * Create a new branch from `master` for the translation work. e.g.
@@ -228,3 +229,15 @@ In general, the process for these kinds of changes should be:
 are:
 * LICENSE
 * docs/about (particularly licensing and privacy info)
+
+## Freeze checklist
+
+* Ensure that all pages in docs/about.rst have been reviewed and updated if necessary.
+* Check docs/schema/reference.rst. Are all new objects, properties and codelists there? Have sub-properties been collapsed sensibly?
+* Update BODS version ‘attention’ box on all relevant docs pages
+* Do a final edit of docs/schema/changelog.rst
+* Fix any sphinx build warnings or errors (including broken links)
+* Update all example and test BODS json data to increment `bodsVersion` value
+* Update the `version` field value in all schema .json files
+* Update docs/conf.py
+* Run pytest finally, and resolve any errors.
