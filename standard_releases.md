@@ -232,12 +232,12 @@ are:
 
 ## Freeze checklist
 
-* Ensure that all pages in docs/about.rst have been reviewed and updated if necessary.
-* Check docs/schema/reference.rst. Are all new objects, properties and codelists there? Have sub-properties been collapsed sensibly?
-* Update BODS version ‘attention’ box on all relevant docs pages
-* Do a final edit of docs/schema/changelog.rst
-* Fix any sphinx build warnings or errors (including broken links)
-* Update all example and test BODS json data to increment `bodsVersion` value
-* Update the `version` field value in all schema .json files
-* Update docs/conf.py
-* Run pytest finally, and resolve any errors.
+1. Ensure that all pages in docs/about.rst have been reviewed and updated if necessary.
+2. Check docs/schema/reference.rst. Are all new objects, properties and codelists there? Have sub-properties been collapsed sensibly?
+3. Update BODS version ‘attention’ box on all relevant docs pages
+4. Do a final edit of docs/schema/changelog.rst
+5. Fix any sphinx build warnings or errors (including broken links)
+6. Update all example and test BODS json data to increment `bodsVersion` value
+7. Update the `version` field value in all schema .json files
+8. Update docs/conf.py
+9. Run pytest finally, and resolve any errors.
