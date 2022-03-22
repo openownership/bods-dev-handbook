@@ -232,7 +232,7 @@ are:
 
 ## Freeze checklist
 
-1. Ensure that all pages in docs/about.rst have been reviewed and updated if necessary.
+1. Ensure that all pages in the docs/about/ directory have been reviewed and updated if necessary.
 2. Check docs/schema/reference.rst. Are all new objects, properties and codelists there? Have sub-properties been collapsed sensibly?
 3. Update BODS version ‘attention’ box on all relevant docs pages
 4. Do a final edit of docs/schema/changelog.rst
