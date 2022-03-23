@@ -233,11 +233,13 @@ are:
 ## Freeze checklist
 
 1. Ensure that all pages in the docs/about/ directory have been reviewed and updated if necessary.
-2. Check docs/schema/reference.rst. Are all new objects, properties and codelists there? Have sub-properties been collapsed sensibly?
-3. Update BODS version ‘attention’ box on all relevant docs pages
-4. Do a final edit of docs/schema/changelog.rst
-5. Fix any sphinx build warnings or errors (including broken links)
-6. Update all example and test BODS json data to increment `bodsVersion` value
-7. Update the `version` field value in all schema .json files
-8. Update docs/conf.py
-9. Run pytest finally, and resolve any errors.
+2. Update the license file (root of repo).
+3. Update the ReadMe file (root of repo).
+4. Check docs/schema/reference.rst. Are all new objects, properties and codelists there? Have sub-properties been collapsed sensibly?
+5. Update BODS version ‘attention’ box on all relevant docs pages
+6. Do a final edit of docs/schema/changelog.rst
+7. Fix any sphinx build warnings or errors (including broken links)
+8. Update all example and test BODS json data to increment `bodsVersion` value
+9. Update the `version` field value in all schema .json files
+10. Update docs/conf.py and check the docs build without errors.
+11. Run pytest finally, and resolve any errors.
