@@ -61,13 +61,14 @@ See https://keepachangelog.com/en/0.3.0/ for more on maintaining a good changelo
 
 ## Translations and releases
 
-Our standard assumption for translations is that they can be considered to be
-**asynchronous with development**. That means that changes to the standard or
-documentation do not need to wait for translation before they can be released,
-they should be planned and scheduled as appropriate. For small changes, this
-most likely means batching and performing translations when a suitable number
-are required. For larger changes, particularly new releases, we're more likely
-to want to have all supported translations in place before releasing.
+New releases for the standard must be translated into supported languages.
+
+For incremental work on the schema and documentation, translations do not need
+to be complete before changes are merged into the main branch. Translation
+may happen periodically during work on a new version, but it is usually better
+to wait until a stable version is ready and then translated all at once, just
+prior to a versioned release. This reduces the risk of translators working on
+text that may change again in the near future.
 
 ## Release processes
 
