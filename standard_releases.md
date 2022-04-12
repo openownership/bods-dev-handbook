@@ -105,7 +105,7 @@ least work! The general process is:
   If the changes affect schema and/or docs then they may, in turn, affect the
   translation. The process for making these changes is:
   * First create an issue in Github to track the problem.
-  * Then create a new branch that uses the issue number, eg.
+  * Then create a new branch that uses the issue number, e.g.
     `297-concept-translation`.
   * When the branch is ready to be merged into `master`, ensure that the translations
     on the new branch are either equivalent to or ahead of the translations on
@@ -124,7 +124,7 @@ least work! The general process is:
 * Once the release is finalised and everything is ready, create a branch for the
   new version (eg, `0.2.0`) from `master`.
 * [Create a new Transifex project](translations.md#creating-and-configuring-a-new-project-in-transifex)
-  named for the new version (eg. `bods-v02`).
+  named for the new version (e.g. `bods-v02`).
 * Configure the Transifex config on the versioned branch with the versioned Transifex
   project (and commit this), and push both the source files *and* the translations
   to the new Transifex project. This means that further work on the schema and
@@ -156,7 +156,7 @@ significantly:
     to bring those in.
 * Pull the new translations from Transifex, commit them, and merge the branch
   into the versioned branch (`0.2.0`).
-* Make a new branch from `master` (eg. `esperanto-translation`) and bring
+* Make a new branch from `master` (e.g. `esperanto-translation`) and bring
   across the changes from your translation branch. `git cherry-pick` is
   usually easiest.
 * Double check there are no new translations in `BODS-main` that were not present
