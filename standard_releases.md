@@ -241,5 +241,6 @@ are:
 7. Fix any sphinx build warnings or errors (including broken links)
 8. Update all example and test BODS json data to increment `bodsVersion` value
 9. Update the `version` field value in all schema .json files
-10. Update docs/conf.py and check the docs build without errors.
-11. Run pytest finally, and resolve any errors.
+10. Update the version info in the title of index.rst (home page of the docs).
+11. Update docs/conf.py and check the docs build without errors.
+12. Run pytest finally, and resolve any errors.
