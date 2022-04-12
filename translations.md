@@ -174,7 +174,8 @@ If you need to create a new Transifex project that contains the latest available
 * Assign the project to the BODS team.
 * Under the 'Workflow' tab choose "Translation Memory Fill-up" under "Pre-translation".
 * ![Screenshot: tick the  "Translation Memory Fill-up" under "Pre-translation" when creating a new project](/screenshots/translation/transifex_translation_memory.png)
-* Make sure you have the latest translations and source files in your local environment (see the [Data Standard README](https://github.com/openownership/data-standard/blob/master/README.md#managing-the-translation-workflow))
+* Make sure you have the latest translations and source files in your local environment (see the [translation process](https://github.com/openownership/data-standard/blob/master/README.md#managing-the-translation-workflow)).
+* Update the Transifex config to use the Transifex project that you just created (see the [translation process](https://github.com/openownership/data-standard/blob/master/README.md#managing-the-translation-workflow)). Commit this change if you want all subsequent updates to the branch you are on to use the new Transifex project.
 * Run `tx push -s` to push the source files to Transifex.
 * Run `tx push -t` to push the translation files to Transifex.
   * Transifex only lets you push translations if it detects yours are newer than what it already has, but sometimes this fails - especially if you are pushing to an empty project. You can force it to accept translations from your local environment with `tx push -t -f` - you will have to confirm (press `y` and <enter>) each file by hand. Note that this will override anything already in Transifex, so make sure yours really are the latest.

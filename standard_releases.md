@@ -103,13 +103,12 @@ least work! The general process is:
 * Once the release is finalised, and the translations have been pulled from
   Transifex and merged into `master`, create a branch for the new version
   (e.g. `0.2.0`) from `master`.
-* [Create a new Transifex project](translations.md#creating-and-configuring-a-new-project-in-transifex)
-  named for the new version (e.g. `bods-v02`).
-* Configure the Transifex config on the versioned branch with the versioned Transifex
-  project (and commit this), and push both the source files *and* the translations
-  to the new Transifex project. This means that further work on the schema and
-  documentation *and* the equivalent translations can proceed on the `master` branch
-  and in the `BODS-main` Transifex project, while the versioned release remains fixed.
+* [Create and configure a new Transifex project](translations.md#creating-and-configuring-a-new-project-in-transifex)
+  named for the new version (e.g. `bods-v02`). Remember to commit the changes
+  you make to the Transifex config to your versioned branch. This means that
+  further work on the schema and documentation *and* the equivalent
+  translations can proceed on the `master` branch and in the `BODS-main`
+  Transifex project, while the versioned release remains fixed.
 * Make the new version live on ReadTheDocs.
 
 #### Editing during a "freeze"
