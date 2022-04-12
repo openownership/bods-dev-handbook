@@ -97,32 +97,12 @@ least work! The general process is:
 * Review, test and merge those changes into the `master` branch.
 * Call a "freeze" on the `master` branch. This freeze lasts during the translation
   process and applies to the schema and docs folders in the repository.
-* Begin translation of the new release (see [translations](/translations)) using the
+    * See below for how to make necessary edits during a "freeze".
+* Carry out translation of the new release (see [translations](/translations)) using the
   BODS-main project in Transifex.
-* During translation there may be a need to fix issues that exist on the `master`
-  branch. If they are outside schema and docs they can be developed on a branch
-  taken from `master` and merged back in when completed.
-  If the changes affect schema and/or docs then they may, in turn, affect the
-  translation. The process for making these changes is:
-  * First create an issue in Github to track the problem.
-  * Then create a new branch that uses the issue number, e.g.
-    `297-concept-translation`.
-  * When the branch is ready to be merged into `master`, ensure that the translations
-    on the new branch are either equivalent to or ahead of the translations on
-    `master`. ie. if no new translations have been merged back into `master` since the
-    new branch was made, no need to pull new translations down from Transifex. But if
-    `master` has since been updated, be sure to fetch the new translations to the new
-    branch, either from Transifex or by rebasing against `master` (the best option will
-    depend on the changes you have made in the new branch).
-  * Merge the branch (`297-concept-translation`) into `master`.
-  * Checkout the `master` branch, extract the new or changed strings per the translation
-    process, and push them up to Transifex.
-  * Wait for the new changes to be translated.
-  * Once the translation is finalised, check out a new branch for the translations and
-    pull them from Transifex. Commit these and make a PR against `master` to bring it up
-    to date.
-* Once the release is finalised and everything is ready, create a branch for the
-  new version (eg, `0.2.0`) from `master`.
+* Once the release is finalised, and the translations have been pulled from
+  Transifex and merged into `master`, create a branch for the new version
+  (e.g. `0.2.0`) from `master`.
 * [Create a new Transifex project](translations.md#creating-and-configuring-a-new-project-in-transifex)
   named for the new version (e.g. `bods-v02`).
 * Configure the Transifex config on the versioned branch with the versioned Transifex
@@ -131,6 +111,37 @@ least work! The general process is:
   documentation *and* the equivalent translations can proceed on the `master` branch
   and in the `BODS-main` Transifex project, while the versioned release remains fixed.
 * Make the new version live on ReadTheDocs.
+
+#### Editing during a "freeze"
+
+During translation there may be a need to fix issues that exist on the `master`
+branch. If they do not affect anything that needs to be translated (docs,
+schema, codelists) they can be developed on a branch taken from `master` and
+merged back in when completed.
+  
+If the changes affect schema and/or docs then they may, in turn, affect the
+translation. The process for making these changes is:
+
+* First create an issue in Github to track the problem.
+* Then create a new branch that uses the issue number, e.g. `297-fix-typo` and
+  make the needed changes.
+* Determine if any of the strings you have changed have *already been
+  translated* in Transifex. If so, advise the translators of the nature of the
+  change you made to the English string. Even small changes, like fixing
+  spelling, punctuation or markup can cause Transifex to detect a new source
+  string and reset the translation. If the change is small, the translators
+  can reuse what they had before (with punctuation/markup fixes as applicable).
+  If the change is large (e.g. a complete sentence rewrite) they probably need
+  to translate it again from scratch. Agree when you are going to push the
+  updated string to Transifex, and proceed with the following steps at that time.
+* After review, merge the branch (`297-fix-typo`) into `master`.
+* Checkout the `master` branch and follow
+  [the translation process](https://github.com/openownership/data-standard/blob/master/README.md#managing-the-translation-workflow)
+  so that the new or changed strings are extracted, and push them to Transifex.
+* Wait for the new changes to be translated.
+* Once the translation is finalised, check out a new branch for the translations and
+  pull them from Transifex. Commit these and make a PR against `master` to bring it up
+  to date.
 
 ### A new language to the current release
 
