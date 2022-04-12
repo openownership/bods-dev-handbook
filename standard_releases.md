@@ -173,7 +173,7 @@ significantly:
 * Double check there are no new translations in `BODS-main` that were not present
   in the versioned branch. Then push your local translations up to Transifex
   (`tx push -t`; you may need to use `--force` but in theory Transifex should
-  be happy that your local translations are the newest and let you push them).
+  detect that your local translations are the newest and let you push them).
 * Make the new language live on Read The Docs (see [translations](/translations))
 
 When `master` and the current release have diverged significantly, treat
