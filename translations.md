@@ -53,12 +53,17 @@ The diagram below provides an extremely high-level overview of the workflow. It 
 
 ![Translation Workflow](/screenshots/translation/translation_workflow_overview.png)
 
+## BODS on Transifex
+
+BODS translations currently live under the [Open Data Services Transifex account](https://www.transifex.com/OpenDataServices/). The BODS docs and schema live in [BODS-main](https://www.transifex.com/OpenDataServices/bods-main) (for the latest in-development version), or versioned projects (for versioned releases of the standard), e.g. v0.1 'project' is [bods-v01](https://www.transifex.com/OpenDataServices/bods-v01/dashboard/). The project contains 'resources', each of which correspond to a page of documentation (an individual RST file) plus one each for the schema, codelists and .svg files. These may also be referred to as 'source files'.
+
+The documentation sphinx theme translations live under [bods-theme](https://www.transifex.com/OpenDataServices/bods-theme/dashboard/), which contains only one resource for all the strings in the theme templates.
+
 ## Setting up your local machine
 
 Complete the following steps to get your system set up to undergo the workflow outlined above (assumes Ubuntu 18.04.2 LTS or similar):
 
 * set up an account and join the ODSC organization in Transifex
-* create and configure a new project in Transifex
 * clone the repositories to manage the workflow
 * install and configure the Transifex client
 
@@ -74,23 +79,13 @@ Open Data Services Co-operative is already set up as an organization in Transife
 
 Once you have signed up to Transifex you should ask an administrator of ODSC to make you an administrator too. We don't maintain a list of those administrators here, but there is a considerable overlap with the [people who contribute towards the BODS Standard repository](https://github.com/openownership/data-standard/graphs/contributors).
 
-### Creating and configuring a new project in Transifex
-
-*[This section will be updated before any release of BODS subsequent to v0.2. It will then include details of how to set up a new project (for an updated version of the Standard) so that it only highlights for translation those strings which have been edited since the last BODS version.]*
-
-* [Add a new project on Transifex](https://www.transifex.com/OpenDataServices/add/).
-* Name it according to the version of BODS, ie `bods-v02` for BODS version 0.2.
-* Choose 'public project' and **make sure to check the 'My project is a non-commercial Open Source project checkbox'** and enter the github repo URL.
-* ![Screenshot: tick the My project is a non-commercial Open Source project checkbox when creating a new project](screenshots/translation/transifex_noncommercial.png)
-* Assign the project to the BODS team.
-* Under the 'Workflow' tab choose "Translation Memory Fill-up" under "Pre-translation".
-* ![Screenshot: tick the  "Translation Memory Fill-up" under "Pre-translation" when creating a new project](/screenshots/translation/transifex_translation_memory.png)
-
 ### Cloning the repositories to manage the workflow
 
 Follow the instructions in the [BODS data-standard-sphinx-theme README.md](https://github.com/openownership/data-standard-sphinx-theme). These instructions will clone both the data-standard-sphinx-theme and data-standard repositories to your local machine.
 
 ### Installing and configuring the Transifex client
+
+Note that if you installed the [data standard repo](https://github.com/openownership/data-standard) the Transifex client is a dependency so it will already be installed.
 
 #### Installing the Transifex client
 
@@ -148,13 +143,15 @@ To create an initial `.tx/config` file follow the instructions in the [data-stan
 
 ## Integrating translations
 
-Whenever any strings are changed that are in scope for translation (see list above) they need to be 'extracted', pushed to Transifex, translated, and the translated strings pulled back down. Updates to the documentation and schema should not be deployed until the necessary translations are in place.
+Whenever any strings are changed that are in scope for translation (see list above) they need to be 'extracted', pushed to Transifex, translated, and the translated strings pulled back down. Updates to the documentation and schema should not be released until the necessary translations are in place.
 
-The steps for doing this should be done by the person making the changes to the schema and docs, and are documented in the [data standard README](https://github.com/openownership/data-standard/blob/master/README.md). There are separate steps for the docs, schema and codelists, and you only need to carry out the steps applicable to the changes you made. For example, if you only updated the schema, you don't need to execute commands to extract strings from the docs or codelists.
+The steps for doing this should be done by the person making the changes to the schema and docs, and are documented in the [data standard README](https://github.com/openownership/data-standard/blob/master/README.md#managing-the-translation-workflow). There are separate steps for the docs, schema and codelists, and you only need to carry out the steps applicable to the changes you made. For example, if you only updated the schema, you don't need to execute commands to extract strings from the docs or codelists.
+
+If you are working on a development branch, you **should not** push source file changes to Transifex. Instead, wait until your changes have been merged into the main branch. **Source files should only ever be pushed to Transifex from the main branch** (currently `master`) to ensure conflicts do not occur in Transifex between multiple people working on different branches simultaneously.
+
+Note that 'extracted' (English) strings (`.pot` files) are not pushed to the Github repo, but translated strings (`.po` files) are. This lets readthedocs find them so it can build everything in other languages. For a clean commit history, it's helpful to make separate commits for your changes to the source (docs or schema) and the translation files subsequently pulled from Transifex.
 
 The steps for the Sphinx theme are in the [sphinx theme README](https://github.com/openownership/data-standard-sphinx-theme#translations).
-
-Note that 'extracted' (English) strings (`.pot` files) are not pushed to the github repo, but translated strings (`.po` files) are. This lets readthedocs find them so it can build everything in other languages. For a clean commit history, it's helpful to make separate commits for your changes to the source (docs or schema) and the translation files subsequently pulled from Transifex.
 
 Note for developers: `.po` files from the Sphinx theme are included when you build the docs from `data-standard` thanks to the following line in `docs/conf.py`:
 
@@ -164,11 +161,24 @@ locale_dirs = ['locale/', os.path.join(oods.sphinxtheme.get_html_theme_path(), '
 
 So make sure the latest version of the theme is being installed in case expected translations aren't showing up.
 
-## BODS on Transifex
+### Creating and configuring a new project in Transifex
 
-BODS translations currently live under the Open Data Services Transifex account. The BODS docs and schema live in versioned projects, ie. v0.1 'project' is [bods-v01](https://www.transifex.com/OpenDataServices/bods-v01/dashboard/). The project contains 'resources', each of which correspond to a page of documentation (an individual RST file) plus one each for the schema, codelists and .svg files.
+Translations for the current latest version of BODS are found in the [BODS-main Transifex project](https://www.transifex.com/OpenDataServices/bods-main). These may not be updated until it is time for a new versioned release of BODS, meaning translations in Transifex may be lagging behind the latest text in the BODS Github repository. However, when changes to the docs, schema or codelists are merged into the main branch, these changes should always be pushed to Transifex, so that - assuming translators are available - translations can be brought up to date at any time. See [integrating translations](#integrating-translations).
 
-The documentation sphinx theme translations live under [bods-theme](https://www.transifex.com/OpenDataServices/bods-theme/dashboard/), which contains only one resource for all the strings in the theme templates.
+If you need to create a new Transifex project that contains the latest available source files and translations, do the following:
+
+* [Add a new project on Transifex](https://www.transifex.com/OpenDataServices/add/).
+* If applicable, name it according to the version of BODS, e.g. `bods-v02` for BODS version 0.2.
+* Choose 'public project' and **make sure to check the 'My project is a non-commercial Open Source project checkbox'** and enter the Github repo URL.
+* ![Screenshot: tick the My project is a non-commercial Open Source project checkbox when creating a new project](screenshots/translation/transifex_noncommercial.png)
+* Assign the project to the BODS team.
+* Under the 'Workflow' tab choose "Translation Memory Fill-up" under "Pre-translation".
+* ![Screenshot: tick the  "Translation Memory Fill-up" under "Pre-translation" when creating a new project](/screenshots/translation/transifex_translation_memory.png)
+* Make sure you have the latest translations and source files in your local environment (see the [translation process](https://github.com/openownership/data-standard/blob/master/README.md#managing-the-translation-workflow)).
+* Update the Transifex config to use the Transifex project that you just created (see the [translation process](https://github.com/openownership/data-standard/blob/master/README.md#managing-the-translation-workflow)). Commit this change if you want all subsequent updates to the branch you are on to use the new Transifex project.
+* Run `tx push -s` to push the source files to Transifex.
+* Run `tx push -t` to push the translation files to Transifex.
+  * Transifex only lets you push translations if it detects yours are newer than what it already has, but sometimes this fails - especially if you are pushing to an empty project. You can force it to accept translations from your local environment with `tx push -t -f` - you will have to confirm (press `y` and <enter>) each file by hand. Note that this will override anything already in Transifex, so make sure yours really are the latest.
 
 ### Teams and Roles
 
@@ -265,7 +275,7 @@ which can be completed to add the person to the project
 
 Translators should be given access to the project on Transifex and also a link to the latest version of the data standard website for context. 
 
-Translators do not have to translate every word in the Transifex project. Any text wrapped in \`s (eg. \`address\`, \`JSON document <https://tools.ietf.org/html/rfc8259>\`) should not be translated. Special attention to this should be paid in the schema, schema-reference and concepts resources where they are used most. In the svg resource the names of objects and codes from a codelist are not to be  translated. As a guide a link to a translated version of the Key Concepts page should be provided (eg. https://standard.openownership.org/es/latest/schema/concepts.html).
+Translators do not have to translate every word in the Transifex project. Any text wrapped in \`s (e.g. \`address\`, \`JSON document <https://tools.ietf.org/html/rfc8259>\`) should not be translated. Special attention to this should be paid in the schema, schema-reference and concepts resources where they are used most. In the svg resource the names of objects and codes from a codelist are not to be  translated. As a guide a link to a translated version of the Key Concepts page should be provided (e.g. https://standard.openownership.org/es/latest/schema/concepts.html).
 
 #### The translation and review process
 
@@ -316,7 +326,7 @@ Once you've got all your translations, you need to publish them. The process for
 
 * Go to your [readthedocs dashboard](https://readthedocs.org/dashboard) and click 'Import a Project', then 'Import manually' to the right.
   * You probably want to name it something like "Beneficial Ownership Data Standard (LANG)"
-  * The github URL is the base BODS repo, https://github.com/openownership/data-standard
+  * The Github URL is the base BODS repo, https://github.com/openownership/data-standard
   * Check the box for 'edit advanced project settings'
 * Choose the language under Project Extra Details. The rest of the fields are intuitive, or have the right defaults.
 * Go to Admin > Versions to activate any of the branches you need other than master. These should probably be the same ones as you have active in the main BODS readthedocs project, so the menus are consistent when the user switches language.
@@ -331,9 +341,9 @@ These instructions were summarised from [Localization of Documentation](https://
 
 When work is in progress on a branch, you can build this branch in readthedocs to preview it before publishing.
 
-* Push local changes and translations to your in-progress branch github.
+* Push local changes and translations to your in-progress branch Github.
 * Go to the readthedocs project for the particular language version of the docs you want to preview.
-* If you have never built this branch before, you need to nudge readthedocs into seeing it; build any other branch, eg. latest:
+* If you have never built this branch before, you need to nudge readthedocs into seeing it; build any other branch, e.g. latest:
   * ![Screenshot: building an existing branch](screenshots/translation/rtd_preview_build1.png)
 * Go to Versions on the main menu. Find your branch on the list of inactive branchs and click Edit on the right.
   * ![Screenshot: activating a new branch](screenshots/translation/rtd_preview_build2.png)
@@ -342,7 +352,7 @@ When work is in progress on a branch, you can build this branch in readthedocs t
 * Go to Builds. Your new branch should have already built automatically and appear at the top of the list, but if it hasn't you can choose it from the dropdown and click 'Build'. You can see the results by clicking on the latest build:
   * ![Screenshot: the results of a readthedocs build](screenshots/translation/rtd_preview_built.png)
 * You can preview it by clicking the green 'view docs' button in the top right.
-* You can rebuild it from the dropdown at the top of the Builds page every time you push new changes to github.
+* You can rebuild it from the dropdown at the top of the Builds page every time you push new changes to Github.
 * Don't forget to switch it off when you're done in Admin > Versions.
 
 ## Additional resources
