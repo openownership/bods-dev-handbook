@@ -99,13 +99,12 @@ least work! The general process is:
   process and applies to the schema and docs folders in the repository.
     * See below for how to make necessary edits during a "freeze".
 * Carry out translation of the new release (see [translations](/translations)) using the
-  BODS-main project in Transifex.
-* Once the release is finalised, and the translations have been pulled from
-  Transifex and merged into `master`, create a branch for the new version
-  (e.g. `0.2.0`) from `master`.
+  BODS-main project in Transifex. The final step of this will have been to
+  pull completed translations from Transifex and merge them into `master`.
+* Create a branch for the new version (e.g. `0.2.0`) from `master`.
 * [Create and configure a new Transifex project](translations.md#creating-and-configuring-a-new-project-in-transifex)
   named for the new version (e.g. `bods-v02`). Remember to commit the changes
-  you make to the Transifex config to your versioned branch. This means that
+  you make to the Transifex config to your versioned branch (`0.2.0`). This means that
   further work on the schema and documentation *and* the equivalent
   translations can proceed on the `master` branch and in the `BODS-main`
   Transifex project, while the versioned release remains fixed.
@@ -137,10 +136,6 @@ translation. The process for making these changes is:
 * Checkout the `master` branch and follow
   [the translation process](https://github.com/openownership/data-standard/blob/master/README.md#managing-the-translation-workflow)
   so that the new or changed strings are extracted, and push them to Transifex.
-* Wait for the new changes to be translated.
-* Once the translation is finalised, check out a new branch for the translations and
-  pull them from Transifex. Commit these and make a PR against `master` to bring it up
-  to date.
 
 ### A new language to the current release
 
