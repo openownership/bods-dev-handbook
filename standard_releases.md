@@ -99,7 +99,7 @@ least work! The general process is:
   process and applies to the schema and docs folders in the repository.
     * See below for how to make necessary edits during a "freeze".
 * Carry out translation of the new release (see [translations](/translations)) using the
-  BODS-main project in Transifex. The final step of this will have been to
+  BODS-main project in Transifex. The final step of this is to
   pull completed translations from Transifex and merge them into `master`.
 * Create a branch for the new version (e.g. `0.2.0`) from `master`.
 * [Create and configure a new Transifex project](translations.md#creating-and-configuring-a-new-project-in-transifex)
