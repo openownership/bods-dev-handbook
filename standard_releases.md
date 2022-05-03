@@ -95,8 +95,8 @@ least work! The general process is:
   likely already been merged in the course of normal development, but they may
   need additional development, examples adding, etc.
 * Review, test and merge those changes into the `master` branch.
-* Call a "freeze" on the `master` branch. This freeze lasts during the translation
-  process and applies to the schema and docs folders in the repository.
+* Go through the [Freeze checklist](#freeze-checklist) (below) and ensure that all elements of the docs and schema have been updated and tested as outlined.
+* Call a "development freeze" on the master branch. This freeze lasts during the translation process and applies to the schema and docs folders in the repository.
     * See below for how to make necessary edits during a "freeze".
 * Carry out translation of the new release (see [translations](/translations)) using the
   BODS-main project in Transifex. The final step of this is to
@@ -260,3 +260,18 @@ In general, the process for these kinds of changes should be:
 are:
 * LICENSE
 * docs/about (particularly licensing and privacy info)
+
+## Freeze checklist
+
+1. Ensure that all pages in the docs/about/ directory have been reviewed and updated if necessary.
+2. Update the license file (root of repo).
+3. Update the ReadMe file (root of repo).
+4. Check docs/schema/reference.rst. Are all new objects, properties and codelists there? Have sub-properties been collapsed sensibly?
+5. Update BODS version ‘attention’ box on all relevant docs pages
+6. Do a final edit of docs/schema/changelog.rst
+7. Fix any sphinx build warnings or errors (including broken links)
+8. Update all example and test BODS json data to increment `bodsVersion` value. (And 'bodsVersionTypo' in one test file.)
+9. Update the `version` field value in all schema .json files
+10. Update the two version references in index.rst (home page of the docs).
+11. Update docs/conf.py and check the docs build without errors.
+12. Run pytest finally, and resolve any errors.
