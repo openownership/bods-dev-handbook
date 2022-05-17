@@ -11,6 +11,7 @@
   * [Fixes to an existing release](#fixes-to-an-existing-release)
   * [Fixes to an existing translation](#fixes-to-an-existing-translation)
   * [Non-material changes](#non-material-changes)
+* [Freeze checklist](#freeze-checklist)
 
 
 ## Overview
