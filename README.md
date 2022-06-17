@@ -16,6 +16,7 @@ If you add a new page, please list it on the contents below.
 * [Translations](translations.md)
 * [Maintenance and compilation of the BODS schema](compiling_schema.md)
 * [Git Branches, Version Numbers and Standard Releases](standard_releases.md)
+* [Python development](python.md)
 * [This handbook](this_handbook.md)
 
 ## Not contents
