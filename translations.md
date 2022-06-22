@@ -156,8 +156,6 @@ Instructions to create an initial `.tx/config` file are provided [below](#transl
 
 Whenever any strings are changed that are in scope for translation (see list above) they need to be 'extracted', pushed to Transifex, translated, and the translated strings pulled back down. Updates to the documentation and schema should not be released until the necessary translations are in place.
 
-If you are working on a development branch, you **should not** push source file changes to Transifex. Instead, wait until your changes have been merged into the main branch. **Source files should only ever be pushed to Transifex from the main branch** (currently `master`) to ensure conflicts do not occur in Transifex between multiple people working on different branches simultaneously.
-
 The steps for doing this should be done by the person making the changes to the schema and docs, and are documented [below](#translation-workflow). There are separate steps for the docs, schema and codelists, and you only need to carry out the steps applicable to the changes you made. For example, if you only updated the schema, you don't need to execute commands to extract strings from the docs or codelists.
 
 If you are working on a development branch, you **should not** push source file changes to Transifex. Instead, wait until your changes have been merged into the main branch. **Source files should only ever be pushed to Transifex from the main branch** (currently `master`) to ensure conflicts do not occur in Transifex between multiple people working on different branches simultaneously.
