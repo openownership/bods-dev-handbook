@@ -102,14 +102,19 @@ least work! The general process is:
 * Carry out translation of the new release (see [translations](/translations)) using the
   BODS-main project in Transifex. The final step of this is to
   pull completed translations from Transifex and merge them into `master`.
-* Create a branch for the new version (e.g. `0.2.0`) from `master`.
+* Create a branch for the new version (e.g. `0.5.0`) from `master`.
 * [Create and configure a new Transifex project](translations.md#creating-and-configuring-a-new-project-in-transifex)
-  named for the new version (e.g. `bods-v02`). Remember to commit the changes
-  you make to the Transifex config to your versioned branch (`0.2.0`). This means that
+  named for the new version (e.g. `bods-v05`). Remember to commit the changes
+  you make to the Transifex config to your versioned branch (`0.5.0`). This means that
   further work on the schema and documentation *and* the equivalent
   translations can proceed on the `master` branch and in the `BODS-main`
   Transifex project, while the versioned release remains fixed.
-* Make the new version live on ReadTheDocs.
+* Make the new release live on ReadTheDocs:
+  1. On the Versions page of the main ReadTheDocs project, make the new version branch active and not hidden. (If the new branch doesn't appear in the 'Activate a version' list, you will need to build an existing branch so that ReadTheDocs notices the new branch.) 
+  2. In Admin > Advanced Settings, set the 'Default version' and 'Default branch' to the new version branch.
+  3. On the Builds page, build both the new version branch and 'latest'. 
+  4. Carry out steps i - iii for all related translation projects in ReadTheDocs.
+  5. Test version and language switching.
 
 #### Editing during a "freeze"
 
