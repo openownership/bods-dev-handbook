@@ -114,7 +114,7 @@ least work! The general process is:
   2. In Admin > Advanced Settings, set the 'Default version' and 'Default branch' to the new version branch.
   3. On the Builds page, build both the new version branch and 'latest'. 
   4. Carry out steps i - iii for all related translation projects in ReadTheDocs.
-  5. Test version and language switching.
+  5. On the live site, test the new version and language switching for all translations.
 
 #### Editing during a "freeze"
 
