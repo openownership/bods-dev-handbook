@@ -172,6 +172,25 @@ locale_dirs = ['locale/', os.path.join(oods.sphinxtheme.get_html_theme_path(), '
 
 So make sure the latest version of the theme is being installed in case expected translations aren't showing up.
 
+### Creating and configuring a new project in Transifex
+
+Translations for the current latest version of BODS are found in the [BODS-main Transifex project](https://www.transifex.com/OpenDataServices/bods-main). These may not be updated until it is time for a new versioned release of BODS, meaning translations in Transifex may be lagging behind the latest text in the BODS Github repository. However, when changes to the docs, schema or codelists are merged into the main branch, these changes should always be pushed to Transifex, so that - assuming translators are available - translations can be brought up to date at any time. See [integrating translations](#integrating-translations).
+
+If you need to create a new Transifex project that contains the latest available source files and translations, do the following:
+
+* [Add a new project on Transifex](https://www.transifex.com/OpenDataServices/add/).
+* If applicable, name it according to the version of BODS, e.g. `bods-v02` for BODS version 0.2.
+* Choose 'public project' and **make sure to check the 'My project is a non-commercial Open Source project checkbox'** and enter the Github repo URL.
+* ![Screenshot: tick the My project is a non-commercial Open Source project checkbox when creating a new project](screenshots/translation/transifex_noncommercial.png)
+* Assign the project to the BODS team.
+* Under the 'Workflow' tab choose "Translation Memory Fill-up" under "Pre-translation".
+* ![Screenshot: tick the  "Translation Memory Fill-up" under "Pre-translation" when creating a new project](/screenshots/translation/transifex_translation_memory.png)
+* Make sure you have the latest translations and source files in your local environment (see the [translation workflow](#translation-workflow).
+* Update the Transifex config to use the Transifex project that you just created (see the [translation workflow](#translation-workflow)). Commit this change if you want all subsequent updates to the branch you are on to use the new Transifex project.
+* Run `tx push -s` to push the source files to Transifex.
+* Run `tx push -t` to push the translation files to Transifex.
+  * Transifex only lets you push translations if it detects yours are newer than what it already has, but sometimes this fails - especially if you are pushing to an empty project. You can force it to accept translations from your local environment with `tx push -t -f` - you will have to confirm (press `y` and <enter>) each file by hand. Note that this will override anything already in Transifex, so make sure yours really are the latest.
+
 ### Translation workflow
 
 To run the steps in the translation workflow, ensure that you have followed the installation and setup instructions above.
@@ -230,26 +249,6 @@ itstool -m docs/locale/<LANG>/LC_MESSAGES/svg.mo -o docs/_build_svgs/<LANG> docs
 ```
 
 7. **Make a PR** with the new translation files and SVGs (if applicable).
-
-
-### Creating and configuring a new project in Transifex
-
-Translations for the current latest version of BODS are found in the [BODS-main Transifex project](https://www.transifex.com/OpenDataServices/bods-main). These may not be updated until it is time for a new versioned release of BODS, meaning translations in Transifex may be lagging behind the latest text in the BODS Github repository. However, when changes to the docs, schema or codelists are merged into the main branch, these changes should always be pushed to Transifex, so that - assuming translators are available - translations can be brought up to date at any time. See [integrating translations](#integrating-translations).
-
-If you need to create a new Transifex project that contains the latest available source files and translations, do the following:
-
-* [Add a new project on Transifex](https://www.transifex.com/OpenDataServices/add/).
-* If applicable, name it according to the version of BODS, e.g. `bods-v02` for BODS version 0.2.
-* Choose 'public project' and **make sure to check the 'My project is a non-commercial Open Source project checkbox'** and enter the Github repo URL.
-* ![Screenshot: tick the My project is a non-commercial Open Source project checkbox when creating a new project](screenshots/translation/transifex_noncommercial.png)
-* Assign the project to the BODS team.
-* Under the 'Workflow' tab choose "Translation Memory Fill-up" under "Pre-translation".
-* ![Screenshot: tick the  "Translation Memory Fill-up" under "Pre-translation" when creating a new project](/screenshots/translation/transifex_translation_memory.png)
-* Make sure you have the latest translations and source files in your local environment (see the [translation workflow](#translation-workflow).
-* Update the Transifex config to use the Transifex project that you just created (see the [translation workflow](#translation-workflow)). Commit this change if you want all subsequent updates to the branch you are on to use the new Transifex project.
-* Run `tx push -s` to push the source files to Transifex.
-* Run `tx push -t` to push the translation files to Transifex.
-  * Transifex only lets you push translations if it detects yours are newer than what it already has, but sometimes this fails - especially if you are pushing to an empty project. You can force it to accept translations from your local environment with `tx push -t -f` - you will have to confirm (press `y` and <enter>) each file by hand. Note that this will override anything already in Transifex, so make sure yours really are the latest.
 
 ### Teams and Roles
 
