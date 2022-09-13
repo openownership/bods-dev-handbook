@@ -8,13 +8,15 @@ If you add a new page, please follow the editing advice below, and list it under
 
 ## Contents
 
-* [The feature development pipeline](feature_development.md)
-* Principles for working with BODS
+* [The BODS feature development pipeline](feature_development.md)
+* BODS schema development [To be written]
+  * [Maintenance and compilation of the BODS schema](compiling_schema.md)
+* BODS documentation writing
+  * [Creating SVG diagrams](diagram_creation.md)
   * [Style Guide](style_guide.md)
+* [BODS translations](translations.md)
 * [Tools for working with BODS](tools.md)
-* [CoVE Translations](cove_translations.md)
-* [Translations](translations.md)
-* [Maintenance and compilation of the BODS schema](compiling_schema.md)
+* [CoVE translations](cove_translations.md)
 * [Git Branches, Version Numbers and Standard Releases](standard_releases.md)
 
 ## Not contents
