@@ -32,4 +32,4 @@ BODS diagrams are created in Scalable Vector Graphic (SVG) format for ease of sc
 
   There appears to be a bug around Inkscape's aligment and SVG output. This can mean that the text shows up in odd places. Moving the text element in Inkscape away and then back to its original position, then re-saving, can correct things.
   
- - If you want to see how well your diagram will do at accommodating longer strings, open the SVG file in a text editor. Edit strings within the <text> elements, save and view in the browser of your choice.
+ - If you want to see how well your diagram will do at accommodating longer strings, open the SVG file in a text editor. Edit strings within the \<text\> elements, save and view in the browser of your choice.
