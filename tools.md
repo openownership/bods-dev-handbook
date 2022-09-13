@@ -88,6 +88,6 @@ _This is a hacky way of doing things. Please edit with any improved process_
 * The `schema_versions` setting maps the value of the bodsVersion field in the data to the schema file the tool will check it against.
 * The easiest way to add in the new schema is to copy the block of code for an existing schema and paste into the array (make sure of the right bracket level);
 * The text before the colon is the name of the schema used by the code - update this to reflect the bodsVersion that will be referenced in the json files;
-* Within schema_url update the filename to reflect the new json schema file that was saved down earlier;
+* Within schema_url update the filename to reflect the new json schema file that was added to the lib-cove-bods/data directory earlier;
 * Update `schema_latest_version` to point to the schema name defined earlier.
 * use lib-cove-bods to validate some example data against the new compiled schema: `libcovebods path/to/example.json`
