@@ -4,7 +4,7 @@ BODS diagrams are created in Scalable Vector Graphic (SVG) format for ease of sc
 
 ## Suggested diagram creation workflow
 
-- Use Google Draw to do a 1st draft of a diagram BUT do not include any text.
+- Use Google Draw to do a first draft of a diagram BUT do not include any text.
 
   This is recommended since Google Draw allows for easy layout, styling and connection of diagram elements. Examples of Google Draw versions of diagrams can be [seen here](https://drive.google.com/drive/folders/1R0r-Dx-PivOYmUPbE7MtKbHm-nrFAikB), though note that they have text in them.
   
