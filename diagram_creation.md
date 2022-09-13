@@ -1,6 +1,6 @@
 # Creating SVG diagrams
 
-BODS diagrams are created in Scalable Vector Graphic (SVG) format for ease of scaling and translation. SVGs use XML syntax. Text can therefore be stripped out and translated using standard tools. The following workflow guidance is provided so that diagrams within the BODS documentation can accommodate translated text.
+BODS diagrams are created in [Scalable Vector Graphic (SVG) format](https://www.w3.org/TR/SVG2/) for ease of scaling and translation. SVGs use XML syntax. Text can therefore be stripped out and translated using standard translation libraries and tools. The following workflow guidance is provided so that diagrams within the BODS documentation can accommodate translated text.
 
 ## Suggested diagram creation workflow
 
