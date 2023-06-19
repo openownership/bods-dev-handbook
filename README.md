@@ -45,7 +45,7 @@ html. You can do so locally too, to preview changes:
 
 This Handbook is in English only (no translations).
 
-Currently, there is no requirement for pull requests to be made - you can edit content on the master branch directly. Later, that will change to a strict requirement to always use pull requests.
+Currently, there is no requirement for pull requests to be made - you can edit content on the main branch directly. Later, that will change to a strict requirement to always use pull requests.
 
 ### Previewing work you have done
 
