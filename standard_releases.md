@@ -16,17 +16,17 @@
 
 ## Overview
 
-Development is normally done on the `master` branch. All released versions of the
+Development is normally done on the `main` branch. All released versions of the
 standard live in other, specially named, release branches (**not tags**).
 
-By default, new work should happen on a branch taken from the master branch and
-be merged back into master, via a pull request, as soon as possible. However, in
+By default, new work should happen on a branch taken from the main branch and
+be merged back into main, via a pull request, as soon as possible. However, in
 some cases you may need to branch from a specific release branch and merge
 your changes back into that release branch. It's best to discuss this before
 making changes if you're unsure.
 
-Note that the default, merging into master, does not release any changes to the
-world immediately. Changes in master will be incorporated into the next release
+Note that the default, merging into main, does not release any changes to the
+world immediately. Changes in main will be incorporated into the next release
 of the standard, which may be some time. If your changes affect the current, or
 older, versions they must be released by bringing the changes into those
 respective release branches. This can introduce complications, so again is best
@@ -57,7 +57,7 @@ version of v0.1
 
 ## Changelog
 A [changelog](https://github.com/openownership/data-standard/blob/master/docs/schema/changelog.rst) is kept of changes to the schema and documentation. Before a PR is merged into
-the `master` branch, you should consider whether an update to the changelog is
+the `main` branch, you should consider whether an update to the changelog is
 necessary. (Broadly: is this a change that will materially effect people's use
 of BODS? Fixing a typo: no, not necessary. Editing a schema property's
 description for clarity: possibly necessary.) If there is no specific BODS
@@ -95,27 +95,32 @@ least work! The general process is:
 * Decide on the set of changes that will be released. Some of these will have
   likely already been merged in the course of normal development, but they may
   need additional development, examples adding, etc.
-* Review, test and merge those changes into the `master` branch.
+* Review, test and merge those changes into the `main` branch.
 * Go through the [Freeze checklist](#freeze-checklist) (below) and ensure that all elements of the docs and schema have been updated and tested as outlined.
-* Call a "development freeze" on the master branch. This freeze lasts during the translation process and applies to the schema and docs folders in the repository.
+* Call a "development freeze" on the main branch. This freeze lasts during the translation process and applies to the schema and docs folders in the repository.
     * See below for how to make necessary edits during a "freeze".
 * Carry out translation of the new release (see [translations](/translations)) using the
   BODS-main project in Transifex. The final step of this is to
-  pull completed translations from Transifex and merge them into `master`.
-* Create a branch for the new version (e.g. `0.2.0`) from `master`.
+  pull completed translations from Transifex and merge them into `main`.
+* Create a branch for the new version (e.g. `0.5.0`) from `main`.
 * [Create and configure a new Transifex project](translations.md#creating-and-configuring-a-new-project-in-transifex)
-  named for the new version (e.g. `bods-v02`). Remember to commit the changes
-  you make to the Transifex config to your versioned branch (`0.2.0`). This means that
+  named for the new version (e.g. `bods-v05`). Remember to commit the changes
+  you make to the Transifex config to your versioned branch (`0.5.0`). This means that
   further work on the schema and documentation *and* the equivalent
-  translations can proceed on the `master` branch and in the `BODS-main`
+  translations can proceed on the `main` branch and in the `BODS-main`
   Transifex project, while the versioned release remains fixed.
-* Make the new version live on ReadTheDocs.
+* Make the new release live on ReadTheDocs:
+  1. On the Versions page of the main ReadTheDocs project, make the new version branch active and not hidden. (If the new branch doesn't appear in the 'Activate a version' list, you will need to build an existing branch so that ReadTheDocs notices the new branch.) 
+  2. In Admin > Advanced Settings, set the 'Default version' and 'Default branch' to the new version branch.
+  3. On the Builds page, build both the new version branch and 'latest'. 
+  4. Carry out steps i - iii for all related translation projects in ReadTheDocs.
+  5. On the live site, test the new version and language switching for all translations.
 
 #### Editing during a "freeze"
 
-During translation there may be a need to fix issues that exist on the `master`
+During translation there may be a need to fix issues that exist on the `main`
 branch. If they do not affect anything that needs to be translated (docs,
-schema, codelists) they can be developed on a branch taken from `master` and
+schema, codelists) they can be developed on a branch taken from `main` and
 merged back in when completed.
   
 If the changes affect schema and/or docs then they may, in turn, affect the
@@ -133,8 +138,8 @@ translation. The process for making these changes is:
   If the change is large (e.g. a complete sentence rewrite) they probably need
   to translate it again from scratch. Agree when you are going to push the
   updated string to Transifex, and proceed with the following steps at that time.
-* After review, merge the branch (`297-fix-typo`) into `master`.
-* Checkout the `master` branch and follow
+* After review, merge the branch (`297-fix-typo`) into `main`.
+* Checkout the `main` branch and follow
   [the translation process](https://github.com/openownership/data-standard/blob/master/README.md#managing-the-translation-workflow)
   so that the new or changed strings are extracted, and push them to Transifex.
 
@@ -151,7 +156,7 @@ can be added at any time through the Transifex UI.
 The new language should also be added to the `BODS-main` Transifex project,
 as well as the [Sphinx theme](https://github.com/openownership/data-standard-sphinx-theme).
 
-If the `master` branch and the current stable release have not diverged
+If the `main` branch and the current stable release have not diverged
 significantly:
 
 * Make a new translation branch from the release branch, (e.g. `0.2.0`) for the
@@ -162,7 +167,7 @@ significantly:
     to bring those in.
 * Pull the new translations from Transifex, commit them, and merge the branch
   into the versioned branch (`0.2.0`).
-* Make a new branch from `master` (e.g. `esperanto-translation`) and bring
+* Make a new branch from `main` (e.g. `esperanto-translation`) and bring
   across the changes from your translation branch. `git cherry-pick` is
   usually easiest.
 * Double check there are no new translations in `BODS-main` that were not present
@@ -171,9 +176,9 @@ significantly:
   detect that your local translations are the newest and let you push them).
 * Make the new language live on Read The Docs (see [translations](/translations))
 
-When `master` and the current release have diverged significantly, treat
+When `main` and the current release have diverged significantly, treat
 the translation of each as a separate project. Translate the versioned release
-as described above. Translate `master` only when it is due for release, or at
+as described above. Translate `main` only when it is due for release, or at
 the next point in the development process that makes the most sense.
 
 ### Fixes to an existing release
@@ -199,7 +204,7 @@ to make an unplanned release. The process for this is as follows:
   consider adding a notice to the old release documenting the issue and that it
   should not be used. You may also have to notify existing users of that
   version.
-* If the fixed issue is also present in `master`, the fix branch should also be
+* If the fixed issue is also present in `main`, the fix branch should also be
   merged back into there, in a separate pull-request.
 
 **Note:** until we hit a stable 1.0 release, only very severe bugs that impede real
@@ -238,16 +243,16 @@ existing versions of the standard you wish the changes to appear in.
   this also needed updates to the theme and a new pinned version.
 - Adding additional language examples to a released version
   [data-standard#260](https://github.com/openownership/data-standard/pull/260)
-  which can be merged into `master` **and** the current release.
+  which can be merged into `main` **and** the current release.
 - Updating an underlying software library
   [data-standard#291](https://github.com/openownership/data-standard/pull/291)
-  which can be merged directly into `master` and does not need to update any
+  which can be merged directly into `main` and does not need to update any
   current or previous versions.
 
 In general, the process for these kinds of changes should be:
 
-* Do the work on a branch based on the master branch, pull-request & approve it,
-  merge it back into `master`
+* Do the work on a branch based on the main branch, pull-request & approve it,
+  merge it back into `main`
 * For each old release we want to put the work on, create a new branch from that
   version, `git cherry-pick` or `git merge` the commits across, resolve any
   conflicts, pull-request and finally merge into that version.
