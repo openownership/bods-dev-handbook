@@ -12,8 +12,8 @@ The following instructions cover the translation of:
 
 ## Locations of source files to be translated
 
-BODS **schema** and **codelists** exist under the [schema folder within the BODS Github repository](https://github.com/openownership/data-standard/tree/master/schema).
-The content for the BODS **documentation** website exists under the [docs folder within the same BODS Github repository](https://github.com/openownership/data-standard/tree/master/docs).
+BODS **schema** and **codelists** exist under the [schema folder within the BODS Github repository](https://github.com/openownership/data-standard/tree/main/schema).
+The content for the BODS **documentation** website exists under the [docs folder within the same BODS Github repository](https://github.com/openownership/data-standard/tree/main/docs).
 The documentation website’s **theme** has its own Github repository - [data-standard-sphinx-theme](https://github.com/openownership/data-standard-sphinx-theme).
 
 By translating the three components listed above the publicly available website at https://standard.openownership.org can be published in different languages. This is the aim of the translation work.
@@ -158,7 +158,7 @@ Whenever any strings are changed that are in scope for translation (see list abo
 
 The steps for doing this should be done by the person making the changes to the schema and docs, and are documented [below](#translation-workflow). There are separate steps for the docs, schema and codelists, and you only need to carry out the steps applicable to the changes you made. For example, if you only updated the schema, you don't need to execute commands to extract strings from the docs or codelists.
 
-If you are working on a development branch, you **should not** push source file changes to Transifex. Instead, wait until your changes have been merged into the main branch. **Source files should only ever be pushed to Transifex from the main branch** (currently `master`) to ensure conflicts do not occur in Transifex between multiple people working on different branches simultaneously.
+If you are working on a development branch, you **should not** push source file changes to Transifex. Instead, wait until your changes have been merged into the main branch. **Source files should only ever be pushed to Transifex from the main branch** (currently `main`) to ensure conflicts do not occur in Transifex between multiple people working on different branches simultaneously.
 
 Note that 'extracted' (English) strings (`.pot` files) are not pushed to the Github repo, but translated strings (`.po` files) are. This lets readthedocs find them so it can build everything in other languages. For a clean commit history, it's helpful to make separate commits for your changes to the source (docs or schema) and the translation files subsequently pulled from Transifex.
 
@@ -399,7 +399,7 @@ Once you've got all your translations, you need to publish them. The process for
   * The Github URL is the base BODS repo, https://github.com/openownership/data-standard
   * Check the box for 'edit advanced project settings'
 * Choose the language under Project Extra Details. The rest of the fields are intuitive, or have the right defaults.
-* Go to Admin > Versions to activate any of the branches you need other than master. These should probably be the same ones as you have active in the main BODS readthedocs project, so the menus are consistent when the user switches language.
+* Go to Admin > Versions to activate any of the branches you need other than main. These should probably be the same ones as you have active in the main BODS readthedocs project, so the menus are consistent when the user switches language.
 * Go to Builds to make sure the branch you need builds correctly. If it fails on a branch that the English version passes this is likely an indication that some translation files are missing. You can also preview it by clicking 'view docs'.
 * Go back to the main (English) [BODS project](https://readthedocs.org/projects/beneficial-ownership-data-standard/). In Admin > Translations, choose the new project you just created from the Project dropdown:
   * ![Screenshot: add a readthedocs subproject](screenshots/translation/rtd_addtranslation.png)

@@ -18,7 +18,9 @@ If you add a new page, please follow the editing advice below, and list it under
 * [Tools for working with BODS](tools.md)
 * [CoVE translations](cove_translations.md)
 * [Git Branches, Version Numbers and Standard Releases](standard_releases.md)
-
+* [Python development](python.md)
+* [This handbook](this_handbook.md)
+* 
 ## Not contents
 
 It does **not** contain:
@@ -45,7 +47,7 @@ html. You can do so locally too, to preview changes:
 
 This Handbook is in English only (no translations).
 
-Currently, there is no requirement for pull requests to be made - you can edit content on the master branch directly. Later, that will change to a strict requirement to always use pull requests.
+Currently, there is no requirement for pull requests to be made - you can edit content on the main branch directly. Later, that will change to a strict requirement to always use pull requests.
 
 ### Previewing work you have done
 
