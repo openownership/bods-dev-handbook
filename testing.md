@@ -1,0 +1,23 @@
+# Testing the schema
+
+## Metaschema
+
+BODS v0.4 uses JSON Schema 2020-12 as its base metaschema, extended with some custom properties which are used to further constrain the BODS schema. These are:
+
+* `codelist` (string): The filename of a .csv in the BO Data Standard which defines the allowed values for this property.
+* `openCodelist` (boolean): If true, the property can contain values beyond what is defined in the codelist in the BO Data Standard. If false,the property is restricted to only the values defined in the codelist.
+* `version` (string): The BODS schema version number.
+* `propertyOrder` (integer): The order in which properties should be displayed for optimised user experience. Properties whose values are not objects or arrays should be listed first.
+* `oneOfEnumSelectorField` (string): Hints to a validator which subschema to use when validating objects which may use one of several schema options, in order to improve error messages.
+
+Properties from the extended metaschema should not be present in any BODS _data_, only in the _schema_. Therefore they don't need to be documented for data publishers, only for schema architects and developers.
+
+The metaschema file is found in `data-standard/tests/schema/meta-schema.json`. As part of the data standard repository tests, the BODS schema files are validated against the metaschema.
+
+## Python tests
+
+Tests for the BODS schema are organised into:
+
+* CSV tests: These validate the codelist CSV files
+* JSON tests: These validate the structure of the schema files, and compliance with the [metaschema](#metaschema)
+* Data tests: These test valid and invalid sample data against the schema files, to check that the schema constrains data as expected
