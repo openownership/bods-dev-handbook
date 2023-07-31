@@ -15,7 +15,7 @@ The tests import a specific validator version from the Python jsonschema library
 
 We extend JSON Schema with a few custom properties which are applied in the metaschema. The file `meta-schema.json` (found in `data-standard/tests/schema`) contains a copy of the current JSON Schema version, plus the custom properties. This will need to be updated when changing the JSON Schema version.
 
-For a description of custom properties currently in use, see [Metaschema](metaschema).
+For a description of custom properties currently in use, see [Metaschema](testing#metaschema).
 
 It's likely that the testing dependencies of [jsonschema](https://python-jsonschema.readthedocs.io/en/stable/) and [JSCC](https://jscc.readthedocs.io/en/latest/) will need to be updated to accommodate JSON Schema version upgrades.
 
@@ -29,9 +29,9 @@ Changes which affect a small number of data items may be simple to make by hand.
 
 # Update from draft-04 to 2020-12
 
-## Changes
+The JSON Schema version update was applied to version 0.3 of the BODS schema.
 
-Required:
+## Changes
 
 | From | To | Notes |
 | ==== | == | ===== |
@@ -45,7 +45,7 @@ Required:
 
 ## Additions
 
-Maybe useful:
+New terms/functionality that may be useful:
 
 * contains, maxContains, minContains
 * const
@@ -59,18 +59,25 @@ Maybe useful:
 * $comment
 * $vocabulary for metaschema
 
+_(This section will be updated as new terms are integrated into the BODS schema)_
+
 ## Documentation
 
-* Update schema documentation about minimum/exclusiveMinimum/maximum/exclusiveMaximum
-  * While you can specify both of minimum and exclusiveMinimum or both of maximum and exclusiveMaximum, it doesn’t really make sense to do so.
-  * Interest / share / maximum has gone from exclusive to inclusive. exclusiveMaximum now needs to be used instead
+* Update schema documentation about `minimum`/`exclusiveMinimum`/`maximum`/`exclusiveMaximum`
+  * While you can specify both of `minimum `and `exclusiveMinimum` or both of `maximum` and `exclusiveMaximum`, it doesn’t really make sense to do so.
+  * `Interest / share / maximum` has gone from exclusive by default to inclusive. `exclusiveMaximum` now needs to be used instead
 
 ## Data
 
-* change maximum to exclusiveMaximum for:
-  * Interest / share / maximum
-* if Interest / share / exclusiveMinimum was set to true
-  * change minimum to exclusiveMinimum and remove exclusiveMinimum
+* change `maximum` to `exclusiveMaximum`, unless:
+  * it's representing exact values
+  * `exclusiveMaximum` is present and set to `false`
+* if `exclusiveMaximum` is present and set to `false`:
+  * remove the boolean `exclusiveMaximum`
+* if `exclusiveMinimum` was set to `true`:
+  * change `minimum` to `exclusiveMinimum` and remove the boolean `exclusiveMinimum`
+
+In the BODS schema, this is applicable to `Interest / share / maximum` and `Interest / share / minimum`.
 
 ## Working notes
 
