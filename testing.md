@@ -21,3 +21,31 @@ Tests for the BODS schema are organised into:
 * CSV tests: These validate the codelist CSV files
 * JSON tests: These validate the structure of the schema files, and compliance with the [metaschema](#metaschema)
 * Data tests: These test valid and invalid sample data against the schema files, to check that the schema constrains data as expected
+
+Test files are found in the `data-standard/tests` directory. The tests and a flake8 code quality check are run automatically when a branch is pushed to the `data-standard` repository.
+
+Data for the data tests is organised in several subdirectories under `data-standards/tests/data`.
+
+### Running tests locally
+
+Tests can be run in your local development environment (ie. in a virtualenv or docker container or similar) from inside the `data-standard` repository.
+
+Make sure the test requirements are installed, ie.:
+
+```bash
+pip install -r requirements_test.txt
+```
+
+To run all the tests:
+
+```python
+pytest tests/
+```
+
+To run one set of tests:
+
+```python
+pytest tests/test_csv.py
+```
+
+### Adding tests
