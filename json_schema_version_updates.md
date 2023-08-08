@@ -21,7 +21,7 @@ It's likely that the testing dependencies of [jsonschema](https://python-jsonsch
 
 ## Migrating the data
 
-Changes to JSON Schema which are not backwards-compatible may mean that BODS data which conforms to an old version of the BODS schema is no longer valid. It is advisable to couple any non-backwards-compatible JSON Schema updates with a version update to BODS as a whole, so that published data does not need to be migrated to remain valid.
+Updating the BODS schema to use a later version of JSON Schema may mean that BODS data which conforms to the old version of the BODS schema is no longer conformant; in this case, the BODS schema update is non-backwards-compatible. It is advisable to couple any non-backwards-compatible JSON Schema updates with a version update to BODS as a whole, so that published data does not need to be migrated to remain valid.
 
 Data used for examples and testing will need to be migrated to the new version.
 
