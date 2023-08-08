@@ -26,6 +26,10 @@ Test files are found in the `data-standard/tests` directory. The tests and a fla
 
 Data for the data tests is organised in several subdirectories under `data-standards/tests/data`.
 
+### Code quality
+
+We use  [Black](https://pypi.org/project/black/), * [iSort](https://pypi.org/project/isort/) and [flake8](https://pypi.org/project/flake8/) for code linting. Pull requests are automatically checked and must pass these before they can be merged.
+
 ### Running tests locally
 
 Tests can be run in your local development environment (ie. in a virtualenv or docker container or similar) from inside the `data-standard` repository.
