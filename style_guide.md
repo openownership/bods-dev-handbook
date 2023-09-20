@@ -22,7 +22,7 @@ This style guide is a draft to be discussed and not yet implemented across the B
 
 ## BODS documentation
 
-restructuredText (.rst) files are used to document BODS. 
+[restructuredText (.rst) files](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html) are used to document BODS. 
 
 - Properties to be referred to by their property name (not title) and marked up as \`\`propertyName\`\`. This can be used to refer to the property and its value. Or it can be used as a shorthand for the property value.
 
