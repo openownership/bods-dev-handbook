@@ -2,6 +2,8 @@
 
 This style guide is a draft to be discussed and not yet implemented across the BODS schema and documentation (as of May 2019, BODS v0.2). It can be used to guide editing and content writing. The Guide is divided into separate, though related, sections: one for the BODS schema and one for the BODS documentation.
 
+test
+
 ## BODS Schema
 
 - Object and property names, and definition entry names to be camelCase, e.g. interestedParty
