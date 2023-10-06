@@ -43,6 +43,8 @@ Use English spelling:
 
 - Codelists codes to be lowercase when single words, or camelCase when multiple words.
 
+- Do not use constructions like “person(s)” or “the supplier (or suppliers)”. The plural is fine, like “persons”
+
 **WIP notes**
 
 *Adapt and adopt [OCDS style guidance for property descriptions](https://ocds-standard-development-handbook.readthedocs.io/en/latest/meta/schema_style_guide.html#field-and-code-descriptions) ?*
