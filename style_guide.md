@@ -41,10 +41,10 @@ test
 ### Bulleted lists
 When using bulleted lists:
 - start with a lead in line, followed by a colon
+- use lower case at the start of each bullet
 - do not put semicolons or full stops at the end of bullets
 - do not put or/and at the end of bullets
 - try to have one sentence per bullet
-- use lower case at the start of a bullet
   
 **WIP notes**
 
