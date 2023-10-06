@@ -12,6 +12,12 @@ These tools can help with this:
 - [Grammarly](https://www.grammarly.com/)
 - [Readability tools](https://www.webfx.com/tools/read-able/)
 
+## Spelling 
+Use English spelling:
+- 'organisation' not 'organization'
+- 'standardised' not 'standardized'
+- 'modelling' not 'modeling'
+
 ## Normative Statements
 - Normative statements should be constructed using the keywords defined in [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119)
 - Non-normative statements can use these key words 
