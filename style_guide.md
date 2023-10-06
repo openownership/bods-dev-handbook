@@ -4,6 +4,12 @@ This style guide is a draft to be discussed and not yet implemented across the B
 
 test
 
+## Normative Statements
+- Normative statements should be constructed using the keywords defined in [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119)
+- Non-normative statements can use these key words 
+- Normative statement keywords should be capitalized to distinguish from those words being used in a non-normative statement
+- Normative statements must be consistent with the BODS schema
+
 ## BODS Schema
 
 - Object and property names, and definition entry names to be camelCase, e.g. interestedParty
