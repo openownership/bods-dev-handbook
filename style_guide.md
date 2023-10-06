@@ -10,6 +10,13 @@ test
 - Normative statement keywords should be capitalized to distinguish from those words being used in a non-normative statement
 - Normative statements must be consistent with the BODS schema
 
+## Word choice
+- use 'person' instead of using 'individual' as a noun
+- 'changelog' not 'change-log,' 'change log,' or 'changeLog'
+- 'codelist' not 'code-list' or 'code list'
+- 'politically exposed' not 'politically-exposed'
+- 'free text' not 'free-text'
+
 ## BODS Schema
 
 - Object and property names, and definition entry names to be camelCase, e.g. interestedParty
