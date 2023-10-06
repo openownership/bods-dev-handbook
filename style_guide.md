@@ -38,6 +38,14 @@ test
 
 - Statements to be referred to by their titles. e.g. "The details of the company are entered into an Entity Statement"
 
+### Bulleted lists
+When using bulleted lists:
+- start with a lead in line, followed by a colon
+- do not put semicolons or full stops at the end of bullets
+- do not put or/and at the end of bullets
+- try to have one sentence per bullet
+- use lower case at the start of a bullet
+  
 **WIP notes**
 
 *How should a codelist be referred to? I suggest by its inferred title, capitalised. e.g. "...choose an item from the Unspecified Reason codelist...". And it would be translated for internationalisation.*
