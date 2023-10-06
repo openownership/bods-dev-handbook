@@ -4,6 +4,14 @@ This style guide is a draft to be discussed and not yet implemented across the B
 
 test
 
+## Readability 
+We try to write clear, concise documentation, using plain English where possible. 
+
+These tools can help with this:
+- [Hemingway editor](https://hemingwayapp.com/)
+- [Grammarly](https://www.grammarly.com/)
+- [Readability tools](https://www.webfx.com/tools/read-able/)
+
 ## Normative Statements
 - Normative statements should be constructed using the keywords defined in [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119)
 - Non-normative statements can use these key words 
