@@ -20,7 +20,7 @@ Use English spelling:
 ### Word choice
 - use 'person' instead of using 'individual' as a noun
 - 'changelog' not 'change-log,' 'change log,' or 'changeLog'
-- 'codelist' not 'code-list' or 'code list'
+- 'codelist' not 'code-list,' 'code list' or 'codeList'
 - 'politically exposed' not 'politically-exposed'
 - 'free text' not 'free-text'
 - do not use constructions like “person(s)” or “the supplier (or suppliers)”. The plural is fine, like “persons.” Should this also include e.g 'One or more addresses for this entity.' -> 'addresses for this entity.'
@@ -53,7 +53,7 @@ The first sentence of a description should:
 
 Subsequent sentences may provide information or guidance to assist publishers to use the field effectively or users to interpret the field effectively. Guidance sentences should be grounded in clear user needs and implementation experience of common pitfalls or errors.
 
-Descriptions with a link to a codelist should be phrased as - '<semantics>, using the <name> codelist.'
+Descriptions with a link to a codelist should be phrased as - '<description>, using the <name> codelist.'
 
 Descriptions should also:
 - refer to property names using backquotes E.g. "\`id\` is required"
