@@ -9,8 +9,10 @@ If you add a new page, please follow the editing advice below, and list it under
 ## Contents
 
 * [The BODS feature development pipeline](feature_development.md)
-* BODS schema development [To be written]
+* BODS schema development
   * [Maintenance and compilation of the BODS schema](compiling_schema.md)
+  * [Testing and metaschema extensions](testing.md)
+  * [Updating the JSON schema version](json_schema_version_updates.md)
 * BODS documentation writing
   * [Creating SVG diagrams](diagram_creation.md)
   * [Style Guide](style_guide.md)
@@ -18,7 +20,6 @@ If you add a new page, please follow the editing advice below, and list it under
 * [Tools for working with BODS](tools.md)
 * [CoVE translations](cove_translations.md)
 * [Git Branches, Version Numbers and Standard Releases](standard_releases.md)
-* [Python development](python.md)
 * [This handbook](this_handbook.md)
 * 
 ## Not contents
