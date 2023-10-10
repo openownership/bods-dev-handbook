@@ -23,7 +23,7 @@ Use English spelling:
 - 'codelist' not 'code-list,' 'code list' or 'codeList'
 - 'politically exposed' not 'politically-exposed'
 - 'free text' not 'free-text'
-- do not use constructions like “person(s)” or “the supplier (or suppliers)”. The plural is fine, like “persons.” Should this also include e.g 'One or more addresses for this entity.' -> 'addresses for this entity.'
+- do not use constructions like “person(s)” or “the supplier (or suppliers)”. The plural is fine, like “persons.” *Should this also include e.g 'One or more addresses for this entity.' -> 'addresses for this entity.'*
 
 ### Bulleted lists
 When using bulleted lists you should:
@@ -39,24 +39,24 @@ When using bulleted lists you should:
 Normative statements should:
 - be constructed using the keywords defined in [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119) (*WIP note* non-normative statements currently include these as well- is that ok?) 
 - have capitalised keywords to distinguish from those words being used in a non-normative statement (e.g you MUST do this thing) 
-- be consistent with the BODS schema
+- be consistent with the BODS schema (*does this go without saying?*)
 
-### Names and titles (note - might be worth explaining the distinction here) 
+### Names and titles (*note - might be worth explaining what these are and how they are different*) 
 Use camelCase for object, property, codelist and definition names. E.g. 'interestedParty' or 'identifiers'
 
 Capitalize the first word of object, property and codelist titles. E.g. 'Interest' or 'Ownership-or-control statement'
 
 ### Field and code descriptions 
 The first sentence of a description should:
-- be a statement not a question. E.g for beneficialOwnershipOrControl - 'Whether the statement asserts this as beneficial ownership or control' not 'Does this statement assert this as a beneficial ownership or control interest?'
+- be a statement not a question. E.g for beneficialOwnershipOrControl - 'Whether the statement asserts this relationship as beneficial ownership or control' not 'Does this statement assert this as a beneficial ownership or control interest?'
 - be written in a neutral voice, not for a specific audience. E.g for 'foundingDate' - 'When the entity was founded, in ISO 8601 format' not 'When the entity was founded, please provide this in ISO 8601 format'
 
 Subsequent sentences may provide information or guidance to assist publishers to use the field effectively or users to interpret the field effectively. Guidance sentences should be grounded in clear user needs and implementation experience of common pitfalls or errors.
 
-Descriptions with a link to a codelist should be phrased as - '<description>, using the <name> codelist.'
+Descriptions with a link to a codelist should be phrased as - '\<description\>, using the \<name\> codelist.'
 
 Descriptions should also:
-- refer to property names using backquotes E.g. "\`id\` is required"
+- refer to property names using backquotes E.g. "\`id\` is required" (*wip - why backquotes specifically?*) 
 - refer to property values, whether example free text strings or values from a codelist, using single quotes. E.g. "the given name for Johann Sebastian Bach is 'Johann Sebastian'"
 - use plain text only, without markup (eg. no \[Markdown\](https://en.wikipedia.org/wiki/Markdown) or similar syntax)
 - place URLs in brackets by the appropriate word or phrase or at the end of the sentence
