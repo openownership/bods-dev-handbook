@@ -2,9 +2,9 @@
 
 This style guide is a draft to be discussed and not yet implemented across the BODS schema and documentation (as of May 2019, BODS v0.2). It can be used to guide editing and content writing. The Guide is divided into separate, though related, sections: one for the BODS schema and one for the BODS documentation.
 
-test
+## Common Conventions
 
-## Readability 
+### Readability 
 We try to write clear, concise documentation, using plain English where possible. 
 
 These tools can help with this:
@@ -12,26 +12,35 @@ These tools can help with this:
 - [Grammarly](https://www.grammarly.com/)
 - [Readability tools](https://www.webfx.com/tools/read-able/)
 
-## Spelling 
+### Spelling 
 Use English spelling:
 - 'organisation' not 'organization'
 - 'standardised' not 'standardized'
 - 'modelling' not 'modeling'
 
-## Normative Statements
+### Normative Statements
 - Normative statements should be constructed using the keywords defined in [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119)
 - Non-normative statements can use these key words 
 - Normative statement keywords should be capitalized to distinguish from those words being used in a non-normative statement
 - Normative statements must be consistent with the BODS schema
 
-## Word choice
+### Word choice
 - use 'person' instead of using 'individual' as a noun
 - 'changelog' not 'change-log,' 'change log,' or 'changeLog'
 - 'codelist' not 'code-list' or 'code list'
 - 'politically exposed' not 'politically-exposed'
 - 'free text' not 'free-text'
+- do not use constructions like “person(s)” or “the supplier (or suppliers)”. The plural is fine, like “persons”
 
-## BODS Schema
+### Bulleted lists
+When using bulleted lists:
+- start with a lead in line, followed by a colon
+- use lower case at the start of each bullet
+- do not put semicolons or full stops at the end of bullets
+- do not put or/and at the end of bullets
+- try to have one sentence per bullet
+
+## Schema style guide
 
 - Object and property names, and definition entry names to be camelCase, e.g. interestedParty
 
@@ -43,7 +52,6 @@ Use English spelling:
 
 - Codelists codes to be lowercase when single words, or camelCase when multiple words.
 
-- Do not use constructions like “person(s)” or “the supplier (or suppliers)”. The plural is fine, like “persons”
 
 **WIP notes**
 
@@ -51,7 +59,7 @@ Use English spelling:
 
 *Markup within descriptions?*
 
-## BODS documentation
+## Markdown style guide 
 
 [restructuredText (.rst) files](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html) are used to document BODS. 
 
@@ -61,14 +69,7 @@ Use English spelling:
 
 - Statements to be referred to by their titles. e.g. "The details of the company are entered into an Entity Statement"
 
-### Bulleted lists
-When using bulleted lists:
-- start with a lead in line, followed by a colon
-- use lower case at the start of each bullet
-- do not put semicolons or full stops at the end of bullets
-- do not put or/and at the end of bullets
-- try to have one sentence per bullet
-  
+
 **WIP notes**
 
 *How should a codelist be referred to? I suggest by its inferred title, capitalised. e.g. "...choose an item from the Unspecified Reason codelist...". And it would be translated for internationalisation.*
