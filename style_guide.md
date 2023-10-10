@@ -1,7 +1,6 @@
 # BODS Style Guide - #WIP
 
-This style guide is a draft to be discussed and not yet implemented across the BODS schema and documentation (as of May 2019, BODS v0.2). It can be used to guide editing and content writing. The Guide is divided into separate, though related, sections: one for the BODS schema and one for the BODS documentation.
-
+This style guide is a draft to be discussed and not yet implemented across the BODS schema and documentation (as of May 2019, BODS v0.2). It can be used to guide editing and content writing.
 ## Common Conventions
 
 ### Readability 
@@ -18,22 +17,16 @@ Use English spelling:
 - 'standardised' not 'standardized'
 - 'modelling' not 'modeling'
 
-### Normative Statements
-- Normative statements should be constructed using the keywords defined in [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119)
-- Non-normative statements can use these key words 
-- Normative statement keywords should be capitalized to distinguish from those words being used in a non-normative statement
-- Normative statements must be consistent with the BODS schema
-
 ### Word choice
 - use 'person' instead of using 'individual' as a noun
 - 'changelog' not 'change-log,' 'change log,' or 'changeLog'
 - 'codelist' not 'code-list' or 'code list'
 - 'politically exposed' not 'politically-exposed'
 - 'free text' not 'free-text'
-- do not use constructions like “person(s)” or “the supplier (or suppliers)”. The plural is fine, like “persons”
+- do not use constructions like “person(s)” or “the supplier (or suppliers)”. The plural is fine, like “persons.” Should this also include e.g 'One or more addresses for this entity.' -> 'addresses for this entity.'
 
 ### Bulleted lists
-When using bulleted lists:
+When using bulleted lists you should:
 - start with a lead in line, followed by a colon
 - use lower case at the start of each bullet
 - do not put semicolons or full stops at the end of bullets
@@ -42,22 +35,57 @@ When using bulleted lists:
 
 ## Schema style guide
 
-- Object and property names, and definition entry names to be camelCase, e.g. interestedParty
+### Normative Statements
+Normative statements should:
+- be constructed using the keywords defined in [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119) (*WIP note* non-normative statements currently include these as well- is that ok?) 
+- have capitalised keywords to distinguish from those words being used in a non-normative statement (e.g you MUST do this thing) 
+- be consistent with the BODS schema
 
-- Object and property titles: first word to be upper case. E.g. 'Interest' or 'Ownership-or-control statement'.
+### Names and titles (note - might be worth explaining the distinction here) 
+Use camelCase for object, property, codelist and definition names. E.g. 'interestedParty' or 'identifiers'
 
-- In descriptions, properties should be referred to by their property name in backquotes. E.g. "\`id\` is required". Property values, whether example free text strings or values from a codelist, should appear in single quotes. E.g. "the given name for Johann Sebastian Bach is 'Johann Sebastian'".
+Capitalize the first word of object, property and codelist titles. E.g. 'Interest' or 'Ownership-or-control statement'
 
-- In descriptions or other longer text fields, use plain text only, without markup (eg. no \[Markdown\](https://en.wikipedia.org/wiki/Markdown) or similar syntax). Where URLs are necessary, they can be placed in brackets by the appropriate word or phrase or at the end of the sentence. 
+### Field and code descriptions 
+The first sentence of a description should:
+- be a statement not a question. E.g for beneficialOwnershipOrControl - 'Whether the statement asserts this as beneficial ownership or control' not 'Does this statement assert this as a beneficial ownership or control interest?'
+- be written in a neutral voice, not for a specific audience. E.g for 'foundingDate' - 'When the entity was founded, in ISO 8601 format' not 'When the entity was founded, please provide this in ISO 8601 format'
 
-- Codelists codes to be lowercase when single words, or camelCase when multiple words.
+Subsequent sentences may provide information or guidance to assist publishers to use the field effectively or users to interpret the field effectively. Guidance sentences should be grounded in clear user needs and implementation experience of common pitfalls or errors.
 
+Descriptions with a link to a codelist should be phrased as - '<semantics>, using the <name> codelist.'
+
+Descriptions should also:
+- refer to property names using backquotes E.g. "\`id\` is required"
+- refer to property values, whether example free text strings or values from a codelist, using single quotes. E.g. "the given name for Johann Sebastian Bach is 'Johann Sebastian'"
+- use plain text only, without markup (eg. no \[Markdown\](https://en.wikipedia.org/wiki/Markdown) or similar syntax)
+- place URLs in brackets by the appropriate word or phrase or at the end of the sentence
+
+Descriptions should not:
+- include duplications of the codelist as part of the description
+- link to external websites
+- only restate the title or name E.g 'Address type' - 'The address type'
+- explicity state whether a field is required or optional (this is indicated by an asterisk)
+- declare the type of the field (this is indicated above the description) 
+
+Assuming the rest of the guidance is followed, it is recommended to start the description with:
+- “Whether”, for a boolean field.
+- “The” with a plural noun phrase, for the description of an array of strings.
+
+  
+### 
 
 **WIP notes**
 
 *Adapt and adopt [OCDS style guidance for property descriptions](https://ocds-standard-development-handbook.readthedocs.io/en/latest/meta/schema_style_guide.html#field-and-code-descriptions) ?*
 
-*Markup within descriptions?*
+*Markup within descriptions?* 
+
+*How should a codelist be referred to? I suggest by its inferred title, capitalised. e.g. "...choose an item from the Unspecified Reason codelist...". And it would be translated for internationalisation.* - in the OCDS schema codelists are referred to in descriptions using camel case and aren't translated there. The titles in the codelist page are translated though. 
+
+*How should a code be referred to? By its code or by its title? If by code, this wouldn't be translated. Perhaps use single quotes (e.g. "...use 'placeOfBirth' to refer to an address...") Then translation guidance could instruct translators to retain the code in the text but follow it with the translated code title (e.g. "... utilise 'placeOfBirth' (lieu de naissance) pour faire référence à une adresse...". Similar guidance would work for dealing with property names in translation (see above).* 
+
+*Should we use 'object' or 'block' or even 'component' to refer to JSON objects?* - object?
 
 ## Markdown style guide 
 
@@ -68,15 +96,6 @@ When using bulleted lists:
 - Objects to be referred to by their title, e.g. '... the Interested Party object has a number of required properties...'
 
 - Statements to be referred to by their titles. e.g. "The details of the company are entered into an Entity Statement"
-
-
-**WIP notes**
-
-*How should a codelist be referred to? I suggest by its inferred title, capitalised. e.g. "...choose an item from the Unspecified Reason codelist...". And it would be translated for internationalisation.*
-
-*How should a code be referred to? By its code or by its title? If by code, this wouldn't be translated. Perhaps use single quotes (e.g. "...use 'placeOfBirth' to refer to an address...") Then translation guidance could instruct translators to retain the code in the text but follow it with the translated code title (e.g. "... utilise 'placeOfBirth' (lieu de naissance) pour faire référence à une adresse...". Similar guidance would work for dealing with property names in translation (see above).* 
-
-*Should we use 'object' or 'block' or even 'component' to refer to JSON objects?*
 
 ### Embeddeding schema objects
 
