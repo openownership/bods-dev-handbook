@@ -35,6 +35,9 @@ When using bulleted lists you should:
 
 ## Schema style guide
 
+### Duplication
+Avoid multiple representations of the same fact where possible. A user should, ideally, have a single way of answering a given question. Having multiple representations of the same fact also introduces the possibility of inconsistent values.
+
 ### Normative Statements
 Normative statements should:
 - be constructed using the keywords defined in [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119) (*WIP note* non-normative statements currently include these as well- is that ok?) 
