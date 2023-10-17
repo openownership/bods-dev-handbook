@@ -82,6 +82,10 @@ Assuming the rest of the guidance is followed, it is recommended to start the de
 
 *Adapt and adopt [OCDS style guidance for property descriptions](https://ocds-standard-development-handbook.readthedocs.io/en/latest/meta/schema_style_guide.html#field-and-code-descriptions) ?*
 
+'The top level of the schema is split between properties and definitions. The latter contains objects that may be re-used, by reference, in multiple locations across the schema. Each of these can be thought of as a “Class”, and its name is capitalized accordingly. Whenever you consider that an object or structure might be re-used in a different area of the standard, it should be included in definitions.'
+
+I think we are already doing this in practice for at least some 'definitions' via the 'components' file - e.g 'Addresses'? Would the adoption of this guidance just to be to state that explicitly? Or would this be some other change to the schema itself?
+
 *Markup within descriptions?* 
 
 *How should a codelist be referred to? I suggest by its inferred title, capitalised. e.g. "...choose an item from the Unspecified Reason codelist...". And it would be translated for internationalisation.* - in the OCDS schema codelists are referred to in descriptions using camel case and aren't translated there. The titles in the codelist page are translated though. 
