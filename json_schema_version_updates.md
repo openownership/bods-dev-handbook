@@ -27,6 +27,9 @@ Data used for examples and testing will need to be migrated to the new version.
 
 Changes which affect a small number of data items may be simple to make by hand. Changes which affect large numbers of data items, or which are complex, may need to be scripted. When updating the JSON Schema version, keep track of how the changes may affect existing data, and provide guidence or scripts for data migration if necessary.
 
+## Update json pointers in the BODS documentation
+If changes to JSON Schema properties have been made, json pointers used in Sphinx directives may no longer resolve. This will cause the documentation build process to fail. As of 2023-10, there is extensive use of json pointers on the reference.rst page of the documentation. 
+
 # Update from draft-04 to 2020-12
 
 The JSON Schema version update was applied to version 0.3 of the BODS schema.
