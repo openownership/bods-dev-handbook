@@ -153,3 +153,14 @@ We use various plugins to embed schema and codelist elements in dynamic ways.
         Background
     </h2>
 ```
+
+
+## Reference Page 
+The reference page should be ordered:
+- objects
+- codelists
+
+These sections should be ordered alphabetically. 
+
+Use titles not names for the subheadings of the objects and codelists sections.
+
