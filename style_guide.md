@@ -26,8 +26,15 @@ Use English spelling:
 - 'politically exposed' not 'politically-exposed'
 - 'free text' not 'free-text'
 - do not use constructions like “person(s)”, “the supplier (or suppliers)”, or 'one or more persons'. The plural is fine, “persons.”
-- refer to JSON objects as 'objects' not 'blocks' or 'components' 
+- refer to JSON objects as 'objects' not 'blocks' or 'components'
 
+### Acronyms 
+Don't assume everyone is aware of common acronyms. When using acronyms it is good practice to include a definition at least once. 
+
+These acronyms are commonly used in the documentation:
+- 'BODS' for 'Beneficial Ownership Data Standard'
+- 'PEP' is used for 'Politically Exposed Persons'
+  
 ### Names and titles 
 'Names' refer to JSON keys, codelists and codelist entries used in the schema.  
 
