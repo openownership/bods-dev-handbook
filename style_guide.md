@@ -29,7 +29,7 @@ Use English spelling:
 - refer to JSON objects as 'objects' not 'blocks' or 'components'
 
 ### Acronyms 
-Don't assume everyone is aware of common acronyms. When using acronyms it is good practice to include a definition at least once. 
+Don't assume everyone is aware of common acronyms. When using acronyms make all letters in the acronym uppercase (PEP not Pep) 
 
 These acronyms are commonly used in the documentation:
 - 'BODS' for 'Beneficial Ownership Data Standard'
