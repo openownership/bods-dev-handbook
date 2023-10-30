@@ -20,8 +20,7 @@ Use English spelling:
 
 ### Word choice
 - use 'person' instead of using 'individual' as a noun. You can use 'natural person' to avoid confusion with 'legal person'
-- use 'entity' to refer to legal entities or use specific descriptors like 'trust' where relevant
-- do not use 'person' or 'legal person' to refer to entities, 'person' should be used for natural persons only
+- use 'entity,' 'legal person' or specific descriptors like 'trust' to describe legal entities
 - 'changelog' not 'change-log,' 'change log,' or 'changeLog'
 - 'codelist' not 'code-list,' 'code list' or 'codeList'
 - 'politically exposed' not 'politically-exposed'
