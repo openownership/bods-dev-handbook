@@ -25,8 +25,13 @@ Use English spelling:
 - 'codelist' not 'code-list,' 'code list' or 'codeList'
 - 'politically exposed' not 'politically-exposed'
 - 'free text' not 'free-text'
-- do not use constructions like “person(s)”, “the supplier (or suppliers)”, or 'one or more persons'. The plural is fine, “persons.”
 - refer to JSON objects as 'objects' not 'blocks' or 'components'
+
+### Grammar
+- do not use constructions like “person(s)”, “the supplier (or suppliers)”, or 'one or more persons'. The plural is fine, “persons”
+- avoid using and/or, where needed you can use “or both” (e.g. ownership, control, or both
+- use 'and' not '&' or '+'
+- abbreviations such as “e.g.”, “i.e.”, and “etc.” need full stops, but prefixes and acronyms (for example, “Dr Jane Goodall”; “OO”) do not
 
 ### Acronyms 
 Don't assume everyone is aware of common acronyms. When using acronyms make all letters in the acronym uppercase (PEP not Pep) 
@@ -34,6 +39,8 @@ Don't assume everyone is aware of common acronyms. When using acronyms make all 
 These acronyms are commonly used in the documentation:
 - 'BODS' for 'Beneficial Ownership Data Standard'
 - 'PEP' is used for 'Politically Exposed Persons'
+- 'OO' for Open Ownership
+- 'ODS' for Open Data Services (not 'ODSC')
   
 ### Names and titles 
 'Names' refer to JSON keys, codelists and codelist entries used in the schema.  
