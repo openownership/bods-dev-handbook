@@ -177,3 +177,35 @@ These sections should be ordered alphabetically.
 
 Use titles not names for the subheadings of the objects and codelists sections.
 
+### Sphinx Directives 
+**```:externallinks:```**
+
+This is used to add 'See [link name]()' at the end of the definitions in the object tables. For some fields, such as fields with multiple words in the name, you have to explicitly state the field name and link. 
+
+This is written like 
+
+```:externallinks:{fieldname1:{"url":"field-name-1","name"}```
+
+For example 
+
+```:externallinks: {"share":{"url":"#share","text":"Share"}, "type":{"url":"#interest-type","text":"Interest Type"}}```
+
+would add 'See [Share](https://standard.openownership.org/en/latest/schema/reference.html#share)' to the 'share' portion of the table and 'See [Interest Type](https://standard.openownership.org/en/latest/schema/reference.html#interesttype)' to the 'interestType' portion of the table.
+
+**```:allowexternalrefs:```**
+
+I'm not sure what this does - when I take it out it doesn't seem to change anything?
+
+**```:collapse:```**
+
+Collapse prevents nested objects from being expanded within the table.
+
+This is written like 
+
+```:collapse: name1,name2```
+
+For example 
+
+```:collapse: jurisdiction```
+
+means the table will include the high level definition of jurisdiction without having additional lines for jurisdiction/name and jurisdiction/code
