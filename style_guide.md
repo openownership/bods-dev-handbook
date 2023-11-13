@@ -31,7 +31,7 @@ Use English spelling:
 - do not use constructions like “person(s)”, “the supplier (or suppliers)”, or 'one or more persons'. The plural is fine, “persons”
 - avoid using and/or, where needed you can use “or both” (e.g. ownership, control, or both
 - use 'and' not '&' or '+'
-- abbreviations such as “e.g.”, “i.e.”, and “etc.” need full stops, but prefixes and acronyms (for example, “Dr Jane Goodall”; “BODS”) do not
+- abbreviations such as “e.g.”, “i.e.”, and “etc.” need full stops, but prefixes and acronyms (for example, “Dr Jane Goodall”, “BODS”) do not
 
 ### Acronyms 
 Don't assume everyone is aware of common acronyms. The first time an acronym is used in a property description (schema) or on a page (docs) the full term should be used, followed the by the acronym in parentheses (e.g. "whether the person described by this statement has the status of politically exposed person (PEP).")
@@ -54,7 +54,7 @@ Non-normative statements:
 ## Schema style guide
 
 ### Duplication
-Avoid multiple representations of the same fact where possible. A user should, ideally, have a single way of answering a given question. Having multiple representations of the same fact also introduces the possibility of inconsistent values.
+Avoid multiple representations of the same fact where possible. A user should have a single way of answering a given question. Having multiple representations of the same fact also introduces the possibility of inconsistent values.
 
 ### Names and titles 
 'Names' refer to JSON keys, codelists and codelist entries used in the schema.  
@@ -81,7 +81,7 @@ Subsequent sentences may provide information or guidance to assist publishers to
 Descriptions with a link to a codelist should be phrased as - '\<description\>, using the \<name\> codelist.'
 
 Descriptions should also:
-- refer to names using backquotes E.g. "\`id\` is required" (*wip - why backquotes specifically?*) 
+- refer to names using backquotes E.g. "\`id\` is required" 
 - refer to values, whether example free text strings or values from a codelist, using single quotes. E.g. "the given name for Johann Sebastian Bach is 'Johann Sebastian'"
 - use plain text only, without markup (eg. no \[Markdown\](https://en.wikipedia.org/wiki/Markdown) or similar syntax)
 - place URLs in brackets by the appropriate word or phrase or at the end of the sentence
@@ -97,17 +97,14 @@ Assuming the rest of the guidance is followed, it is recommended to start the de
 - “Whether”, for a boolean field.
 - “The” with a plural noun phrase, for the description of an array of strings.
 
-  
-### 
-
 ## Documentation style guide 
 
 ### Bulleted lists
 When using bulleted lists you should:
 - start with a lead in line, followed by a colon
 - use lower case at the start of each bullet
-- do not put semicolons or full stops at the end of bullets
-- do not put or/and at the end of bullets
+- not put semicolons or full stops at the end of bullets
+- not put or/and at the end of bullets
 - try to have one sentence per bullet
 
 ### Restructured text files 
