@@ -31,31 +31,16 @@ Use English spelling:
 - do not use constructions like “person(s)”, “the supplier (or suppliers)”, or 'one or more persons'. The plural is fine, “persons”
 - avoid using and/or, where needed you can use “or both” (e.g. ownership, control, or both
 - use 'and' not '&' or '+'
-- abbreviations such as “e.g.”, “i.e.”, and “etc.” need full stops, but prefixes and acronyms (for example, “Dr Jane Goodall”; “OO”) do not
+- abbreviations such as “e.g.”, “i.e.”, and “etc.” need full stops, but prefixes and acronyms (for example, “Dr Jane Goodall”; “BODS”) do not
 
 ### Acronyms 
-Don't assume everyone is aware of common acronyms. When using acronyms make all letters in the acronym uppercase (PEP not Pep) 
+Don't assume everyone is aware of common acronyms. The first time an acronym is used in a property description (schema) or on a page (docs) the full term should be used, followed the by the acronym in parentheses (e.g. "whether the person described by this statement has the status of politically exposed person (PEP).")
+
+Make all letters in acronyms uppercase (PEP not Pep). 
 
 These acronyms are commonly used in the documentation:
 - 'BODS' for 'Beneficial Ownership Data Standard'
 - 'PEP' is used for 'Politically Exposed Persons'
-- 'OO' for Open Ownership
-- 'ODS' for Open Data Services (not 'ODSC')
-  
-### Names and titles 
-'Names' refer to JSON keys, codelists and codelist entries used in the schema.  
-
-Names:
-- are formatted using camelCase (e.g 'interestedParty', 'entityType', 'identifiers')
-- do not contain spaces or punctuation
-- are not translated into languages other than English
-
-'Titles' are the way that a name is referred to in the documentation. (e.g 'Use the Statement Fragment Pointer to describe...')
-
-Titles:
-- have all words capitalised
-- have spaces between words
-- are translated into languages other than English
 
 ### Normative Statements
 Normative statements MUST:
@@ -70,6 +55,21 @@ Non-normative statements:
 
 ### Duplication
 Avoid multiple representations of the same fact where possible. A user should, ideally, have a single way of answering a given question. Having multiple representations of the same fact also introduces the possibility of inconsistent values.
+
+### Names and titles 
+'Names' refer to JSON keys, codelists and codelist entries used in the schema.  
+
+Names:
+- are formatted using camelCase (e.g 'interestedParty', 'entityType', 'identifiers')
+- do not contain spaces or punctuation
+- are not translated into languages other than English
+
+'Titles' are the way that a name is referred to in the documentation. (e.g 'Use the Statement Fragment Pointer to describe...')
+
+Titles:
+- have all words capitalised
+- have spaces between words
+- are translated into languages other than English
 
 ### Field and code descriptions 
 The first sentence of a description should:
@@ -114,11 +114,9 @@ When using bulleted lists you should:
 
 [restructuredText (.rst) files](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html) are used to document BODS. 
 
-- Properties to be referred to by their property name (not title) and marked up as \`\`propertyName\`\`. This can be used to refer to the property and its value. Or it can be used as a shorthand for the property value.
+- Properties should be referred to by their property name (not title) and marked up as \`\`propertyName\`\`. This can be used to refer to the property and its value. Or it can be used as a shorthand for the property value.
 
-- Objects to be referred to by their title, e.g. '... the Interested Party object has a number of required properties...'
-
-- Statements to be referred to by their titles. e.g. "The details of the company are entered into an Entity Statement"
+- Schema objects should be referred to by their title, (e.g. 'the Interested Party object has a number of required properties', 'The details of the company are entered into an Entity Statement')
 
 ### Embeddeding schema objects
 
@@ -155,18 +153,6 @@ We use various plugins to embed schema and codelist elements in dynamic ways.
 ![Screenshot: addressTypes codelist rendered as a table](screenshots/docs/embed_codelist.png)
 
 
-### RST usage
-
-**DO NOT** use this directive to embed HTML elements in the docs. (Encompassed strings will not be picked up for translation.)
-
-```
-.. raw:: html
-
-    <h2>
-        Background
-    </h2>
-```
-
 
 ## Reference Page 
 The reference page should be ordered:
@@ -177,35 +163,11 @@ These sections should be ordered alphabetically.
 
 Use titles not names for the subheadings of the objects and codelists sections.
 
-### Sphinx Directives 
-**```:externallinks:```**
+The Reference page in the schema makes extensive use of the [jsonschema Sphinx directive](https://sphinxcontrib-opendataservices-jsonschema.readthedocs.io/en/latest/use.html#required-path-to-the-json-schema-file) which ODSC maintains.
 
-This is used to add 'See [link name]()' at the end of the definitions in the object tables. For some fields, such as fields with multiple words in the name, you have to explicitly state the field name and link. 
+These directives are used frequently:
+- ```:externallinks:```
+- ```:allowexternalrefs:```
+- ```:collapse:```
 
-This is written like 
 
-```:externallinks:{fieldname1:{"url":"field-name-1","name"}```
-
-For example 
-
-```:externallinks: {"share":{"url":"#share","text":"Share"}, "type":{"url":"#interest-type","text":"Interest Type"}}```
-
-would add 'See [Share](https://standard.openownership.org/en/latest/schema/reference.html#share)' to the 'share' portion of the table and 'See [Interest Type](https://standard.openownership.org/en/latest/schema/reference.html#interesttype)' to the 'interestType' portion of the table.
-
-**```:allowexternalrefs:```**
-
-I'm not sure what this does - when I take it out it doesn't seem to change anything?
-
-**```:collapse:```**
-
-Collapse prevents nested objects from being expanded within the table.
-
-This is written like 
-
-```:collapse: name1,name2```
-
-For example 
-
-```:collapse: jurisdiction```
-
-means the table will include the high level definition of jurisdiction without having additional lines for jurisdiction/name and jurisdiction/code
