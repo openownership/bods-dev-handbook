@@ -167,4 +167,4 @@ These directives are used frequently:
 - ```:allowexternalrefs:```
 - ```:collapse:```
 
-
+Anchor links ``.. _link-anchor`` allow a section to be linked elsewhere in the docs ``<link-anchor>``. Link anchors must be maintained to prevent broken links. Broken anchor links may generate this warning when building the docs ``WARNING: 'any' reference target not found: link-anchor``
