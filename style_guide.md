@@ -113,6 +113,8 @@ When using bulleted lists you should:
 
 - Properties should be referred to by their property name (not title) and marked up as \`\`propertyName\`\`. This can be used to refer to the property and its value. Or it can be used as a shorthand for the property value.
 
+- Nested properties should be referred to using a period between the levels of nesting (e.g. 'publicationDetails.publicationDate' not 'publicationDetails/publicationDate') 
+
 - Schema objects should be referred to by their title, (e.g. 'the Interested Party object has a number of required properties', 'The details of the company are entered into an Entity Statement')
 
 ### Embeddeding schema objects
