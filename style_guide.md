@@ -182,7 +182,7 @@ Technical diagrams often require representations of statements. For this:
 Font choice:
 - use Arial for all text not inside a statement rectangle
 - use Monaco for the text inside a statement rectangle (you may need to download and install Monaco)
-- as a guideline you could use font size 12 for icon labels ('Person A', 'Company A'), font size 8 for text inside the statement rectangle, and font size 9 for the statement label ('entity stament', 'person statement')
+- as a guideline you could use font size 10 for icon labels ('Person A', 'Company A'), font size 8 for text inside the statement rectangle, and font size 8 for the statement label ('entity stament', 'person statement')
 
 Text alignment:
 - icon labels should be placed underneath icons, centred and aligned to the centre of the icon
