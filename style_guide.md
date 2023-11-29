@@ -151,9 +151,7 @@ We use various plugins to embed schema and codelist elements in dynamic ways.
 
 ![Screenshot: addressTypes codelist rendered as a table](screenshots/docs/embed_codelist.png)
 
-
-
-## Reference Page 
+### Reference Page 
 The reference page should be ordered:
 - objects
 - codelists
@@ -170,3 +168,28 @@ These directives are used frequently:
 - ```:collapse:```
 
 Anchor links ``.. _link-anchor`` allow a section to be linked elsewhere in the docs ``<link-anchor>``. Link anchors must be maintained to prevent broken links. Broken anchor links may generate this warning when building the docs ``WARNING: 'any' reference target not found: link-anchor``
+
+### Diagrams 
+See [diagram creation](https://github.com/openownership/bods-dev-handbook/blob/style-guide-edits/diagram_creation.md) for advice on how to create diagrams. 
+
+The [BOVS template](https://docs.google.com/drawings/d/19vIvWkr8qFsuSTZMHO_QuwXAyOxN5QLvvX4agtZmUps/edit?usp=sharing) should be used as the reference point for icons.
+
+Technical diagrams often require representations of statements. For this:
+- place a rectangle to the right of the icon or ownership line the statement relates to with background colour #efefefff (light grey 2 in Google Draw) and a black outline
+- the type of statement should be written directly above the rectangle
+- inside the box include only the essential key:value pairs for the point you are illustation
+
+Font choice:
+- use Arial for all text not inside a statement rectangle
+- use Monaco for the text inside a statement rectangle (you may need to download and install Monaco)
+- as a guideline you could use font size 12 for icon labels ('Person A', 'Company A'), font size 8 for text inside the statement rectangle, and font size 9 for the statement label ('entity stament', 'person statement')
+
+Text alignment:
+- icon labels should be placed underneath icons, centred and aligned to the centre of the icon
+- statement labels should be aligned above the statement rectangle, aligned to the right and the right edge should be at the right edge of the rectangle
+- text inside the statement rectangle should be left aligned and placed close to the left edge of the rectangle with a small gap, the text should be centred on the horizontal axis of the rectangle. 
+
+
+
+
+
