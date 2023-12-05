@@ -1,42 +1,122 @@
-# BODS Style Guide - #draft
+# BODS Style Guide - #WIP
 
-This style guide is a draft to be discussed and not yet implemented across the BODS schema and documentation (as of May 2019, BODS v0.2). It can be used to guide editing and content writing. The Guide is divided into separate, though related, sections: one for the BODS schema and one for the BODS documentation.
+This style guide is a draft not yet implemented across the BODS schema and documentation (as of October 2023 BODS 0.3). It can be used to guide editing and content writing.
 
-## BODS Schema
+## Common Conventions
 
-- Object and property names, and definition entry names to be camelCase, e.g. interestedParty
+### Readability 
+We try to write clear, concise documentation, using plain English where possible. 
 
-- Object and property titles: first word to be upper case. E.g. 'Interest' or 'Ownership-or-control statement'.
+These tools can help with this:
+- [Hemingway editor](https://hemingwayapp.com/)
+- [Grammarly](https://www.grammarly.com/)
+- [Readability tools](https://www.webfx.com/tools/read-able/)
 
-- In descriptions, properties should be referred to by their property name in backquotes. E.g. "\`id\` is required". Property values, whether example free text strings or values from a codelist, should appear in single quotes. E.g. "the given name for Johann Sebastian Bach is 'Johann Sebastian'".
+### Spelling 
+Use English spelling:
+- 'organisation' not 'organization'
+- 'standardised' not 'standardized'
+- 'modelling' not 'modeling'
 
-- In descriptions or other longer text fields, use plain text only, without markup (eg. no \[Markdown\](https://en.wikipedia.org/wiki/Markdown) or similar syntax). Where URLs are necessary, they can be placed in brackets by the appropriate word or phrase or at the end of the sentence. 
+### Word choice
+- use 'person' instead of using 'individual' as a noun. You can use 'natural person' to avoid confusion with 'legal person'
+- use 'legal entity,' 'legal person' or specific descriptors like 'registered company' to describe entities with legal personality
+- use 'legal arrangement' or specific descriptors like 'trust' to describe legal arrangements
+- 'changelog' not 'change-log,' 'change log,' or 'changeLog'
+- 'codelist' not 'code-list,' 'code list' or 'codeList'
+- 'politically exposed' not 'politically-exposed'
+- 'free text' not 'free-text'
+- refer to JSON objects as 'objects' not 'blocks' or 'components'
 
-- Codelists codes to be lowercase when single words, or camelCase when multiple words.
+### Grammar
+- do not use constructions like “person(s)”, “the supplier (or suppliers)”, or 'one or more persons'. The plural is fine, “persons”
+- avoid using and/or, where needed you can use “or both” (e.g. ownership, control, or both
+- use 'and' not '&' or '+'
+- abbreviations such as “e.g.”, “i.e.”, and “etc.” need full stops, but prefixes and acronyms (for example, “Dr Jane Goodall”, “BODS”) do not
 
-**WIP notes**
+### Acronyms 
+Don't assume everyone is aware of common acronyms. The first time an acronym is used in a property description (schema) or on a page (docs) the full term should be used, followed the by the acronym in parentheses (e.g. "whether the person described by this statement has the status of politically exposed person (PEP).")
 
-*Adapt and adopt [OCDS style guidance for property descriptions](https://ocds-standard-development-handbook.readthedocs.io/en/latest/meta/schema_style_guide.html#field-and-code-descriptions) ?*
+Make all letters in acronyms uppercase (PEP not Pep). 
 
-*Markup within descriptions?*
+These acronyms are commonly used in the documentation:
+- 'BODS' for 'Beneficial Ownership Data Standard'
+- 'PEP' is used for 'Politically Exposed Persons'
 
-## BODS documentation
+### Normative Statements
+Normative statements MUST:
+- be constructed using the keywords defined in [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119) 
+- have capitalised keywords to distinguish from those words being used in a non-normative statement
+
+Non-normative statements:
+- MAY use the same keywords as normative statements
+- MUST format normative keywords in lower case (e.g 'Implementers should be aware that future changes are anticipated')
+
+## Schema style guide
+
+### Duplication
+Avoid multiple representations of the same fact where possible. A user should have a single way of answering a given question. Having multiple representations of the same fact also introduces the possibility of inconsistent values.
+
+### Names and titles 
+'Names' refer to JSON keys, codelists and codelist entries used in the schema.  
+
+Names:
+- are formatted using camelCase (e.g 'interestedParty', 'entityType', 'identifiers')
+- do not contain spaces or punctuation
+- are not translated into languages other than English
+
+'Titles' are the way that a name is referred to in the documentation. (e.g 'Use the Statement Fragment Pointer to describe...')
+
+Titles:
+- have all words capitalised
+- have spaces between words
+- are translated into languages other than English
+
+### Field and code descriptions 
+The first sentence of a description should:
+- be a statement not a question. E.g for beneficialOwnershipOrControl - 'Whether the statement asserts this relationship as beneficial ownership or control' not 'Does this statement assert this as a beneficial ownership or control interest?'
+- be written in a neutral voice, not for a specific audience. E.g for 'foundingDate' - 'When the entity was founded, in ISO 8601 format' not 'When the entity was founded, please provide this in ISO 8601 format'
+
+Subsequent sentences may provide information or guidance to assist publishers to use the field effectively or users to interpret the field effectively. Guidance sentences should be grounded in clear user needs and implementation experience of common pitfalls or errors.
+
+Descriptions with a link to a codelist should be phrased as - '\<description\>, using the \<name\> codelist.'
+
+Descriptions should also:
+- refer to names using backquotes E.g. "\`id\` is required" 
+- refer to values, whether example free text strings or values from a codelist, using single quotes. E.g. "the given name for Johann Sebastian Bach is 'Johann Sebastian'"
+- use plain text only, without markup (eg. no \[Markdown\](https://en.wikipedia.org/wiki/Markdown) or similar syntax)
+- place URLs in brackets by the appropriate word or phrase or at the end of the sentence
+
+Descriptions should not:
+- include duplications of the codelist as part of the description
+- link to external websites
+- only restate the title or name E.g 'Address type' - 'The address type'
+- explicity state whether a field is required or optional (this is indicated by an asterisk)
+- declare the type of the field (this is indicated above the description) 
+
+Assuming the rest of the guidance is followed, it is recommended to start the description with:
+- “Whether”, for a boolean field.
+- “The” with a plural noun phrase, for the description of an array of strings.
+
+## Documentation style guide 
+
+### Bulleted lists
+When using bulleted lists you should:
+- start with a lead in line, followed by a colon
+- use lower case at the start of each bullet
+- not put semicolons or full stops at the end of bullets
+- not put or/and at the end of bullets
+- try to have one sentence per bullet
+
+### Restructured text files 
 
 [restructuredText (.rst) files](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html) are used to document BODS. 
 
-- Properties to be referred to by their property name (not title) and marked up as \`\`propertyName\`\`. This can be used to refer to the property and its value. Or it can be used as a shorthand for the property value.
+- Properties should be referred to by their property name (not title) and marked up as \`\`propertyName\`\`. This can be used to refer to the property and its value. Or it can be used as a shorthand for the property value.
 
-- Objects to be referred to by their title, e.g. '... the Interested Party object has a number of required properties...'
+- Nested properties should be referred to using a period between the levels of nesting (e.g. 'publicationDetails.publicationDate' not 'publicationDetails/publicationDate'). When referring to a nested array use numbers to indicate the position of the object within the array (e.g. 'interests.0.type: settlor, interests.1.type: trustee')
 
-- Statements to be referred to by their titles. e.g. "The details of the company are entered into an Entity Statement"
-
-**WIP notes**
-
-*How should a codelist be referred to? I suggest by its inferred title, capitalised. e.g. "...choose an item from the Unspecified Reason codelist...". And it would be translated for internationalisation.*
-
-*How should a code be referred to? By its code or by its title? If by code, this wouldn't be translated. Perhaps use single quotes (e.g. "...use 'placeOfBirth' to refer to an address...") Then translation guidance could instruct translators to retain the code in the text but follow it with the translated code title (e.g. "... utilise 'placeOfBirth' (lieu de naissance) pour faire référence à une adresse...". Similar guidance would work for dealing with property names in translation (see above).* 
-
-*Should we use 'object' or 'block' or even 'component' to refer to JSON objects?*
+- Schema objects should be referred to by their title, (e.g. 'the Interested Party object has a number of required properties', 'The details of the company are entered into an Entity Statement')
 
 ### Embeddeding schema objects
 
@@ -72,15 +152,44 @@ We use various plugins to embed schema and codelist elements in dynamic ways.
 
 ![Screenshot: addressTypes codelist rendered as a table](screenshots/docs/embed_codelist.png)
 
+### Reference Page 
+The reference page should be ordered:
+- objects
+- codelists
 
-### RST usage
+These sections should be ordered alphabetically. 
 
-**DO NOT** use this directive to embed HTML elements in the docs. (Encompassed strings will not be picked up for translation.)
+Use titles not names for the subheadings of the objects and codelists sections.
 
-```
-.. raw:: html
+The Reference page in the schema makes extensive use of the [jsonschema Sphinx directive](https://sphinxcontrib-opendataservices-jsonschema.readthedocs.io/en/latest/use.html#required-path-to-the-json-schema-file) which ODSC maintains.
 
-    <h2>
-        Background
-    </h2>
-```
+These directives are used frequently:
+- ```:externallinks:```
+- ```:allowexternalrefs:```
+- ```:collapse:```
+
+Anchor links ``.. _link-anchor`` allow a section to be linked elsewhere in the docs ``<link-anchor>``. Link anchors must be maintained to prevent broken links. Broken anchor links may generate this warning when building the docs ``WARNING: 'any' reference target not found: link-anchor``
+
+### Diagrams 
+See [diagram creation](https://github.com/openownership/bods-dev-handbook/blob/style-guide-edits/diagram_creation.md) for advice on how to create diagrams. 
+
+The [BOVS template](https://docs.google.com/drawings/d/19vIvWkr8qFsuSTZMHO_QuwXAyOxN5QLvvX4agtZmUps/edit?usp=sharing) should be used as the reference point for icons.
+
+Technical diagrams often require representations of statements. For this:
+- place a rectangle to the right of the icon or ownership line the statement relates to with background colour #efefefff (light grey 2 in Google Draw) and a black outline
+- the type of statement should be written directly above the rectangle
+- inside the box include only the essential key:value pairs for the point you are illustation
+
+Font choice:
+- use Arial for all text in diagrams
+- as a guideline you could use font size 10 for icon labels ('Person A', 'Company A'), font size 9 for text inside the statement rectangle ('entityType: registeredEntity), and font size 8 for the statement label ('entity stament', 'person statement')
+
+Text alignment:
+- icon labels should be placed underneath icons, centred and aligned to the centre of the icon
+- statement labels should be aligned above the statement rectangle, aligned to the right and the right edge should be at the right edge of the rectangle
+- text inside the statement rectangle should be left aligned and placed close to the left edge of the rectangle with a small gap, the text should be centred on the horizontal axis of the rectangle. 
+
+
+
+
+

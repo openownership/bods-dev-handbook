@@ -6,10 +6,10 @@ BODS diagrams are created in [Scalable Vector Graphic (SVG) format](https://www.
 
 - Use Google Draw to do a first draft of a diagram BUT do not include any text.
 
-  This is recommended since Google Draw allows for easy layout, styling and connection of diagram elements. Examples of Google Draw versions of diagrams can be [seen here](https://drive.google.com/drive/folders/1R0r-Dx-PivOYmUPbE7MtKbHm-nrFAikB), though note that they have text in them.
-
-  Copy diagram elements from the [BOVS template](https://docs.google.com/drawings/d/19vIvWkr8qFsuSTZMHO_QuwXAyOxN5QLvvX4agtZmUps/edit?usp=sharing)
+  This is recommended since Google Draw allows for easy layout, styling and connection of diagram elements. Examples of Google Draw versions of diagrams can be [seen here](https://drive.google.com/drive/folders/1R0r-Dx-PivOYmUPbE7MtKbHm-nrFAikB), though note that they have text in them. When dowloading to SVG format Google Draw doesn't render the text elements as text so they can't be easily translated. 
   
+  Copy visual elements from the [BOVS template](https://docs.google.com/drawings/d/19vIvWkr8qFsuSTZMHO_QuwXAyOxN5QLvvX4agtZmUps/edit?usp=sharing)
+
 - Export the diagram as an SVG file using File > Download.
 
 - Open the SVG locally in [Inkscape >1.0](https://inkscape.org/).
@@ -26,9 +26,11 @@ BODS diagrams are created in [Scalable Vector Graphic (SVG) format](https://www.
 
   Looking at [this diagram](https://standard.openownership.org/es/0.3.0/schema/guidance/repr-beneficial-ownership.html#overview) in Spanish, the line labels should have been left aligned.
 
-- Place the text and adjust diagram elements so that there is space for the text to be replaced by a longer, translated string.
+- Place the text and adjust diagram elements so that there is space for the text to be replaced by a longer, translated string. (If SVG 2 is fully implemented in the future it may be possible to use the [text inside](https://www.w3.org/TR/SVG2/text.html#TextShapeInside) to prevent this problem.) 
 
   Looking at [this diagram](https://standard.openownership.org/es/0.3.0/schema/guidance/repr-state-owned-enterprises.html#scenario-4) in Spanish, a string has crept outside the middle grey statement box. Extra space should have been created in the grey box to accommodate longer strings.
+
+- Ctrl + Shift + A opens the alignment menu. Use this to make sure text is aligned consistently 
 
 - Save your edits and open the file in a browser (or two) to see how the layout looks.
 
