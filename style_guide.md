@@ -20,6 +20,7 @@ Use English spelling:
 
 ### Word choice
 - use 'person' instead of using 'individual' as a noun. You can use 'natural person' to avoid confusion with 'legal person'
+- use 'people' to refer to natural persons plural not 'persons'
 - use 'legal entity,' 'legal person' or specific descriptors like 'registered company' to describe entities with legal personality
 - use 'legal arrangement' or specific descriptors like 'trust' to describe legal arrangements
 - 'changelog' not 'change-log,' 'change log,' or 'changeLog'
