@@ -179,7 +179,7 @@ The [BOVS template](https://docs.google.com/drawings/d/19vIvWkr8qFsuSTZMHO_QuwXA
 Technical diagrams often require representations of statements. For this:
 - place a rectangle to the right of the icon or ownership line the statement relates to with background colour #efefefff (light grey 2 in Google Draw) and a black outline
 - the type of statement should be written directly above the rectangle
-- inside the box include only the essential key:value pairs for the point you are illustation
+- inside the box include only the essential key:value pairs for the point you are illustrating
 
 Font choice:
 - use Arial for all text in diagrams
