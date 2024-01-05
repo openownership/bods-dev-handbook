@@ -16,15 +16,18 @@ The metaschema file is found in `data-standard/tests/schema/meta-schema.json`. A
 
 ## Python tests
 
+Test files are found in the `data-standard/tests` directory.
+
 Tests for the BODS schema are organised into:
 
-* CSV tests: These validate the codelist CSV files
-* JSON tests: These validate the structure of the schema files, and compliance with the [metaschema](#metaschema)
-* Data tests: These test valid and invalid sample data against the schema files, to check that the schema constrains data as expected
+* CSV tests: These validate the codelist CSV files.
+* Schema tests: These validate the structure of the schema files, and compliance with the [metaschema](#metaschema).
+* Data tests: These test the schema against valid and invalid sample data, to check that the schema constrains data as expected. Data for these tests is organised in several subdirectories under `data-standards/tests/data`.
+* Docs tests: These test the data snippets and example data used in the data standard documentation, to make sure they are formatted correctly and valid BODS data.
 
-Test files are found in the `data-standard/tests` directory. The tests and a flake8 code quality check are run automatically when a branch is pushed to the `data-standard` repository.
+The tests are written using pytest. Fixtures for loading the schema, creating a validator, and other helper functions can be found in `conftest.py`.
 
-Data for the data tests is organised in several subdirectories under `data-standards/tests/data`.
+The tests and a flake8 code quality check are run automatically when a branch is pushed to the `data-standard` repository.
 
 ### Code quality
 
