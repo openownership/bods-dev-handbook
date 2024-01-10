@@ -101,6 +101,14 @@ Assuming the rest of the guidance is followed, it is recommended to start the de
 
 ## Documentation style guide 
 
+### Headings and subheadings 
+Use sentence case for headings and subheadings. 
+
+In RST:
+- page titles are indicated by underlining with =
+- headings are indicated by underlining with -
+- subheadings are indicated by underlining with ^
+
 ### Bulleted lists
 When using bulleted lists you should:
 - start with a lead in line, followed by a colon
