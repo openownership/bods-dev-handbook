@@ -4,6 +4,44 @@
 
 BODS docs are published on [readthedocs](https://standard.openownership.org).
 
+## Building the docs using the development environment 
+### Installing the development environment 
+Install the ODSC development environment by following the instructions at https://github.com/OpenDataServices/development-environment
+
+The setup process guides you through several options
+- For 'Please select a container management engine to use' either will work (use Docker if you don't have a preference) 
+- For 'Do you want to mirror the environment's working directory locally?' select 'yes'
+- Select your preferred text editor to be installed (use Pycharm if you don't have a preference)
+- Select 'Beneficial Ownership Data Standard (BODS)' to be installed in the environment
+- Do you want to setup a new development branch? Select 'no' unless you want to set one up
+
+### Building the docs
+Open a terminal and navigate to the development environment 
+
+``cd development-environment``
+
+connect to the environment 
+
+``bin/connect``
+
+navigate to the data standard 
+
+``cd development/data-standard/``
+
+run sphinx build
+
+``sphinx-build docs/ _build``
+
+navigate to _build 
+
+``cd _build``
+
+open the docs in a server 
+
+``python3 -m http.server``
+
+then open http://0.0.0.0:8000/ in a browser window to view the docs 
+
 ## BODS docs theme and vagrant box
 
 The latest version of the BODS docs automatically uses the lastest version of the theme from the repo. Older versions of the docs may be pinned to specific commits or branches of the theme.
