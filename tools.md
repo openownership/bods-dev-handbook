@@ -5,7 +5,8 @@
 BODS docs are published on [readthedocs](https://standard.openownership.org).
 
 ## Building the docs using the development environment 
-### Installing the development environment 
+
+Using the development environment means that you needn't maintain relevant python versions and libraries on your system. Plus the environment can be updated to support common schema development practices.
 Install the ODSC development environment by following the instructions at https://github.com/OpenDataServices/development-environment
 
 The setup process guides you through several options
