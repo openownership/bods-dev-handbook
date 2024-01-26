@@ -16,7 +16,7 @@ The setup process guides you through several options
 - Select 'Beneficial Ownership Data Standard (BODS)' to be installed in the environment
 - Do you want to setup a new development branch? Select 'no' unless you want to set one up
 
-### Building the docs
+### Building the docs within the dev environment
 Open a terminal and navigate to the development environment 
 
 ``cd development-environment``
