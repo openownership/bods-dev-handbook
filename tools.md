@@ -25,7 +25,7 @@ connect to the environment
 
 ``bin/connect``
 
-navigate to the data standard 
+navigate to the directory containing the data standard, e.g.:
 
 ``cd development/data-standard/``
 
