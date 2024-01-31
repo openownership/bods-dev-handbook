@@ -16,6 +16,8 @@ The setup process guides you through several options
 - Select 'Beneficial Ownership Data Standard (BODS)' to be installed in the environment
 - Do you want to setup a new development branch? Select 'no' unless you want to set one up
 
+See https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#switching-remote-urls-from-https-to-ssh for advice on configuring the ssh authentication in the development environment. 
+
 ### Building the docs within the dev environment
 Open a terminal and navigate to the development environment 
 
