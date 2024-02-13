@@ -28,6 +28,8 @@ Use English spelling:
 - 'politically exposed' not 'politically-exposed'
 - 'free text' not 'free-text'
 - refer to JSON objects as 'objects' not 'blocks' or 'components'
+- use 'schema' to refer to the JSON schema in isolation
+- use 'standard' to refer to the who standard (the JSON schema and all other requirements combined) 
 
 ### Grammar
 - do not use constructions like “person(s)”, “the supplier (or suppliers)”, or 'one or more persons'. The plural is fine, “persons”
