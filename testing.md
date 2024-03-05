@@ -1,5 +1,15 @@
 # Testing the schema
 
+Changes to the schema should not be merged until all of the changes are covered by tests, and the tests pass.
+
+Exceptions may be made for rapid iteration on pre-release changes, where test coverage/failure is documented, and expected to be resolved before a new version is released.
+
+In summary, we test:
+
+* Example data (in the docs) is valid and well-formed.
+* The schema and codelists are well-formed and valid JSON.
+* The constraints expressed in the JSON schema work as expected to validate data.
+
 ## Metaschema
 
 BODS v0.4 uses JSON Schema 2020-12 as its base metaschema, extended with some custom properties which are used to further constrain the BODS schema. These are:
@@ -8,7 +18,6 @@ BODS v0.4 uses JSON Schema 2020-12 as its base metaschema, extended with some cu
 * `openCodelist` (boolean): If true, the property can contain values beyond what is defined in the codelist in the BO Data Standard. If false,the property is restricted to only the values defined in the codelist.
 * `version` (string): The BODS schema version number.
 * `propertyOrder` (integer): The order in which properties should be displayed for optimised user experience. Properties whose values are not objects or arrays should be listed first.
-* `oneOfEnumSelectorField` (string): Hints to a validator which subschema to use when validating objects which may use one of several schema options, in order to improve error messages.
 
 Properties from the extended metaschema should not be present in any BODS _data_, only in the _schema_. Therefore they don't need to be documented for data publishers, only for schema architects and developers.
 
@@ -52,6 +61,20 @@ To run one set of tests, eg.:
 
 ```python
 pytest tests/test_schema.py
+```
+
+To run code linting:
+
+```python
+flake8 tests/
+```
+
+(There is no output if all the code is conformant.)
+
+and:
+
+```python
+black tests/ --line-length=119
 ```
 
 ### Adding tests
