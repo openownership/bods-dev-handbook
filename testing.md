@@ -91,6 +91,8 @@ A minimum valid BODS statement looks like this:
 
 Start from this, and add only the field you are testing. If you are testing a field in a nested object (eg. `publicationDetails/publisher/name`) you may need to add more data to cover additional required fields (eg. `publicationDetails/publicationDate`). Check the schema itself to find out which fields are required for the various components.
 
+After adding new files make sure **run the tests** (`pytest tests/test_data.py`) to check they pass.
+
 #### Docs and examples
 
 * If example data is added or removed from the `/examples` directory, you don't need to make any changes to the tests - these are picked up and validated automatically.
