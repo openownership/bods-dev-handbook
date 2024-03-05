@@ -20,12 +20,11 @@ Test files are found in the `data-standard/tests` directory.
 
 Tests for the BODS schema are organised into:
 
-* CSV tests: These validate the codelist CSV files.
-* Schema tests: These validate the structure of the schema files, and compliance with the [metaschema](#metaschema).
+* Schema tests: These validate the structure of the schema files (including codelist CSVs), and compliance with the [metaschema](#metaschema).
 * Data tests: These test the schema against valid and invalid sample data, to check that the schema constrains data as expected. Data for these tests is organised in several subdirectories under `data-standards/tests/data`.
 * Docs tests: These test the data snippets and example data used in the data standard documentation, to make sure they are formatted correctly and valid BODS data.
 
-The tests are written using pytest. Fixtures for loading the schema, creating a validator, and other helper functions can be found in `conftest.py`.
+The tests are written using pytest. Fixtures for fetching files, loading the schema, creating a validator, and other helper functions can be found in `conftest.py`.
 
 The tests and a flake8 code quality check are run automatically when a branch is pushed to the `data-standard` repository.
 
@@ -49,10 +48,45 @@ To run all the tests:
 pytest tests/
 ```
 
-To run one set of tests:
+To run one set of tests, eg.:
 
 ```python
-pytest tests/test_csv.py
+pytest tests/test_schema.py
 ```
 
 ### Adding tests
+
+The tests in the [data standard repository](https://github.com/openownership/data-standard) are present to validate that the _JSON Schema_ works as expected. They are not to validate _data_, and don't test any requirements imposed on data by the data standard which are not enforced by the JSON Schema - these should be covered by a validation tool.
+
+#### Schema structure
+
+* If a schema file is added or removed, or an `$id` value is changed, the `schemas` variable needs to be updated in `test_schema.py`.
+* If additional requirements are placed on how the schema is structured or formatted (eg. letter case of fields, indentation) tests for these should be added to `test_schema.py`.
+* New codelists are tested automatically; nothing needs to be added if these change.
+
+#### Schema function
+
+If constraints are added to or removed from the JSON schema (eg. a string field which previously had no maximum length now has a maximum length), valid and invalid test data should be added to the appropriate subdirectory in `tests/data/`.
+
+Use one file per requirement, with the minimum contents possible to test only the requirement in question. This is so that if any requirements change in future, we have the minimum amount to update in the test files.
+
+Name the test files to make it clear which requirement is being tested.
+
+A minimum valid BODS statement looks like this:
+
+```
+[
+    {
+        "statementId": "2f7bf9370f1254068e5e946df067d07d",
+        "declarationSubject": "xyz",
+        "recordId": "123",
+        "recordType": "entity",
+        "recordDetails": {
+            "entityType": "unknownEntity",
+            "isComponent": False,
+        },
+    }
+]
+```
+
+Start from this, and add only the field you are testing. If you are testing a field in a nested object (eg. `publicationDetails/publisher/name`) you may need to add more data to cover additional required fields (eg. `publicationDetails/publicationDate`). Check the schema itself to find out which fields are required for the various components.
