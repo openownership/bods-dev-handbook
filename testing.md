@@ -95,7 +95,7 @@ Use one file per requirement, with the minimum contents possible to test only th
 
 Name the test files to make it clear which requirement is being tested.
 
-A minimum valid BODS statement looks like this:
+A minimum valid BODS entity statement looks like this:
 
 ```
 [
@@ -112,9 +112,9 @@ A minimum valid BODS statement looks like this:
 ]
 ```
 
-Start from this, and add only the field you are testing. If you are testing a field in a nested object (eg. `publicationDetails/publisher/name`) you may need to add more data to cover additional required fields (eg. `publicationDetails/publicationDate`). Check the schema itself to find out which fields are required for the various components.
+Start from a minimal statement like this, and add only the field you are testing. If you are testing a field in a nested object (eg. `publicationDetails/publisher/name`) you may need to add more data to cover additional required fields (eg. `publicationDetails/publicationDate`). Check the schema itself to find out which fields are required for the various objects.
 
-After adding new files make sure **run the tests** (`pytest tests/test_data.py`) to check they pass.
+After adding new files make sure to **run the tests** (`pytest tests/test_data.py`) to check they pass.
 
 #### Docs and examples
 
