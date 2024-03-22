@@ -121,7 +121,7 @@ When using bulleted lists you should:
 
 ### Statements 
 When referencing statements:
-- capitalise when you're referring to the JSON object (e.g. the Person Statement can be used...)
+- capitalise when you're referring to the JSON object (e.g. ...each Interest in the Statement should have a `directOrIndirect` value of 'indirect'...)
 - don't capitalise when referring to statements in general (e.g. BODS allows publishers to provide statements) 
 
 ### Restructured text files 
