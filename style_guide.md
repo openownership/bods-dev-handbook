@@ -119,6 +119,11 @@ When using bulleted lists you should:
 - not put or/and at the end of bullets
 - try to have one sentence per bullet
 
+### Statements 
+When referencing statements:
+- capitalise when you're referring to the JSON object (e.g. the Person Statement can be used...)
+- don't capitalise when referring to statements in general (e.g. BODS allows publishers to provide statements) 
+
 ### Restructured text files 
 
 [restructuredText (.rst) files](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html) are used to document BODS. 
