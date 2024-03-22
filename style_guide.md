@@ -122,7 +122,7 @@ When using bulleted lists you should:
 ### Referring to JSON objects
 When referring to objects in the data model, capitalise them. For example, when writing about interests:
 - capitalise when you're referring to the JSON object (e.g. ...each Interest in the Statement should have a `directOrIndirect` value of 'indirect'...)
-- don't capitalise when referring to statements in general (e.g. BODS allows publishers to provide statements) 
+- don't capitalise when referring to interests as a general concept (e.g. A beneficial owner may have a number of interests in a company...) 
 
 ### Restructured text files 
 
