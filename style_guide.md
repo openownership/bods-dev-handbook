@@ -119,6 +119,11 @@ When using bulleted lists you should:
 - not put or/and at the end of bullets
 - try to have one sentence per bullet
 
+### Referring to JSON objects
+When referring to objects in the data model, capitalise them. For example, when writing about interests:
+- capitalise when you're referring to the JSON object (e.g. ...each Interest in the Statement should have a `directOrIndirect` value of 'indirect'...)
+- don't capitalise when referring to interests as a general concept (e.g. A beneficial owner may have a number of interests in a company...) 
+
 ### Restructured text files 
 
 [restructuredText (.rst) files](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html) are used to document BODS. 
