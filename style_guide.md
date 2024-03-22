@@ -119,7 +119,7 @@ When using bulleted lists you should:
 - not put or/and at the end of bullets
 - try to have one sentence per bullet
 
-### Statements 
+### Referring to JSON objects
 When referencing statements:
 - capitalise when you're referring to the JSON object (e.g. ...each Interest in the Statement should have a `directOrIndirect` value of 'indirect'...)
 - don't capitalise when referring to statements in general (e.g. BODS allows publishers to provide statements) 
