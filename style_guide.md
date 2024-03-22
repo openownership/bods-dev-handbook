@@ -120,7 +120,7 @@ When using bulleted lists you should:
 - try to have one sentence per bullet
 
 ### Referring to JSON objects
-When referencing statements:
+When referring to objects in the data model, capitalise them. For example, when writing about interests:
 - capitalise when you're referring to the JSON object (e.g. ...each Interest in the Statement should have a `directOrIndirect` value of 'indirect'...)
 - don't capitalise when referring to statements in general (e.g. BODS allows publishers to provide statements) 
 
