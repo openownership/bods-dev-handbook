@@ -102,6 +102,7 @@ A minimum valid BODS entity statement looks like this:
     {
         "statementId": "2f7bf9370f1254068e5e946df067d07d",
         "declarationSubject": "xyz",
+        "statementDate": "2017-11-18",
         "recordId": "123",
         "recordType": "entity",
         "recordDetails": {
