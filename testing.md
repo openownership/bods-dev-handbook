@@ -95,6 +95,10 @@ Use one file per requirement, with the minimum contents possible to test only th
 
 Name the test files to make it clear which requirement is being tested.
 
+After adding new files make sure to **run the tests** (`pytest tests/test_data.py`) to check they pass.
+
+##### Testing against valid data
+
 A minimum valid BODS entity statement looks like this:
 
 ```
@@ -115,7 +119,45 @@ A minimum valid BODS entity statement looks like this:
 
 Start from a minimal statement like this, and add only the field you are testing. If you are testing a field in a nested object (eg. `publicationDetails/publisher/name`) you may need to add more data to cover additional required fields (eg. `publicationDetails/publicationDate`). Check the schema itself to find out which fields are required for the various objects.
 
-After adding new files make sure to **run the tests** (`pytest tests/test_data.py`) to check they pass.
+##### Testing against invalid data
+
+As with valid data, start from a minimal valid statement and add invalid values (or remove in the case of a required field) for only the field you are testing. There should be **one validation error per file** only. The test will fail if there is more than one.
+
+We also have to **test that the validation error is the one we expect**, so we need to map the data files to the type and location of the error we're looking for. Do this by updating `expected_errors.csv` (in the same directory as the invalid data). The structure of this file is:
+
+* file name (eg. "entity_addressType_placeOfBirth.json")
+* validation keyword (the type of error we expect, eg. "enum")
+* json path (the path to the location of the error in the data being tested, eg. "$[0].recordDetails.addresses[0].type")
+* property (the property in the data which is the subject of the test)
+
+**Validation keywords** are from [the JSON Schema standard](https://json-schema.org/draft/2020-12/meta/validation), and are one of:
+
+* `required`: the property is missing
+* `type`: the value is the wrong data type
+* `const`: the value is not the one required by the schema
+* `enum`: the value is not one of a set required by the schema
+* `multipleOf`: the value is not the multiple required
+* `maximum`: the value is too high
+* `exclusiveMaximum`: the value is too high
+* `minimum`: the value is too low
+* `exclusiveMinimum`: the value is too low
+* `maxLength`: the value is too long
+* `minLength`: the value is too short
+* `pattern`: the value does not match the defined pattern
+* `maxItems`: the array has too many items
+* `minItems`: the array has too few items
+* `uniqueItems`: the array contains duplicates
+* `maxContains`: the array contains to many items of the type allowed by the `contains` subschema
+* `minContains`: the array contains too few items of the type allowed by the `contains` subschema
+* `maxProperties`: the object contains too many properties
+* `minProperties`: the object contains too few properties
+* `dependentRequired`: a property dependent on another property is missing
+
+The validation keyword may sometimes need to be set to `oneOf`, `anyOf` or `allOf` if a value is constrained by multiple possible subschemas, rather than the keyword actual validation that is taking place. Making this more precise is a todo.
+
+**The JSON path** always begins with `$[0]` because each test file is an array of one statement. The path is separated by `.`. Elements in arrays are represented by `[0]`, `[1]`, etc. for the position of the error in the array. When the error relates to a missing required field, the JSON path ends at the parent. ie. To test a missing `statementDate`, the JSON path is `$[0]` (because that is the location of the required field error), _not_ `$[0].statementDate`.
+
+**The property** is the name of the specific field you're testing. To test a missing `statementDate`, set this value to `statementDate`. To test an incorrect address type, set this to `type`.
 
 #### Docs and examples
 
