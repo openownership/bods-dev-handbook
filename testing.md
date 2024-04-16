@@ -110,7 +110,9 @@ A minimum valid BODS entity statement looks like this:
         "recordId": "123",
         "recordType": "entity",
         "recordDetails": {
-            "entityType": "unknownEntity",
+            "entityType": {
+                `"type": "unknownEntity"
+            },
             "isComponent": false,
         },
     }
