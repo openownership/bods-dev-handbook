@@ -83,20 +83,21 @@ Once you have signed up to Transifex you should ask an administrator of ODSC to 
 
 Follow the instructions in the [BODS data-standard-sphinx-theme README.md](https://github.com/openownership/data-standard-sphinx-theme). These instructions will clone both the data-standard-sphinx-theme and data-standard repositories to your local machine.
 
-### Installing and configuring the Transifex client
+If you already have the repositories, make sure you pull the most up to date version of the branch you're working on, and have updated the requirements.
 
-Note that if you installed the [data standard repo](https://github.com/openownership/data-standard) the Transifex client is a dependency so it will already be installed.
+### Installing and configuring the Transifex client
 
 #### Installing the Transifex client
 
 Transifex offers a number of different options for uploading content to be translated. In this documentation we will describe the process for setting up the Command Line Interface (CLI) Client.
 
-The commands for installing the Transifex CLI client on Ubuntu are:
+At the commandline, you can install the lastest version of the client by running:
 
 ```
-$ sudo apt-get install python-pip
-$ sudo pip install transifex-client
+curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
 ```
+
+For other methods of installing, or to get a specific version of the client, follow the [instructions for installing the Transifex client for your system here](https://github.com/transifex/cli/blob/devel/README.md).
 
 #### Installing other dependencies
 
@@ -221,7 +222,7 @@ Run the following commands from the root directory unless otherwise specified (e
 ```
 rm -f .tx/config
 sphinx-intl create-txconfig
-sphinx-intl update-txconfig-resources --pot-dir docs/_build/gettext --locale-dir docs/locale --transifex-project-name bods-test
+sphinx-intl update-txconfig-resources --pot-dir docs/_build/gettext --locale-dir docs/locale --transifex-organization-name OpenDataServices --transifex-project-name bods-test
 ```
 
 (Replacing `bods-test` with a different Transifex project name.)
