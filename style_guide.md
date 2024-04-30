@@ -22,6 +22,7 @@ Use English spelling:
 - use 'person' instead of using 'individual' as a noun. You can use 'natural person' to avoid confusion with 'legal person'
 - use 'legal entity,' 'legal person' or specific descriptors like 'registered company' to describe entities with legal personality
 - use 'legal arrangement' or specific descriptors like 'trust' to describe legal arrangements
+- use people instead of persons (unless using specific phrases like natural persons) 
 - 'changelog' not 'change-log,' 'change log,' or 'changeLog'
 - 'codelist' not 'code-list,' 'code list' or 'codeList'
 - 'politically exposed' not 'politically-exposed'
