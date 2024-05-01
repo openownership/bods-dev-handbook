@@ -89,7 +89,7 @@ If you already have the repositories, make sure you pull the most up to date ver
 
 #### Installing the Transifex client
 
-Transifex offers a number of different options for uploading content to be translated. In this documentation we will describe the process for setting up the Command Line Interface (CLI) Client.
+Transifex offers a number of different options for uploading content to be translated. In this documentation we will describe the process for setting up the Command Line Interface (CLI) Client. If you are using the BODS development environment, this has already been installed and you can skip to [Configuring the Transifex client](#configuring-the-transifex-client).
 
 At the commandline, you can install the lastest version of the client by running:
 
