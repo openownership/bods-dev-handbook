@@ -90,9 +90,9 @@ A list of translation projects Open Data Services manage via Transifex is visibl
 1. Follow the instructions in the [BODS data-standard-sphinx-theme README.md](https://github.com/openownership/data-standard-sphinx-theme). These instructions will clone both the data-standard-sphinx-theme and data-standard repositories to your local machine.
   * If you already have the repositories, make sure you pull the most up to date version of the branch you're working on, and have updated the requirements.
 
-### Install and configure the Transifex client
+### Install and configure the software
 
-#### The CLI client
+#### The Transifex CLI client
 
 1. Install the latest version of the Command Line Interface (CLI) client by running:
 
@@ -159,9 +159,9 @@ To run the steps in the translation workflow, ensure that you have followed the 
 
 ### Extract the strings
 
-Run the following commands from the **root directory** of the repository unless otherwise specified.
+*Before you start*, run `tx pull -a` to make sure you have the most up to date translations in your local environment.
 
-0. *Before you start*, run `tx pull -a` to make sure you have the most up to date translations in your local environment.
+Run the following commands from the **root directory** of the repository unless otherwise specified.
 
 **If you modified the schema**:
 
@@ -200,7 +200,7 @@ Now the files are ready to be translated in Transifex.
 1. To fetch new translations when they're complete, run `tx pull -a` to fetch all, or `tx pull -l ru` to fetch a particular language.
 2. If the SVGs were translated, **build translated SVGs** for each language using itstool, and commit these (because we can't easily install itstool on readthedocs):
   * Run `pybabel compile --use-fuzzy -d docs/locale -D svg`
-  * Replacing <LANG> with language code, eg, `ru` (run this once per language): `itstool -m docs/locale/<LANG>/LC_MESSAGES/svg.mo -o docs/_build_svgs/<LANG> docs/_assets/*.svg`
+  * Replacing `<LANG>` with language code, eg, `ru` (run this once per language): `itstool -m docs/locale/<LANG>/LC_MESSAGES/svg.mo -o docs/_build_svgs/<LANG> docs/_assets/*.svg`
 3. If you are still on the main branch, check out a new development branch from which you will make a PR with the updated translations. **Commit** the new or updated .po files in `docs/locale`, eg.:
   * `git checkout -b 0.5.0-dev-translate-schema`
   * `git add docs/locale`
