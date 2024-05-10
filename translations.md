@@ -75,9 +75,9 @@ Summary:
 
 These steps are explained in more detail in the next sections.
 
-### Set up an account and joining the ODS organization in Transifex
+### Set up an account and join the ODS organization in Transifex
 
-A list of our translation projects Open Data Services manage via Transifex is visible at the [Open Data Services Co-operative public page](https://www.transifex.com/OpenDataServices/public/).
+A list of translation projects Open Data Services manage via Transifex is visible at the [Open Data Services Co-operative public page](https://www.transifex.com/OpenDataServices/public/).
 
 ![ODS Organisation in Transifex](/screenshots/translation/transifex_odsc_organisation.png)
 
