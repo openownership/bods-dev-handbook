@@ -55,43 +55,46 @@ The diagram below provides an extremely high-level overview of the workflow. It 
 
 ## BODS on Transifex
 
-BODS translations currently live under the [Open Data Services Transifex account](https://www.transifex.com/OpenDataServices/). The BODS docs and schema live in [BODS-main](https://www.transifex.com/OpenDataServices/bods-main) (for the latest in-development version), or versioned projects (for versioned releases of the standard), e.g. v0.1 'project' is [bods-v01](https://www.transifex.com/OpenDataServices/bods-v01/dashboard/). The project contains 'resources', each of which correspond to a page of documentation (an individual RST file) plus one each for the schema, codelists and .svg files. These may also be referred to as 'source files'.
+BODS translations are found under the [Open Data Services Transifex account](https://www.transifex.com/OpenDataServices/).
 
-The documentation sphinx theme translations live under [bods-theme](https://www.transifex.com/OpenDataServices/bods-theme/dashboard/), which contains only one resource for all the strings in the theme templates.
+The BODS documentation and schema are in [BODS-main](https://www.transifex.com/OpenDataServices/bods-main) (for the latest in-development version), or versioned projects (for versioned releases of the standard), e.g. v0.1 'project' is [bods-v01](https://www.transifex.com/OpenDataServices/bods-v01/dashboard/).
 
-## Setting up your local machine
+A Transifex project contains 'resources', each of which correspond to a page of documentation (an individual RST file) plus one each for the schema, codelists and SVG files. These may also be referred to as 'source files'.
 
-Complete the following steps to get your system set up to undergo the workflow outlined above (assumes Ubuntu 18.04.2 LTS or similar):
+The translations for the documentation _theme_ (menu items, footer text, etc) are in the [bods-theme Transifex project](https://www.transifex.com/OpenDataServices/bods-theme/dashboard/), which contains only one resource for all the strings in the theme templates.
 
-* set up an account and join the ODSC organization in Transifex
-* clone the repositories to manage the workflow
-* install and configure the Transifex client
+## Getting set up
 
-### Setting up an account and joining the ODSC organization in Transifex
+The following steps get your system set up to follow the translation workflow (assumes Ubuntu 22.04 LTS or similar).
 
-Create a free Transifex account on their [sign up page](https://www.transifex.com/signup/).
+Summary:
 
-The organization is the home of all the translation projects that an organization runs on Transifex.
+1. Set up an account and join the ODS organization in Transifex.
+2. Clone the repositories to manage the workflow.
+3. Install and configure the Transifex client.
 
-Open Data Services Co-operative is already set up as an organization in Transifex and all of our projects and teams are managed from within it. A list of our translation projects is visible at the [Open Data Services Co-operative public page](https://www.transifex.com/OpenDataServices/public/).
+These steps are explained in more detail in the next sections.
 
-![ODSC Organisation in Transifex](/screenshots/translation/transifex_odsc_organisation.png)
+### Set up an account and joining the ODS organization in Transifex
 
-Once you have signed up to Transifex you should ask an administrator of ODSC to make you an administrator too. We don't maintain a list of those administrators here, but there is a considerable overlap with the [people who contribute towards the BODS Standard repository](https://github.com/openownership/data-standard/graphs/contributors).
+A list of our translation projects Open Data Services manage via Transifex is visible at the [Open Data Services Co-operative public page](https://www.transifex.com/OpenDataServices/public/).
 
-### Cloning the repositories to manage the workflow
+![ODS Organisation in Transifex](/screenshots/translation/transifex_odsc_organisation.png)
 
-Follow the instructions in the [BODS data-standard-sphinx-theme README.md](https://github.com/openownership/data-standard-sphinx-theme). These instructions will clone both the data-standard-sphinx-theme and data-standard repositories to your local machine.
+1. Create a free Transifex account on their [sign up page](https://www.transifex.com/signup/).
 
-If you already have the repositories, make sure you pull the most up to date version of the branch you're working on, and have updated the requirements.
+2. Ask an administrator of ODS to make you an administrator for the BODS projects. We don't maintain a list of those administrators here, but there is a considerable overlap with the [people who contribute towards the BODS repository](https://github.com/openownership/data-standard/graphs/contributors).
 
-### Installing and configuring the Transifex client
+### Clone the repositories to manage the workflow
 
-#### Installing the Transifex client
+1. Follow the instructions in the [BODS data-standard-sphinx-theme README.md](https://github.com/openownership/data-standard-sphinx-theme). These instructions will clone both the data-standard-sphinx-theme and data-standard repositories to your local machine.
+  * If you already have the repositories, make sure you pull the most up to date version of the branch you're working on, and have updated the requirements.
 
-Transifex offers a number of different options for uploading content to be translated. In this documentation we will describe the process for setting up the Command Line Interface (CLI) Client.
+### Install and configure the Transifex client
 
-At the commandline, you can install the lastest version of the client by running:
+#### The CLI client
+
+1. Install the latest version of the Command Line Interface (CLI) client by running:
 
 ```
 curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
@@ -99,9 +102,9 @@ curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bas
 
 For other methods of installing, or to get a specific version of the client, follow the [instructions for installing the Transifex client for your system here](https://github.com/transifex/cli/blob/devel/README.md).
 
-#### Installing other dependencies
+#### Other dependencies
 
-You also need to make sure you have `gettext`, `pybabel` and (for SVGs) `itstool` installed in whatever environment you're running this in:
+2. Install `gettext` (for extracting source strings from the documentation), `pybabel` (for extracting from the schema and codelists) and `itstool` (for extracting from SVGs):
 
 ```
 $ apt-get install gettext
@@ -109,20 +112,14 @@ $ apt-get install python3-babel
 $ apt-get install itstool
 ```
 
-#### Configuring the Transifex client
+#### Configuration
 
-Transifex configuration involves the creation of two files:
+3. Create a [Transifex API key in the user settings](https://www.transifex.com/user/settings/api/).
+  * Click on the “Generate a token” button on the right hand side.
+  * Click on “Copy and Close”.
+  * Save it locally; don't commit it or share it or store it anywhere public.
 
-`~/.transifexrc`, which stores your Transifex host configuration in your home directory, including your API key.
-`.tx/config`, which stores the mappings between your local files and Transifex in a .tx folder in your repo’s root directory.
-
-Transifex’s own documentation for initialising the client involves running the tx init command. We are going to edit the files more directly.
-
-##### Creating and storing your API key
-
-You'll need a [Transifex API key](https://www.transifex.com/user/settings/api/) to push to and pull from the BODS project. Click on the “Generate a token” button on the right hand side. Click on “Copy and Close”. Your API token has been created.  You only need this locally; don't commit it or share it or store it anywhere public.
-
-So you don't have to enter it at the commandine every time you can store it in `.transifexrc` in your home directory (`~/`), which looks like:
+4. Optionally, so you don't have to enter it at the commandine every time you use the client, you can create a file called `.transifexrc` in your home directory (`~/`) with the following contents, replacing YOUR-API-KEY-SHOULD-GO-HERE with your newly generated api key:
 
 ```
 [https://www.transifex.com]
@@ -131,37 +128,86 @@ hostname = https://www.transifex.com
 password = YOUR-API-KEY-SHOULD-GO-HERE
 username = api
 ```
-Enter the lines as shown above, replacing YOUR-API-KEY-SHOULD-GO-HERE with your newly generated api key.
 
-This sets you up with access to add and retrieve files to and from Transifex. See [Transifex client configuration](https://docs.transifex.com/client/client-configuration) for more details.
-
-##### .tx/config
-
-The `.tx/config` file is used to map files in a local repo/directory to resources in Transifex. This file is stored in the .tx folder in the repo’s root directory.
-
-Although it is possible to pre-configure your `.tx/config` file in advance there are number of ways in which the configuration can change, right up until the moment that you extract and push your projects’ strings up to Transifex. In particular, the `.tx/config` file maps:
-
-  * the Transifex project that you are pushing strings to and then pulling the translated strings from
-  * the files in the repositories that strings are extracted from (see [data-standard](https://github.com/openownership/data-standard)). This can be dependant upon the branch of the repo that you have checked out.
-
-For that reason, we often recreate the .tx/config file as part of the workflow.
-
-The diagram below shows the state of the .tx/config file after extracting the strings from the 0.3 dev branch of the data-standard repo, ready to push those strings up to the BODS v0.3 project on Transifex.
-
-![Github-Transifex config](/screenshots/translation/github_transifex_config.png)
-
-Instructions to create an initial `.tx/config` file are provided [below](#translation-workflow).
+See [Transifex client configuration](https://docs.transifex.com/client/client-configuration) for more details.
 
 
-## Integrating translations
+## Translation workflow
 
-Whenever any strings are changed that are in scope for translation (see list above) they need to be 'extracted', pushed to Transifex, translated, and the translated strings pulled back down. Updates to the documentation and schema should not be released until the necessary translations are in place.
+The [BODS-main Transifex project](https://www.transifex.com/OpenDataServices/bods-main) holds the latest source files and the most up to date translations available.
 
-The steps for doing this should be done by the person making the changes to the schema and docs, and are documented [below](#translation-workflow). There are separate steps for the docs, schema and codelists, and you only need to carry out the steps applicable to the changes you made. For example, if you only updated the schema, you don't need to execute commands to extract strings from the docs or codelists.
+Translations may not be available for the latest English text because translation happens in batches when the source files are stable (not under active development).
 
-If you are working on a development branch, you **should not** push source file changes to Transifex. Instead, wait until your changes have been merged into the main branch. **Source files should only ever be pushed to Transifex from the main branch** (currently `main`) to ensure conflicts do not occur in Transifex between multiple people working on different branches simultaneously.
+When changes to the docs, schema or codelists that are [in scope for translation](#scope-of-translation-work) are merged into the `main` branch, these changes should be pushed to Transifex right away, so that translations can be brought up to date as soon as translators are available.
 
-Note that 'extracted' (English) strings (`.pot` files) are not pushed to the Github repo, but translated strings (`.po` files) are. This lets readthedocs find them so it can build everything in other languages. For a clean commit history, it's helpful to make separate commits for your changes to the source (docs or schema) and the translation files subsequently pulled from Transifex.
+The steps to do this are: 
+
+1. Extract the text that has changed from the files into "strings" which are readable by Transifex.
+2. Upload (push) the strings to Transifex.
+
+These steps happen **after changes have been approved and merged** into the `main` branch on Github. Never push to transifex from a development branch. Note that 'extracted' (English) strings (`.pot` files) are **not** pushed to the Github repository.
+
+Updates to the documentation and schema **should not be released** until the translations are complete.
+
+**After translations** have been added in Transifex, the translated strings (`.po` files) **do** need to be added to the Github repository so that ReadTheDocs can build everything in other languages. The steps to do this are:
+
+1. Make a new branch off `main`.
+2. Download (pull) the translated strings from Transifex.
+3. Commit the translation files to git, and (optionally) [preview them](#previewing-on-readthedocs). Make a pull request to merge them into `main`.
+
+To run the steps in the translation workflow, ensure that you have followed the installation and setup instructions.
+
+### Extract the strings
+
+Run the following commands from the **root directory** of the repository unless otherwise specified.
+
+0. *Before you start*, run `tx pull -a` to make sure you have the most up to date translations in your local environment.
+
+**If you modified the schema**:
+
+1. Run `pybabel extract -F babel_bods_schema.cfg . -o docs/_build/gettext/schema.pot`
+
+**If you modified the codelists**:
+
+1. If you changed (add, remove, rename) a column heading in a codelist CSV, edit the `babel_bods_codelist.cfg` file to match.
+2. Run `pybabel extract -F babel_bods_codelist.cfg . -o docs/_build/gettext/codelist.pot`
+
+**If you modified an SVG diagram**:
+
+1. Run `itstool -i svg-its-rules.xml -o docs/_build/gettext/svg.pot docs/_assets/*.svg`
+
+**If you changed the documentation**:
+
+1. Change to the `docs` directory (`cd docs`)
+2. Run `make gettext` to extract translatable English strings. This generates `.pot` files into `docs/_build/gettext/`.
+
+### Update the configuration
+
+**If you added, deleted or renamed** files or you want to use a **different Transifex project**, run (from root):
+
+1. `rm -f .tx/config` to delete the old config file
+2. `sphinx-intl create-txconfig` to create a new empty config file
+3. `sphinx-intl update-txconfig-resources --pot-dir docs/_build/gettext --locale-dir docs/locale --transifex-organization-name OpenDataServices --transifex-project-name bods-test` (replacing `bods-test` the correct Transifex project name) to fill the config file with the file paths for the source strings.
+
+### Upload source files to Transifex
+
+1. Run `tx push -s` to push the source files to Transifex.
+
+Now the files are ready to be translated in Transifex.
+
+### Download translations from Transifex
+
+1. To fetch new translations when they're complete, run `tx pull -a` to fetch all, or `tx pull -l ru` to fetch a particular language.
+2. If the SVGs were translated, **build translated SVGs** for each language using itstool, and commit these (because we can't easily install itstool on readthedocs):
+  * Run `pybabel compile --use-fuzzy -d docs/locale -D svg`
+  * Replacing <LANG> with language code, eg, `ru` (run this once per language): `itstool -m docs/locale/<LANG>/LC_MESSAGES/svg.mo -o docs/_build_svgs/<LANG> docs/_assets/*.svg`
+3. If you are still on the main branch, check out a new development branch from which you will make a PR with the updated translations. **Commit** the new or updated .po files in `docs/locale`, eg.:
+  * `git checkout -b 0.5.0-dev-translate-schema`
+  * `git add docs/locale`
+  * `git commit -m "Translations: Add latest translations for the schema`
+4. **Make a PR** with the new translation files (and SVGs if applicable).
+
+### Translating the documentation theme
 
 The steps for the Sphinx theme are in the [sphinx theme README](https://github.com/openownership/data-standard-sphinx-theme#translations).
 
@@ -171,87 +217,41 @@ Note for developers: `.po` files from the Sphinx theme are included when you bui
 locale_dirs = ['locale/', os.path.join(oods.sphinxtheme.get_html_theme_path(), 'locale')]
 ```
 
-So make sure the latest version of the theme is being installed in case expected translations aren't showing up.
+So make sure the latest version of the theme is being installed if expected translations aren't showing up.
 
-### Creating and configuring a new project in Transifex
+### Snapshotting a fully translated release of BODS
 
-Translations for the current latest version of BODS are found in the [BODS-main Transifex project](https://www.transifex.com/OpenDataServices/bods-main). These may not be updated until it is time for a new versioned release of BODS, meaning translations in Transifex may be lagging behind the latest text in the BODS Github repository. However, when changes to the docs, schema or codelists are merged into the main branch, these changes should always be pushed to Transifex, so that - assuming translators are available - translations can be brought up to date at any time. See [integrating translations](#integrating-translations).
+When a new version of BODS has been released, and the translation completed, we snapshot the translations in a new Transifex project to match the frozen git branch for the version.
 
-If you need to create a new Transifex project that contains the latest available source files and translations, do the following:
-
-* [Add a new project on Transifex](https://www.transifex.com/OpenDataServices/add/).
-* If applicable, name it according to the version of BODS, e.g. `bods-v02` for BODS version 0.2.
-* Choose 'public project' and **make sure to check the 'My project is a non-commercial Open Source project checkbox'** and enter the Github repo URL.
-* ![Screenshot: tick the My project is a non-commercial Open Source project checkbox when creating a new project](screenshots/translation/transifex_noncommercial.png)
-* Assign the project to the BODS team.
-* Under the 'Workflow' tab choose "Translation Memory Fill-up" under "Pre-translation".
-* ![Screenshot: tick the  "Translation Memory Fill-up" under "Pre-translation" when creating a new project](/screenshots/translation/transifex_translation_memory.png)
-* Make sure you have the latest translations and source files in your local environment (see the [translation workflow](#translation-workflow).
-* Update the Transifex config to use the Transifex project that you just created (see the [translation workflow](#translation-workflow)). Commit this change if you want all subsequent updates to the branch you are on to use the new Transifex project.
-* Run `tx push -s` to push the source files to Transifex.
-* Run `tx push -t` to push the translation files to Transifex.
+1. [Add a new project on Transifex](https://www.transifex.com/OpenDataServices/add/).
+2. Name it according to the version of BODS, e.g. `bods-v05` for BODS version 0.5.
+3. Choose 'public project' and **make sure to check the 'My project is a non-commercial Open Source project checkbox'** and enter the Github repo URL.
+  * ![Screenshot: tick the My project is a non-commercial Open Source project checkbox when creating a new project](screenshots/translation/transifex_noncommercial.png)
+4. Assign the project to the BODS team.
+5. Under the 'Workflow' tab choose "Translation Memory Fill-up" under "Pre-translation".
+  * ![Screenshot: tick the  "Translation Memory Fill-up" under "Pre-translation" when creating a new project](/screenshots/translation/transifex_translation_memory.png)
+6. Check out or switch to the branch of the release from Github (eg. `git branch 0.5.0`).
+7. [Extract the strings](#extract-the-strings).
+8. [Update the Transifex config to use the newly created Transifex project](#update-the-configuration).
+  * Commit this change if you want all subsequent updates to the branch you are on to use the new Transifex project.
+9. Push the source files to Transifex: `tx push -s` to push the source files to Transifex.
+10. Run `tx push -a` to push the translation files to Transifex. Use the `-l` flag if you only want to push certain languages (eg. `tx push -l fr,ru`).
   * Transifex only lets you push translations if it detects yours are newer than what it already has, but sometimes this fails - especially if you are pushing to an empty project. You can force it to accept translations from your local environment with `tx push -t -f` - you will have to confirm (press `y` and <enter>) each file by hand. Note that this will override anything already in Transifex, so make sure yours really are the latest.
 
-### Translation workflow
+### Translation Memory
 
-To run the steps in the translation workflow, ensure that you have followed the installation and setup instructions above.
+Transifex pre-fills translations for phrases which have previously been translated using Translation Memory, but this doesn't work across projects. We can reuse the Translation Memory from another project when creating a new project with the following steps:
 
-Run the following commands from the root directory unless otherwise specified (eg. sometimes it's less complicated to run them from `docs`).
+1. Follow the [steps to snapshot a translated release](#snapshotting-a-fully-translated-release-of-bods), where 'release' in these steps is the branch corresponding to the project with the Translation Memory you want to use. This essentially creates a mirror of the project you want to reuse the Translation Memory from.
+2. Check out the branch which contains the files you actually want to translate from Github.
+3. Delete your `docs/_build` directory.
+4. [Extract the strings](#extract-the-strings).
+5. [Update the Transifex config to re-map the file paths of the source files](#update-the-configuration).
+6. Push the source files to Transifex: `tx push -s` to push the source files to Transifex.
+7. Go to the new project in Transifex > Resources. Any source files which differ from the project you're mirroring should appear partially translated. It may take some time for the Translation Memory to populate them; don't panic if they don't show up straight away. The parts that have been automatically populated appear as translated but unreviewed.
+8. If the project you're mirroring contained source files that are no longer present in your new project (because the path has changed, or they were deleted), and you don't want the translators to see these, go into the Transifex project > Resources and delete these by hand after the Translation Memory has automatically populated as much as it's going to. Some of these can be easily spotted based on the last updated date/time, but be careful to differentiate between source files that aren't present in your project, and files which didn't change at all (and might appear as fully translated, from the project you're mirroring).
 
-0. *Before you start*, run `tx pull -a` to make sure you have the most up to date translations in your local environment.
-
-**When you change text in the docs** you need to do the following so that they can be translated:
-
-* From the `docs` directory, run `make gettext` to extract translatable English strings from the docs. (This generates `.pot` files into `docs/_build/gettext/`.)
-
-**If you modified the schema** also:
-
-* Run `pybabel extract -F babel_bods_schema.cfg . -o docs/_build/gettext/schema.pot` to extract translatable English strings from the schema.
-
-**If you modified the codelists** also:
-
-* Run `pybabel extract -F babel_bods_codelist.cfg . -o docs/_build/gettext/codelist.pot` to extract translatable English strings from the codelists.
-* If you change (add, remove, rename) a column heading in a codelist CSV, you must also edit the `babel_bods_codelist.cfg` file to match.
-
-**If you modified an SVG diagram** also:
-
-* Run `itstool -i svg-its-rules.xml -o docs/_build/gettext/svg.pot docs/_assets/*.svg` to extract translatable English strings from the SVGs.
-
-**If you added, deleted or renamed** files or you want to use a **different Transifex project**, run (from root, ie. `cd ../`):
-
-```
-rm -f .tx/config
-sphinx-intl create-txconfig
-sphinx-intl update-txconfig-resources --pot-dir docs/_build/gettext --locale-dir docs/locale --transifex-organization-name OpenDataServices --transifex-project-name bods-test
-```
-
-(Replacing `bods-test` with a different Transifex project name.)
-
-And then:
-
-3. Run `tx push -s` to **push to Transifex**.
-
-Now the files are ready to be translated in Transifex.
-
-4. **To fetch new translations** when they're done, you need to run `tx pull -a` to fetch all, or `tx pull -l ru` to fetch a particular language.
-
-5. If you are still on the main branch, check out a new development branch from which you will make a PR with the updated translations. **Commit** the new or updated .po files in `docs/locale`.
-
-6. **Build translated SVGs** for each language using itstool, and commit these (because we can't easily install itstool on readthedocs):
-
-```
-pybabel compile --use-fuzzy -d docs/locale -D svg
-```
-
-Replacing <LANG> with language code, eg, `ru` (run this once per language):
-
-```
-itstool -m docs/locale/<LANG>/LC_MESSAGES/svg.mo -o docs/_build_svgs/<LANG> docs/_assets/*.svg
-```
-
-7. **Make a PR** with the new translation files and SVGs (if applicable).
-
-### Teams and Roles
+## Teams and Roles
 
 Teams are the groups of people who do the translations. Each project has just one team allocated to it, although a team can be allocated to more than one project. To illustrate this, below is a diagram showing the first ten projects listed under Open Data Services Co-operative (as at 2019-06-19) and the teams that are allocated to them.
 
@@ -272,7 +272,7 @@ The BODS team manager allocates the translators and reviewers to a specific lang
 
 NOTE: The [OCDS handbook](https://ocds-standard-development-handbook.readthedocs.io/en/latest/standard/translation/workflow.html) specifies different roles. It separates out the "team manager" role into a "Release Manager" and a 'coordinator'. We should review these two different ways of working to see if we can agree a common standard. It also details a proofreader role which is not supported under the Transifex free plan.
 
-#### Team manager
+### Team manager
 
 Tasks:
   * Create the project
@@ -292,7 +292,7 @@ Skills:
   * To be able to push and pull extracted strings to and from Transifex
   * To be able to add and update a translation of the website in Transifex
 
-#### Translator
+### Translator
 
 Tasks:
   * Translate the strings in Transifex from the source language (by default, English) into the target language
@@ -303,7 +303,7 @@ Skills:
   * To be native speakers of the target language and fluent in English (the source language)
   * To be confident in using, or learning to use, Transifex.
 
-#### Reviewer
+### Reviewer
 
 Tasks:
   * Review the translated strings in Transifex and provide feedback to translators and the team manager
@@ -316,7 +316,7 @@ Skills:
   * To be confident in using, or learning to use, Transifex
   * To have a pragmatic approach to translation, taking into account the wider context in which it may be used
 
-#### Subject matter expert
+### Subject matter expert
 
 Tasks:
   * Translate beneficial ownership terms from the glossary's source language into the target language, in an online spreadsheet (a Google sheet).
@@ -330,7 +330,7 @@ Skills:
   * To have extensive experience of talking and writing about beneficial ownership in the target language.
   * To be confident in using, or learning to use, Google sheets.
 
-### Access for translators
+## Access for translators
 
 Translators should be given access to translate the main BODS project (documentation, schema, codelists), as well as the theme.
 
@@ -342,30 +342,30 @@ Once a translator or reviewer has signed up to Transifex then an admiinistrator 
 
 which can be completed to add the person to the project
 
-### Instructions for translators
+## Instructions for translators
 
 Translators should be given access to the project on Transifex and also a link to the latest version of the data standard website for context. 
 
 Translators do not have to translate every word in the Transifex project. Any text wrapped in \`s (e.g. \`address\`, \`JSON document <https://tools.ietf.org/html/rfc8259>\`) should not be translated. Special attention to this should be paid in the schema, schema-reference and concepts resources where they are used most. In the svg resource the names of objects and codes from a codelist are not to be  translated. As a guide a link to a translated version of the Key Concepts page should be provided (e.g. https://standard.openownership.org/es/latest/schema/concepts.html).
 
-#### The translation and review process
+### The translation and review process
 
 NOTE: This section describes a process that is different to how we have worked to date. As such it should be seen as a suggestion that is open to discussion.
 
-##### Translators
+#### Translators
 
 Once the strings for the schema release have been uploaded to Transifex, the translator should be given access to the project and asked to begin the translation.
 
 Translators should be aware that they will be required to take part in the review of their work. Details of this are in the following section.
 
-##### Reviewers
+#### Reviewers
 
 There are two inter-linked tasks for a reviewer. A reviewer can choose to do these separately or together as they work through the project.
 
 1. Review all of the translated strings in the project
 2. Check all of the warnings* against the translated strings in the project
 
-*Transifex will warn users when certain translation checks fail. This includes cases when a term in the source file is translated to something other than the translation in the glossary.
+*Transifex will warn users when certain translation checks fail. This includes cases when a term in the source file is translated to something other than the translation in the glossary.*
 
 Reviewers should make comments against the translation that are then resolved between them and the reviewer.
 
@@ -388,10 +388,13 @@ A template for a response to a comment is as follows
 - Response to the comment
 ```
 
-##### Resolving differences
+#### Resolving differences
+
 Where agreement cannot be reached by the translator and the reviewer it is the Team Manager's role to decide what should be done. They may take a decision themselves, or seek external advice.
 
-## Adding new languages on readthedocs
+## Publishing translated documentation
+
+### Adding new languages on readthedocs
 
 Once you've got all your translations, you need to publish them. The process for adding a new language version of the docs on readthedocs is as follows.
 
@@ -408,7 +411,7 @@ Once you've got all your translations, you need to publish them. The process for
 
 These instructions were summarised from [Localization of Documentation](https://docs.readthedocs.io/en/stable/localization.html) in the readthedocs docs.
 
-## Previewing on readthedocs
+### Previewing on readthedocs
 
 When work is in progress on a branch, you can build this branch in readthedocs to preview it before publishing.
 
