@@ -204,7 +204,7 @@ Now the files are ready to be translated in Transifex.
 3. If you are still on the main branch, check out a new development branch from which you will make a PR with the updated translations. **Commit** the new or updated .po files in `docs/locale`, eg.:
   * `git checkout -b 0.5.0-dev-translate-schema`
   * `git add docs/locale`
-  * `git commit -m "Translations: Add latest translations for the schema`
+  * `git commit -m "Translations: Add latest translations for the schema"`
 4. **Make a PR** with the new translation files (and SVGs if applicable).
 
 ### Translating the documentation theme
@@ -250,6 +250,43 @@ Transifex pre-fills translations for phrases which have previously been translat
 6. Push the source files to Transifex: `tx push -s` to push the source files to Transifex.
 7. Go to the new project in Transifex > Resources. Any source files which differ from the project you're mirroring should appear partially translated. It may take some time for the Translation Memory to populate them; don't panic if they don't show up straight away. The parts that have been automatically populated appear as translated but unreviewed.
 8. If the project you're mirroring contained source files that are no longer present in your new project (because the path has changed, or they were deleted), and you don't want the translators to see these, go into the Transifex project > Resources and delete these by hand after the Translation Memory has automatically populated as much as it's going to. Some of these can be easily spotted based on the last updated date/time, but be careful to differentiate between source files that aren't present in your project, and files which didn't change at all (and might appear as fully translated, from the project you're mirroring).
+
+## Publishing translated documentation
+
+### Adding new languages on readthedocs
+
+Once you've got all your translations, you need to publish them. The process for adding a new language version of the docs on readthedocs is as follows.
+
+* Go to your [readthedocs dashboard](https://readthedocs.org/dashboard) and click 'Import a Project', then 'Import manually' to the right.
+  * You probably want to name it something like "Beneficial Ownership Data Standard (LANG)"
+  * The Github URL is the base BODS repo, https://github.com/openownership/data-standard
+  * Check the box for 'edit advanced project settings'
+* Choose the language under Project Extra Details. The rest of the fields are intuitive, or have the right defaults.
+* Go to Admin > Versions to activate any of the branches you need other than main. These should probably be the same ones as you have active in the main BODS readthedocs project, so the menus are consistent when the user switches language.
+* Go to Builds to make sure the branch you need builds correctly. If it fails on a branch that the English version passes this is likely an indication that some translation files are missing. You can also preview it by clicking 'view docs'.
+* Go back to the main (English) [BODS project](https://readthedocs.org/projects/beneficial-ownership-data-standard/). In Admin > Translations, choose the new project you just created from the Project dropdown:
+  * ![Screenshot: add a readthedocs subproject](screenshots/translation/rtd_addtranslation.png)
+* The new language should now appear as an option in the readthedocs flyout menu for all versions of the HTML documentation.
+
+These instructions were summarised from [Localization of Documentation](https://docs.readthedocs.io/en/stable/localization.html) in the readthedocs docs.
+
+### Previewing on readthedocs
+
+When work is in progress on a branch, you can build this branch in readthedocs to preview it before publishing.
+
+* Push local changes and translations to your in-progress branch Github.
+* Go to the readthedocs project for the particular language version of the docs you want to preview.
+* If you have never built this branch before, you need to nudge readthedocs into seeing it; build any other branch, e.g. latest:
+  * ![Screenshot: building an existing branch](screenshots/translation/rtd_preview_build1.png)
+* Go to Versions on the main menu. Find your branch on the list of inactive branchs and click Edit on the right.
+  * ![Screenshot: activating a new branch](screenshots/translation/rtd_preview_build2.png)
+* Check 'Active' and set the dropdown to 'Protected' (this means the URL will work for sharing, but it won't appear in the versions menu):
+  * ![Screenshot: activating a new branch](screenshots/translation/rtd_preview_build3.png)
+* Go to Builds. Your new branch should have already built automatically and appear at the top of the list, but if it hasn't you can choose it from the dropdown and click 'Build'. You can see the results by clicking on the latest build:
+  * ![Screenshot: the results of a readthedocs build](screenshots/translation/rtd_preview_built.png)
+* You can preview it by clicking the green 'view docs' button in the top right.
+* You can rebuild it from the dropdown at the top of the Builds page every time you push new changes to Github.
+* Don't forget to switch it off when you're done in Admin > Versions.
 
 ## Teams and Roles
 
@@ -392,42 +429,6 @@ A template for a response to a comment is as follows
 
 Where agreement cannot be reached by the translator and the reviewer it is the Team Manager's role to decide what should be done. They may take a decision themselves, or seek external advice.
 
-## Publishing translated documentation
-
-### Adding new languages on readthedocs
-
-Once you've got all your translations, you need to publish them. The process for adding a new language version of the docs on readthedocs is as follows.
-
-* Go to your [readthedocs dashboard](https://readthedocs.org/dashboard) and click 'Import a Project', then 'Import manually' to the right.
-  * You probably want to name it something like "Beneficial Ownership Data Standard (LANG)"
-  * The Github URL is the base BODS repo, https://github.com/openownership/data-standard
-  * Check the box for 'edit advanced project settings'
-* Choose the language under Project Extra Details. The rest of the fields are intuitive, or have the right defaults.
-* Go to Admin > Versions to activate any of the branches you need other than main. These should probably be the same ones as you have active in the main BODS readthedocs project, so the menus are consistent when the user switches language.
-* Go to Builds to make sure the branch you need builds correctly. If it fails on a branch that the English version passes this is likely an indication that some translation files are missing. You can also preview it by clicking 'view docs'.
-* Go back to the main (English) [BODS project](https://readthedocs.org/projects/beneficial-ownership-data-standard/). In Admin > Translations, choose the new project you just created from the Project dropdown:
-  * ![Screenshot: add a readthedocs subproject](screenshots/translation/rtd_addtranslation.png)
-* The new language should now appear as an option in the readthedocs flyout menu for all versions of the HTML documentation.
-
-These instructions were summarised from [Localization of Documentation](https://docs.readthedocs.io/en/stable/localization.html) in the readthedocs docs.
-
-### Previewing on readthedocs
-
-When work is in progress on a branch, you can build this branch in readthedocs to preview it before publishing.
-
-* Push local changes and translations to your in-progress branch Github.
-* Go to the readthedocs project for the particular language version of the docs you want to preview.
-* If you have never built this branch before, you need to nudge readthedocs into seeing it; build any other branch, e.g. latest:
-  * ![Screenshot: building an existing branch](screenshots/translation/rtd_preview_build1.png)
-* Go to Versions on the main menu. Find your branch on the list of inactive branchs and click Edit on the right.
-  * ![Screenshot: activating a new branch](screenshots/translation/rtd_preview_build2.png)
-* Check 'Active' and set the dropdown to 'Protected' (this means the URL will work for sharing, but it won't appear in the versions menu):
-  * ![Screenshot: activating a new branch](screenshots/translation/rtd_preview_build3.png)
-* Go to Builds. Your new branch should have already built automatically and appear at the top of the list, but if it hasn't you can choose it from the dropdown and click 'Build'. You can see the results by clicking on the latest build:
-  * ![Screenshot: the results of a readthedocs build](screenshots/translation/rtd_preview_built.png)
-* You can preview it by clicking the green 'view docs' button in the top right.
-* You can rebuild it from the dropdown at the top of the Builds page every time you push new changes to Github.
-* Don't forget to switch it off when you're done in Admin > Versions.
 
 ## Additional resources
 
