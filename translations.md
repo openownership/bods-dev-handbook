@@ -92,6 +92,8 @@ A list of translation projects Open Data Services manage via Transifex is visibl
 
 ### Install and configure the software
 
+If you are using the BODS development environment, this has already been installed and you can skip to [Configuration](#configuration).
+
 #### The Transifex CLI client
 
 1. Install the latest version of the Command Line Interface (CLI) client by running:
@@ -210,6 +212,8 @@ Now the files are ready to be translated in Transifex.
 ### Translating the documentation theme
 
 The steps for the Sphinx theme are in the [sphinx theme README](https://github.com/openownership/data-standard-sphinx-theme#translations).
+
+Once you have extracted the strings, you can follow the instructions to [Update the configuration](#update-the-configuration) before pushing to transifex. 
 
 Note for developers: `.po` files from the Sphinx theme are included when you build the docs from `data-standard` thanks to the following line in `docs/conf.py`:
 
