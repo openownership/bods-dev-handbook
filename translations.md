@@ -140,7 +140,7 @@ The [BODS-main Transifex project](https://www.transifex.com/OpenDataServices/bod
 
 Translations may not be available for the latest English text because translation happens in batches when the source files are stable (not under active development).
 
-When changes to the docs, schema or codelists that are [in scope for translation](#scope-of-translation-work) are merged into the `main` branch, these changes should be pushed to Transifex right away, so that translations can be brought up to date as soon as translators are available.
+When changes to the docs, schema or codelists that are [in scope for translation](#scope-of-translation-work) are merged into the `main` branch, and a phase of translation is set to begin, these changes should be pushed to teh BODS-main project on Transifex.
 
 The steps to do this are: 
 
@@ -189,7 +189,8 @@ Run the following commands from the **root directory** of the repository unless 
 
 1. `rm -f .tx/config` to delete the old config file
 2. `sphinx-intl create-txconfig` to create a new empty config file
-3. `sphinx-intl update-txconfig-resources --pot-dir docs/_build/gettext --locale-dir docs/locale --transifex-organization-name OpenDataServices --transifex-project-name bods-test` (replacing `bods-test` the correct Transifex project name) to fill the config file with the file paths for the source strings.
+3. `sphinx-intl update-txconfig-resources --pot-dir docs/_build/gettext --locale-dir docs/locale --transifex-organization-name OpenDataServices --transifex-project-name BODS-main` (replacing `BODS-main` with a different Transifex project name if necessary) to fill the config file with the file paths for the source strings.
+4. Via a pull request, merge the updated .tx/config file into the main branch of the BODS repository.
 
 ### Upload source files to Transifex
 
