@@ -200,7 +200,7 @@ Now the files are ready to be translated in Transifex.
 
 ### Download translations from Transifex
 
-1. To fetch new translations when they're complete, run `tx pull -a` to fetch all, or `tx pull -l ru` to fetch a particular language.
+1. To fetch new translations when they're complete, run `tx pull -f -a` to fetch all, or `tx pull -f -l ru` to fetch a particular language (Russian in this case). (We force pull to ensure that local po files are always overwritten with translations from Transifex.) 
 2. If the SVGs were translated, **build translated SVGs** for each language using itstool, and commit these (because we can't easily install itstool on readthedocs):
   * Run `pybabel compile --use-fuzzy -d docs/locale -D svg`
   * Replacing `<LANG>` with language code, eg, `ru` (run this once per language): `itstool -m docs/locale/<LANG>/LC_MESSAGES/svg.mo -o docs/_build_svgs/<LANG> docs/_assets/*.svg`
