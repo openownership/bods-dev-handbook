@@ -57,7 +57,7 @@ The diagram below provides an extremely high-level overview of the workflow. It 
 
 BODS translations are found under the [Open Data Services Transifex account](https://www.transifex.com/OpenDataServices/).
 
-The BODS documentation and schema are in [BODS-main](https://www.transifex.com/OpenDataServices/bods-main) (for the latest in-development version), or versioned projects (for versioned releases of the standard), e.g. v0.1 'project' is [bods-v01](https://www.transifex.com/OpenDataServices/bods-v01/dashboard/).
+The BODS documentation and schema are in [BODS-main](https://www.transifex.com/OpenDataServices/bods-main) (for the latest in-development version), or versioned projects (for versioned releases of the standard), e.g. v0.1 'project' is [bods-v01](https://www.transifex.com/OpenDataServices/bods-v01/dashboard/). Once a translation has been completed in [BODS-main](https://www.transifex.com/OpenDataServices/bods-main) a snapshot should be taken and renamed under the relevant project name or version, see [steps to snapshot a translated release](#snapshotting-a-fully-translated-release-of-bods).
 
 A Transifex project contains 'resources', each of which correspond to a page of documentation (an individual RST file) plus one each for the schema, codelists and SVG files. These may also be referred to as 'source files'.
 
@@ -270,11 +270,27 @@ Once you've got all your translations, you need to publish them. The process for
 
 These instructions were summarised from [Localization of Documentation](https://docs.readthedocs.io/en/stable/localization.html) in the readthedocs docs.
 
+## Creating a preview
+
+During the translation process, there will be points where it will be helpful to generate a preview to allow the translators and/or reviewers to see the translations in context. 
+
+### Local build and Github 
+
+1. If you haven't already, create a staging branch. 
+2. To fetch the current translations, run `tx pull -a` to fetch all, or `tx pull -l ru` to fetch a particular language. You may need to add a force flag (`tx pull -f -a` or `tx pull -f -l ru`)
+3. If the SVGs were translated, **build translated SVGs** for each language using itstool, and commit these (because we can't easily install itstool on readthedocs):
+  * Run `pybabel compile --use-fuzzy -d docs/locale -D svg`
+  * Replacing `<LANG>` with language code, eg, `ru` (run this once per language): `itstool -m docs/locale/<LANG>/LC_MESSAGES/svg.mo -o docs/_build_svgs/<LANG> docs/_assets/*.svg`
+4. Build the docs locally 
+  * Run `sphinx-build  -D language=ru  docs/ _build`
+  * Run `cd _build` to move to the build folder
+  * Run `python3 -m http.server` to check the build
+5. Add, commit and push your changes to the staging branch.
+
 ### Previewing on readthedocs
 
-When work is in progress on a branch, you can build this branch in readthedocs to preview it before publishing.
+You can build this branch in readthedocs to preview it before publishing.
 
-* Push local changes and translations to your in-progress branch Github.
 * Go to the readthedocs project for the particular language version of the docs you want to preview.
 * If you have never built this branch before, you need to nudge readthedocs into seeing it; build any other branch, e.g. latest:
   * ![Screenshot: building an existing branch](screenshots/translation/rtd_preview_build1.png)
@@ -284,7 +300,7 @@ When work is in progress on a branch, you can build this branch in readthedocs t
   * ![Screenshot: activating a new branch](screenshots/translation/rtd_preview_build3.png)
 * Go to Builds. Your new branch should have already built automatically and appear at the top of the list, but if it hasn't you can choose it from the dropdown and click 'Build'. You can see the results by clicking on the latest build:
   * ![Screenshot: the results of a readthedocs build](screenshots/translation/rtd_preview_built.png)
-* You can preview it by clicking the green 'view docs' button in the top right.
+* You can preview it by clicking the green 'view docs' button in the top right. This will also provide you with a sharable link. 
 * You can rebuild it from the dropdown at the top of the Builds page every time you push new changes to Github.
 * Don't forget to switch it off when you're done in Admin > Versions.
 
