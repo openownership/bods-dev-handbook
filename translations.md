@@ -276,7 +276,7 @@ During the translation process, there will be points where it will be helpful to
 
 ### Local build and Github 
 
-1. If you haven't already, create a staging branch. 
+1. If there isn't already a translation staging branch, create one locally. Switch to work on the staging branch.
 2. To fetch the current translations, run `tx pull -a` to fetch all, or `tx pull -l ru` to fetch a particular language. You may need to add a force flag (`tx pull -f -a` or `tx pull -f -l ru`)
 3. If the SVGs were translated, **build translated SVGs** for each language using itstool, and commit these (because we can't easily install itstool on readthedocs):
   * Run `pybabel compile --use-fuzzy -d docs/locale -D svg`
@@ -285,7 +285,7 @@ During the translation process, there will be points where it will be helpful to
   * Run `sphinx-build  -D language=ru  docs/ _build`
   * Run `cd _build` to move to the build folder
   * Run `python3 -m http.server` to check the build
-5. Add, commit and push your changes to the staging branch.
+5. Add, commit and push your changes to the remote staging branch.
 
 ### Previewing on readthedocs
 
