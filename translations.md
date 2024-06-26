@@ -92,6 +92,8 @@ A list of translation projects Open Data Services manage via Transifex is visibl
 
 ### Install and configure the software
 
+If you are using the BODS development environment, this has already been installed and you can skip to [Configuration](#configuration).
+
 #### The Transifex CLI client
 
 1. Install the latest version of the Command Line Interface (CLI) client by running:
@@ -138,7 +140,7 @@ The [BODS-main Transifex project](https://www.transifex.com/OpenDataServices/bod
 
 Translations may not be available for the latest English text because translation happens in batches when the source files are stable (not under active development).
 
-When changes to the docs, schema or codelists that are [in scope for translation](#scope-of-translation-work) are merged into the `main` branch, these changes should be pushed to Transifex right away, so that translations can be brought up to date as soon as translators are available.
+When changes to the docs, schema or codelists that are [in scope for translation](#scope-of-translation-work) are merged into the `main` branch, and a phase of translation is set to begin, these changes should be pushed to the BODS-main project on Transifex.
 
 The steps to do this are: 
 
@@ -187,7 +189,8 @@ Run the following commands from the **root directory** of the repository unless 
 
 1. `rm -f .tx/config` to delete the old config file
 2. `sphinx-intl create-txconfig` to create a new empty config file
-3. `sphinx-intl update-txconfig-resources --pot-dir docs/_build/gettext --locale-dir docs/locale --transifex-organization-name OpenDataServices --transifex-project-name bods-test` (replacing `bods-test` the correct Transifex project name) to fill the config file with the file paths for the source strings.
+3. `sphinx-intl update-txconfig-resources --pot-dir docs/_build/gettext --locale-dir docs/locale --transifex-organization-name OpenDataServices --transifex-project-name bods-main` (replacing `bods-main` with a different Transifex project name if necessary) to fill the config file with the file paths for the source strings.
+4. Via a pull request, merge the updated .tx/config file into the main branch of the BODS repository.
 
 ### Upload source files to Transifex
 
@@ -197,7 +200,7 @@ Now the files are ready to be translated in Transifex.
 
 ### Download translations from Transifex
 
-1. To fetch new translations when they're complete, run `tx pull -a` to fetch all, or `tx pull -l ru` to fetch a particular language.
+1. To fetch new translations when they're complete, run `tx pull -f -a` to fetch all, or `tx pull -f -l ru` to fetch a particular language (Russian in this case). (We force pull to ensure that local po files are always overwritten with translations from Transifex.) 
 2. If the SVGs were translated, **build translated SVGs** for each language using itstool, and commit these (because we can't easily install itstool on readthedocs):
   * Run `pybabel compile --use-fuzzy -d docs/locale -D svg`
   * Replacing `<LANG>` with language code, eg, `ru` (run this once per language): `itstool -m docs/locale/<LANG>/LC_MESSAGES/svg.mo -o docs/_build_svgs/<LANG> docs/_assets/*.svg`
@@ -210,6 +213,8 @@ Now the files are ready to be translated in Transifex.
 ### Translating the documentation theme
 
 The steps for the Sphinx theme are in the [sphinx theme README](https://github.com/openownership/data-standard-sphinx-theme#translations).
+
+Once you have extracted the strings, you can follow the instructions to [Update the configuration](#update-the-configuration) before pushing to transifex. 
 
 Note for developers: `.po` files from the Sphinx theme are included when you build the docs from `data-standard` thanks to the following line in `docs/conf.py`:
 
