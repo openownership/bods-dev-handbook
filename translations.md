@@ -147,19 +147,25 @@ The steps to do this are:
 1. Extract the text that has changed from the files into "strings" which are readable by Transifex.
 2. Upload (push) the strings to Transifex.
 
-These steps happen **after changes have been approved and merged** into the `main` branch on Github. Never push to transifex from a development branch. Note that 'extracted' (English) strings (`.pot` files) are **not** pushed to the Github repository.
+These steps happen **after changes have been approved and merged** into the `main` branch on Github. Never push to transifex from a development branch. Note that locally 'extracted' (English) strings (stored in `.pot` files) are ignored: they do **not** get pushed to the remote Github repository.
 
 Updates to the documentation and schema **should not be released** until the translations are complete.
 
 **After translations** have been added in Transifex, the translated strings (`.po` files) **do** need to be added to the Github repository so that ReadTheDocs can build everything in other languages. The steps to do this are:
 
-1. Make a new branch off `main`.
-2. Download (pull) the translated strings from Transifex.
-3. Commit the translation files to git, and (optionally) [preview them](#previewing-on-readthedocs). Make a pull request to merge them into `main`.
+3. (Once) Make a new translation staging branch off `main`.
+
+Stages 4 and 5 may need to be repeated several times.
+  
+4. Download (pull) the translated strings from Transifex into this translation staging branch.
+5. Preview and commit changes.
+
+**Finally**
+6. Merge translations back into main branch
 
 To run the steps in the translation workflow, ensure that you have followed the installation and setup instructions.
 
-### Extract the strings
+### 1. Extract the strings
 
 *Before you start*, run `tx pull -a` to make sure you have the most up to date translations in your local environment.
 
@@ -183,7 +189,7 @@ Run the following commands from the **root directory** of the repository unless 
 1. Change to the `docs` directory (`cd docs`)
 2. Run `make gettext` to extract translatable English strings. This generates `.pot` files into `docs/_build/gettext/`.
 
-### Update the configuration
+### 2-a. Update the configuration
 
 **If you added, deleted or renamed** files or you want to use a **different Transifex project**, run (from root):
 
@@ -192,23 +198,36 @@ Run the following commands from the **root directory** of the repository unless 
 3. `sphinx-intl update-txconfig-resources --pot-dir docs/_build/gettext --locale-dir docs/locale --transifex-organization-name OpenDataServices --transifex-project-name bods-main` (replacing `bods-main` with a different Transifex project name if necessary) to fill the config file with the file paths for the source strings.
 4. Via a pull request, merge the updated .tx/config file into the main branch of the BODS repository.
 
-### Upload source files to Transifex
+### 2-b. Upload source files to Transifex
 
 1. Run `tx push -s` to push the source files to Transifex.
 
-Now the files are ready to be translated in Transifex.
+Now the files are ready to be translated in Transifex. See 'Teams and roles' for project managing the translation process in Transifex.
 
-### Download translations from Transifex
+### 3. Create a new translation staging branch off `main`.
 
-1. To fetch new translations when they're complete, run `tx pull -f -a` to fetch all, or `tx pull -f -l ru` to fetch a particular language (Russian in this case). (We force pull to ensure that local po files are always overwritten with translations from Transifex.) 
+1. If you are still on the main branch, check out a new translation staging branch from which you will ultimately make a PR with the updated translations. 
+
+### 4. Download translations from Transifex
+
+1. On your local translation staging benach, fetch new translations when they're complete: run `tx pull -f -a` to fetch all, or `tx pull -f -l ru` to fetch a particular language (Russian in this case). (We force pull to ensure that local po files are always overwritten with translations from Transifex.) 
 2. If the SVGs were translated, **build translated SVGs** for each language using itstool, and commit these (because we can't easily install itstool on readthedocs):
   * Run `pybabel compile --use-fuzzy -d docs/locale -D svg`
   * Replacing `<LANG>` with language code, eg, `ru` (run this once per language): `itstool -m docs/locale/<LANG>/LC_MESSAGES/svg.mo -o docs/_build_svgs/<LANG> docs/_assets/*.svg`
-3. If you are still on the main branch, check out a new development branch from which you will make a PR with the updated translations. **Commit** the new or updated .po files in `docs/locale`, eg.:
-  * `git checkout -b 0.5.0-dev-translate-schema`
+
+### 5. Preview and commit changes
+
+1. [Build the documentation locally](https://github.com/openownership/data-standard?tab=readme-ov-file#building-the-documentation-locally) to check how translated pages and diagrams look. (If necessary, edit source SVG diagrams on the translation staging branch, and rebuild them (4.2 above) until everything looks good.)
+2. **Commit** the new or updated .po files and SVGs in `docs/locale`, eg.:
   * `git add docs/locale`
+  * `git add docs/_build_svgs/`
   * `git commit -m "Translations: Add latest translations for the schema"`
-4. **Make a PR** with the new translation files (and SVGs if applicable).
+3. **Push local commits** to the remote repo
+4. (Optional) You may want to set up a [build](#previewing-on-readthedocs) on ReadTheDocs for the translation staging branch so that the translators and reviewers can see their work in situ.
+    
+### 6. Merge translations back into main branch
+
+1. **Make a PR** from the transation staging branch into main, with the new and edited translation files (and SVGs if applicable).
 
 ### Translating the documentation theme
 
@@ -278,19 +297,6 @@ These instructions were summarised from [Localization of Documentation](https://
 ## Creating a preview
 
 During the translation process, there will be points where it will be helpful to generate a preview to allow the translators and/or reviewers to see the translations in context. 
-
-### Local build and Github 
-
-1. If there isn't already a translation staging branch, create one locally. Switch to work on the staging branch.
-2. To fetch the current translations, run `tx pull -a` to fetch all, or `tx pull -l ru` to fetch a particular language. You may need to add a force flag (`tx pull -f -a` or `tx pull -f -l ru`)
-3. If the SVGs were translated, **build translated SVGs** for each language using itstool, and commit these (because we can't easily install itstool on readthedocs):
-  * Run `pybabel compile --use-fuzzy -d docs/locale -D svg`
-  * Replacing `<LANG>` with language code, eg, `ru` (run this once per language): `itstool -m docs/locale/<LANG>/LC_MESSAGES/svg.mo -o docs/_build_svgs/<LANG> docs/_assets/*.svg`
-4. Build the docs locally 
-  * Run `sphinx-build  -D language=ru  docs/ _build`
-  * Run `cd _build` to move to the build folder
-  * Run `python3 -m http.server` to check the build
-5. Add, commit and push your changes to the remote staging branch.
 
 ### Previewing on readthedocs
 
