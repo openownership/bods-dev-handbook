@@ -115,6 +115,7 @@ least work! The general process is:
   3. On the Builds page, build both the new version branch and 'latest'. 
   4. Carry out steps i - iii for all related translation projects in ReadTheDocs.
   5. On the live site, test the new version and language switching for all translations.
+* Consider which BODS-handling tools will now need to be updated. (Add interim banners to such tools with a message like: "This tool is currently being updated to handle BODS x.x data".)
 
 #### Editing during a "freeze"
 
