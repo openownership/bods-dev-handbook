@@ -11,7 +11,7 @@ As BODS is undergoing [test-driven](testing.md) development, the validation spec
 ## Adding constraints which need checking in the Data Review Tool
 1. Add the constraint to the [Validation specification](https://docs.google.com/spreadsheets/d/1KTHGSb_ZkCLB9QpjQ891Y_RxvlBJHFEITjOxptaOTAQ/edit?gid=220139423#gid=220139423), with 'additional check' in the 'Tested where' column. Indicate in the relevant columns which versions of BODS the check applies to.
 2. In a GitHub issue, specify how the check will operate via:
-* a description of the test 
+* a description of the check 
 * valid and invalid example data
 * human-readable error messages for the Data Review Tool 
 
