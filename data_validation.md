@@ -22,7 +22,12 @@ Implementation of the test will depend on whether it is tested within the schema
 
 # Data Review Tool 
 
-The Data Review Tool provides human-readable information about whether a series of BODS statements passes the tests. 
+The Data Review Tool (BODS CoVE) provides human-readable information about whether a series of BODS statements passes validation. That is: whether all the testable requirements of the data standard are met. 
+
+The code spans two repositories:
+
+- [cove-bods](https://github.com/openownership/cove-bods)
+- [lib-cove-bods](https://github.com/openownership/lib-cove-bods/tree/master)
 
 # CoVE Translations
 
