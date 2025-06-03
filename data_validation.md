@@ -18,8 +18,6 @@ As BODS is undergoing [test-driven](testing.md) development, the validation spec
 
 Here is a [previous example of a test PR](https://github.com/openownership/lib-cove-bods/issues/113)
 
-Implementation of the test will depend on whether it is tested within the schema or using CoVE. 
-
 # Data Review Tool 
 
 The Data Review Tool (BODS CoVE) provides human-readable information about whether a series of BODS statements passes validation. That is: whether all the testable requirements of the data standard are met. 
