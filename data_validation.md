@@ -8,7 +8,7 @@ All normative requirements in BODS which are testable should be documented in th
 
 As BODS is undergoing [test-driven](testing.md) development, the validation specification should be kept up to date. It is the central reference point when updating the Data Review Tool to handle new versions of BODS.
 
-## Adding new tests
+## Adding constraints which need checking in the Data Review Tool
 New tests should be documented as a github issue with:
 * a description of the test 
 * valid and invalid example data
