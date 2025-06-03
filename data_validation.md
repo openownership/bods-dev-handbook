@@ -16,7 +16,7 @@ As BODS is undergoing [test-driven](testing.md) development, the validation spec
 * human-readable error messages for the Data Review Tool 
 3. Add a link to the GitHub issue in the notes column (or a temporary 'Development issue' column)
 
-Here is a [previous example of a test PR](https://github.com/openownership/lib-cove-bods/issues/113)
+Here is a [previous example of a check issue](https://github.com/openownership/lib-cove-bods/issues/113)
 
 # Data Review Tool 
 
