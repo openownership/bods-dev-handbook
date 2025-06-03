@@ -27,12 +27,12 @@ The code spans two repositories:
 - [cove-bods](https://github.com/openownership/cove-bods)
 - [lib-cove-bods](https://github.com/openownership/lib-cove-bods/tree/master)
 
-# CoVE Translations
+## Translations
 
-BODS CoVE currently is only in English.
+The Data Review Tool currently is only in English.
 
 However, we know that there will be translations soon and so we are already using the process and workflow.
 
-## When Adding New Strings or altering strings in CoVE BODS
+### When Adding New Strings or altering strings in CoVE BODS
 
 See the "Translations for Developers" section in https://github.com/openownership/cove-bods/blob/master/README.md
