@@ -1,6 +1,6 @@
 # BODS Style Guide
 
-This style guide is not yet implemented across the BODS schema and documentation (as of October 2023 BODS 0.3). It can be used to guide editing and content writing.
+This style guide is implemented as of BODS 0.4. It can be used to guide editing and content writing.
 
 ## Common Conventions
 
