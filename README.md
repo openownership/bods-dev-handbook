@@ -18,7 +18,7 @@ If you add a new page, please follow the editing advice below, and list it under
   * [Style Guide](style_guide.md)
 * [BODS translations](translations.md)
 * [Tools for working with BODS](tools.md)
-* [CoVE translations](cove_translations.md)
+* [Data Validation Tool (BODS CoVE)](data_validation.md)
 * [Git Branches, Version Numbers and Standard Releases](standard_releases.md)
 * [This handbook](this_handbook.md)
 * 
