@@ -9,7 +9,7 @@ If you add a new page, please follow the editing advice below, and list it under
 ## Contents
 
 * [The BODS feature development pipeline](feature_development.md)
-* BODS schema development
+* BODS development
   * [Git Branches, Version Numbers and Standard Releases](standard_releases.md)
   * [Maintenance and compilation of the BODS schema](compiling_schema.md)
   * [Testing and metaschema extensions](testing.md)
