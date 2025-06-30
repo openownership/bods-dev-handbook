@@ -10,6 +10,7 @@ If you add a new page, please follow the editing advice below, and list it under
 
 * [The BODS feature development pipeline](feature_development.md)
 * BODS schema development
+  * [Git Branches, Version Numbers and Standard Releases](standard_releases.md)
   * [Maintenance and compilation of the BODS schema](compiling_schema.md)
   * [Testing and metaschema extensions](testing.md)
   * [Updating the JSON schema version](json_schema_version_updates.md)
@@ -19,9 +20,8 @@ If you add a new page, please follow the editing advice below, and list it under
 * [BODS translations](translations.md)
 * [Tools for working with BODS](tools.md)
 * [Data Validation Tool (BODS CoVE)](data_validation.md)
-* [Git Branches, Version Numbers and Standard Releases](standard_releases.md)
-* [This handbook](this_handbook.md)
-* 
+
+
 ## Not contents
 
 It does **not** contain:
