@@ -56,7 +56,7 @@ These releases are published by enabling the release branch in ReadTheDocs, the
 preferred over "0.1" because someone might interpret the latter as the latest
 version of v0.1
 
-## Normative vs Non-normative changes 
+## Normative vs non-normative changes
 
 Non-normative changes, which do not require a new release, include:
 * Changes to the Homepage, Primer, Example Data or About pages (in the repo /docs folder)
