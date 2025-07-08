@@ -5,12 +5,15 @@
 * [Overview](#overview)
 * [Versioning](#versioning)
 * [Translations and releases](#translations-and-releases)
+* [Normative vs non-normative changes](#normative-vs-non-normative-changes)
+* [Changelog](#changelog)
+* [Translations and releases](#translations-and-releases)
 * [Release processes](#release-processes)
   * [A new release](#a-new-release)
-  * [A new language to the current release](#a-new-language-to-the-current-release)
-  * [Fixes to an existing release](#fixes-to-an-existing-release)
-  * [Fixes to an existing translation](#fixes-to-an-existing-translation)
-  * [Non-material changes](#non-material-changes)
+  * [Adding a new language to the current release](#adding-a-new-language-to-the-current-release)
+  * [Making fixes to an existing release](#making-fixes-to-an-existing-release)
+  * [Making fixes to an existing translation](#making-fixes-to-an-existing-translation)
+  * [Making non-normative changes](#making-non-normative-changes)
 * [Freeze checklist](#freeze-checklist)
 
 
@@ -56,7 +59,7 @@ These releases are published by enabling the release branch in ReadTheDocs, the
 preferred over "0.1" because someone might interpret the latter as the latest
 version of v0.1
 
-## Normative vs non-normative changes
+## Normative vs non-normative changes 
 
 Non-normative changes, which do not require a new release, include:
 * Changes to the Homepage, Primer, Example Data or About pages (in the repo /docs folder)
