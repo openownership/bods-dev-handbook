@@ -17,29 +17,32 @@
 ## Overview
 
 Development is normally done on the `main` branch. All released versions of the
-standard live in other, specially named, release branches (**not tags**).
+standard are in specially named release branches (**not tags**).
 
-By default, new work should happen on a branch taken from the main branch and
+New work should happen on a branch taken from the main branch and
 be merged back into main, via a pull request, as soon as possible. However, in
 some cases you may need to branch from a specific release branch and merge
 your changes back into that release branch. It's best to discuss this before
 making changes if you're unsure.
 
-Note that the default, merging into main, does not release any changes to the
-world immediately. Changes in main will be incorporated into the next release
-of the standard, which may be some time. If your changes affect the current, or
+Note that the default, merging into main, does not release any changes immediately. Changes in main will be incorporated into the next release
+of the standard, which may be some time later. If your changes affect the current, or
 older, versions they must be released by bringing the changes into those
-respective release branches. This can introduce complications, so again is best
-confirmed ahead of time.
+respective release branches. This can introduce complications, so is best
+discussed ahead of time.
 
 ## Versioning
 
-The Standard is given release numbers, following roughly the principles of
-[Semantic Versioning](https://semver.org/), where each part of a version number
-has significance to users and is used by them to understand the differences
-between versions.
+Releases follow the principles of [Semantic Versioning](https://semver.org/). A new release is only required for normative changes to the standard. 
 
-These version numbers are applied in the main BODS repository
+This distinguishes between:
+* MAJOR version releases, which make backwards-incompatible changes (e.g. from 1.2.0 to 2.0.0)
+* MINOR version releases, which add functionality in a backwards-compatible manner (e.g. from  1.1.0 to 1.2.0)
+* PATCH version releases, which make backwards-compatible bugfixes (e.g. from 2.0.0 to 2.0.1)
+
+If a change is backwards-compatible, this means that data shared using the earlier version of the standard will still meet the requirements of the latest version. (e.g. data shared in 1.0.0 format will also comply with the requirements for version 1.1.0 or 1.0.1) 
+
+Version numbers are applied in the main BODS repository
 [github.com/openownership/data-standard](https://github.com/openownership/data-standard)
 as a naming convention for release branches, for example:
 
@@ -49,11 +52,27 @@ as a naming convention for release branches, for example:
 These releases are published by enabling the release branch in ReadTheDocs, the
 "latest" tag in ReadTheDocs is manually changed to point at the latest version.
 
-**Note:** our release branch naming scheme is "MAJOR.MINOR.PATCH"
-
 **Note:** we always include trailing zeroes in our version numbers. e.g. "0.1.0" is
 preferred over "0.1" because someone might interpret the latter as the latest
 version of v0.1
+
+## Normative vs Non-normative changes 
+
+Non-normative changes, which do not require a new release, include:
+* Changes to the Homepage, Primer, Example Data or About pages (in the repo /docs folder)
+* Typo corrections on any documentation page (in the repo /docs folder)
+* The addition of new example data (in the repo /examples folder) 
+* Changes to the readme
+* Updates to dependencies (requirements.txt or requirements_test.txt) 
+* Changes to readthedocs templates 
+* Addition of a new translation
+* Changes to the automated tests 
+
+Normative changes, which do require a new release, include:
+* Any changes to the BODS JSON schema (repo /schema folder)
+* Any changes to tests and test data (repo /tests folder)
+* Changes to the Data Standard pages (repo /docs/standard folder)
+* Changes to the License
 
 ## Changelog
 A [changelog](https://github.com/openownership/data-standard/blob/master/docs/schema/changelog.rst) is kept of changes to the schema and documentation. Before a PR is merged into
@@ -62,7 +81,7 @@ necessary. (Broadly: is this a change that will materially effect people's use
 of BODS? Fixing a typo: no, not necessary. Editing a schema property's
 description for clarity: possibly necessary.) If there is no specific BODS
 release planned, but material changes need to be noted in the changelog, items
-can be added under a `## [Unreleased]` heading.
+can be added under an `## [Unreleased]` heading.
 
 See https://keepachangelog.com/en/0.3.0/ for more on maintaining a good changelog.
 
@@ -73,13 +92,13 @@ New releases for the standard must be translated into supported languages.
 For incremental work on the schema and documentation, translations do not need
 to be complete before changes are merged into the main branch. Translation
 may happen periodically during work on a new version, but it is usually better
-to wait until a stable version is ready and then translated all at once, just
+to wait until a stable version is ready and then translate all at once, just
 prior to a versioned release. This reduces the risk of translators working on
 text that may change again in the near future.
 
 ## Release processes
 
-How exactly we perform a release depends on what is being released and which
+How we perform a release depends on what is being released and which
 versions the changes affect. The sections below detail specific scenarios, but
 the following general questions always apply:
 
@@ -119,7 +138,7 @@ least work! The general process is:
 
 #### Editing during a "freeze"
 
-During translation there may be a need to fix issues that exist on the `main`
+During translation, there may be a need to fix issues that exist on the `main`
 branch. If they do not affect anything that needs to be translated (docs,
 schema, codelists) they can be developed on a branch taken from `main` and
 merged back in when completed.
@@ -127,7 +146,7 @@ merged back in when completed.
 If the changes affect schema and/or docs then they may, in turn, affect the
 translation. The process for making these changes is:
 
-* First create an issue in Github to track the problem.
+* First, create an issue in GitHub to track the problem.
 * Then create a new branch that uses the issue number, e.g. `297-fix-typo` and
   make the needed changes.
 * Determine if any of the strings you have changed have *already been
@@ -136,7 +155,7 @@ translation. The process for making these changes is:
   spelling, punctuation or markup can cause Transifex to detect a new source
   string and reset the translation. If the change is small, the translators
   can reuse what they had before (with punctuation/markup fixes as applicable).
-  If the change is large (e.g. a complete sentence rewrite) they probably need
+  If the change is large (e.g. a complete sentence rewrite), they probably need
   to translate it again from scratch. Agree when you are going to push the
   updated string to Transifex, and proceed with the following steps at that time.
 * After review, merge the branch (`297-fix-typo`) into `main`.
@@ -144,7 +163,7 @@ translation. The process for making these changes is:
   [the translation process](https://github.com/openownership/data-standard/blob/master/README.md#managing-the-translation-workflow)
   so that the new or changed strings are extracted, and push them to Transifex.
 
-### A new language to the current release
+### Adding a new language to the current release
 
 Until such time that we support several stable releases, our assumption is that
 only the current release (and any future ones) will be translated into new
@@ -173,7 +192,7 @@ significantly:
   usually easiest.
 * Double check there are no new translations in `BODS-main` that were not present
   in the versioned branch. Then push your local translations up to Transifex
-  (`tx push -t`; you may need to use `--force` but in theory Transifex should
+  (`tx push -t`; you may need to use `--force` but in theory, Transifex should
   detect that your local translations are the newest and let you push them).
 * Make the new language live on Read The Docs (see [translations](/translations))
 
@@ -182,7 +201,7 @@ the translation of each as a separate project. Translate the versioned release
 as described above. Translate `main` only when it is due for release, or at
 the next point in the development process that makes the most sense.
 
-### Fixes to an existing release
+### Making fixes to an existing release
 
 When a bug is discovered or a correction needs to be made to an existing
 release and it is deemed severe enough to require an immediate fix (i.e.
@@ -216,11 +235,11 @@ considered end-of-life when a new version is released. This policy is likely to
 change only when we have real world use or commitments mandating a greater level
 of support.
 
-### Fixes to an existing translation
+### Making fixes to an existing translation
 
 Fixes that solely relate to an existing translation (i.e. not the source text,
 but a particular translation of it) should follow a similar process to other
-fixes to an exiting release. The fix can be made by editing the translation
+fixes to an existing release. The fix can be made by editing the translation
 in Transifex and pulling down the updated strings to a local branch named for
 the issue eg `297-concept-translation`. This should then be pushed up and merged
 directly back into the existing release branch.
@@ -228,27 +247,7 @@ directly back into the existing release branch.
 This sort of fix does not require a change in version number or a new release
 branch.
 
-### Non-material changes
-
-Changes which do not affect the standard, or normative documentation accompanying
-it, do not need a corresponding change in version number. However, it's still
-important to consider whether any text has been added or changed, and which
-existing versions of the standard you wish the changes to appear in.
-
-**Examples:**
-
-- Making a change to the visual style of the standard website such as
-  [data-standard-sphinx-theme#57](https://github.com/openownership/data-standard-sphinx-theme/pull/57)
-  requires both the translation of a new piece of text and the merging of the
-  updated theme into all the existing released versions of the standard. Note
-  this also needed updates to the theme and a new pinned version.
-- Adding additional language examples to a released version
-  [data-standard#260](https://github.com/openownership/data-standard/pull/260)
-  which can be merged into `main` **and** the current release.
-- Updating an underlying software library
-  [data-standard#291](https://github.com/openownership/data-standard/pull/291)
-  which can be merged directly into `main` and does not need to update any
-  current or previous versions.
+### Making non-normative changes
 
 In general, the process for these kinds of changes should be:
 
