@@ -36,7 +36,7 @@ discussed ahead of time.
 
 ## Versioning
 
-Releases follow the principles of [Semantic Versioning](https://semver.org/). A new release is only required for normative changes to the standard. 
+A new release is only required for normative changes to the standard. Once BODS reaches version 1, releases will follow the principles of [Semantic Versioning](https://semver.org/).  
 
 This distinguishes between:
 * MAJOR version releases, which make backwards-incompatible changes (e.g. from 1.2.0 to 2.0.0)
