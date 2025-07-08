@@ -45,6 +45,8 @@ This distinguishes between:
 
 If a change is backwards-compatible, this means that data shared using the earlier version of the standard will still meet the requirements of the latest version. (e.g. data shared in 1.0.0 format will also comply with the requirements for version 1.1.0 or 1.0.1) 
 
+Before a version 1 release of BODS, backwards-compatibility between minor releases is not guaranteed.
+
 Version numbers are applied in the main BODS repository
 [github.com/openownership/data-standard](https://github.com/openownership/data-standard)
 as a naming convention for release branches, for example:
