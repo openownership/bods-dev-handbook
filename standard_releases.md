@@ -1,10 +1,9 @@
-# Git Branches, Version Numbers and Standard Releases
+# Versioning and Releases
 
 ## Contents
 
 * [Overview](#overview)
 * [Versioning](#versioning)
-* [Translations and releases](#translations-and-releases)
 * [Normative vs non-normative changes](#normative-vs-non-normative-changes)
 * [Changelog](#changelog)
 * [Translations and releases](#translations-and-releases)
