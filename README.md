@@ -9,6 +9,7 @@ If you add a new page, please follow the editing advice below, and list it under
 ## Contents
 
 * [The BODS feature development pipeline](feature_development.md)
+* [Validation Specification](data_validation.md)
 * BODS development
   * [Test-driven Schema Development](testing.md)
   * [Versioning and Releases](standard_releases.md)
@@ -18,7 +19,6 @@ If you add a new page, please follow the editing advice below, and list it under
 * BODS documentation writing
   * [Creating SVG diagrams](diagram_creation.md)
   * [Style Guide](style_guide.md)
-* [Validation Specification](data_validation.md)
 * [BODS translations](translations.md)
 * [Tools for working with BODS](tools.md)
 
