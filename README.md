@@ -10,7 +10,7 @@ If you add a new page, please follow the editing advice below, and list it under
 
 * [The BODS feature development pipeline](feature_development.md)
 * BODS development
-  * [Test-led development](testing.md)
+  * [Test-driven Schema Development](testing.md)
   * [Versioning and Releases](standard_releases.md)
   * [Maintenance and compilation of the BODS schema](compiling_schema.md)
   * [Updating the JSON schema version](json_schema_version_updates.md)
@@ -18,9 +18,9 @@ If you add a new page, please follow the editing advice below, and list it under
 * BODS documentation writing
   * [Creating SVG diagrams](diagram_creation.md)
   * [Style Guide](style_guide.md)
+* [Validation Specification](data_validation.md)
 * [BODS translations](translations.md)
 * [Tools for working with BODS](tools.md)
-* [Data Validation Tool (BODS CoVE)](data_validation.md)
 
 
 ## Not contents
