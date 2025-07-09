@@ -1,6 +1,6 @@
 # Validation Specification
-BODS contains three types of normative requirement:
-- Those which are testable via representation in BODS' JSON schema. (For example: `Interest.type` is a string from the 'Interest type' codelist.)
+BODS contains three types of [normative](normative-vs-non-normative-changes) requirement:
+- Those which are testable via constraints expressed in BODS' JSON schema. (For example: `Interest.type` is a string from the 'Interest type' codelist.)
 - Those which are not testable via the schema, but they are testable. (For example: `birthDate` is not a future date.)
 - Those which are not computationally testable. (For example, modelling requirements like: "if a person is a beneficial owner of an entity [...] there MUST be a Relationship statement connecting the two which represents the beneficial ownership relationship.")
 
