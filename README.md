@@ -10,9 +10,9 @@ If you add a new page, please follow the editing advice below, and list it under
 
 * [The BODS feature development pipeline](feature_development.md)
 * BODS development
-  * [Git Branches, Version Numbers and Standard Releases](standard_releases.md)
+  * [Test-led development](testing.md)
+  * [Versioning and Releases](standard_releases.md)
   * [Maintenance and compilation of the BODS schema](compiling_schema.md)
-  * [Testing and metaschema extensions](testing.md)
   * [Updating the JSON schema version](json_schema_version_updates.md)
   * [GitHub Actions workflows](github-workflows.md)
 * BODS documentation writing
