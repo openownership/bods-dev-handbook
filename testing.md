@@ -1,6 +1,6 @@
-# Testing the schema
+# Test-driven Schema Development
 
-Changes to the schema should not be merged until all of the changes are covered by tests, and the tests pass.
+Before making any changes to the schema, ensure you understand the test framework in the repository, described below. Changes to the schema should not be merged until all of the changes are covered by tests, and the tests pass.
 
 Exceptions may be made for rapid iteration on pre-release changes, where test coverage/failure is documented, and expected to be resolved before a new version is released.
 
@@ -9,6 +9,16 @@ In summary, we test:
 * Example data (in the docs) is valid and well-formed.
 * The schema and codelists are well-formed and valid JSON.
 * The constraints expressed in the JSON schema work as expected to validate data.
+
+This last category of tests facilitate [test-driven development](https://agilealliance.org/glossary/tdd/) of the schema. The approach to changing or adding fields within the schema, introducing or changing constraints, should be to:
+
+1. [Run the python tests](testing.md#running-tests-locally) to see that they are all passing
+2. [Add](testing.md#schema-function) sets of BODS JSON data which should be valid or invalid according to the new constraints (fixtures)
+3. Run the python tests again, noticing that they likely fail because the schema has not been updated
+4. Update the schema, introducing or changing its constraints, and then run the python tests.
+5. Repeat (4) until all tests are passing as expected.
+6. Update the [validation specification](data_validation.md).
+
 
 ## Metaschema
 

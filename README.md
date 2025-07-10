@@ -9,10 +9,11 @@ If you add a new page, please follow the editing advice below, and list it under
 ## Contents
 
 * [The BODS feature development pipeline](feature_development.md)
+* [Validation Specification](data_validation.md)
 * BODS development
-  * [Git Branches, Version Numbers and Standard Releases](standard_releases.md)
+  * [Test-driven Schema Development](testing.md)
+  * [Versioning and Releases](standard_releases.md)
   * [Maintenance and compilation of the BODS schema](compiling_schema.md)
-  * [Testing and metaschema extensions](testing.md)
   * [Updating the JSON schema version](json_schema_version_updates.md)
   * [GitHub Actions workflows](github-workflows.md)
 * BODS documentation writing
@@ -20,7 +21,6 @@ If you add a new page, please follow the editing advice below, and list it under
   * [Style Guide](style_guide.md)
 * [BODS translations](translations.md)
 * [Tools for working with BODS](tools.md)
-* [Data Validation Tool (BODS CoVE)](data_validation.md)
 
 
 ## Not contents
