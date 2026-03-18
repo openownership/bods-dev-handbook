@@ -1,20 +1,24 @@
-# Feature development in BODS
+# BODS development and decision-making
 
 ## Overview
 
 ![Pipeline from 'user stories' to 'feature released'. Stages are 'Research' (ending in a feature development ticket); 'Propose' (involving an implementatioon proposal ticket); and 'Implement' (involving an implementation plan).](./screenshots/BODSdevelopmentPipeline.svg)
 
-Development of the Beneficial Ownership Data Standard (BODS) responds to the needs of those collecting, sharing and using the data. Those needs are evolving as the field of beneficial ownership transparency grows beyond the foundational policy work. Our new development pipeline aims to highlight the requirements that a feature will meet and how progress on developing the feature proceeds. We hope that this will make it easier for all stakeholders to contribute at the point that best suits them.
+Development of the Beneficial Ownership Data Standard (BODS) responds to the needs of those collecting, sharing and using the data (the community). Those needs are evolving as the field of beneficial ownership transparency grows beyond the foundational legislative work. The development pipeline demonstrates the requirements that a feature will meet and how progress on developing the feature proceeds. We hope that this will make it easier for all stakeholders to contribute at the point that best suits them.
 
 The [BODS Feature Tracker](https://github.com/openownership/data-standard/projects/4) gives an overview of progress along the pipeline.
 
-Before a feature is considered for introduction to BODS, as the pipeline suggests, there has already been a lot of research. This may be requirements gathering, experience from supporting implementation of beneficial ownership registers, and thinking on the part of Open Ownership and others. The feature development ticket is the first time that all of that is gathered and presented as background for new developments in the standard.
+**ADD LINK TO GOV PAGE OF STANDARD**
+
+Feature development is ongoing, and some features take longer than others to come to fruition. For that reason we have separated the BODS Feature Tracker from [BODS release trackers](#bods-release-planning-and-tracking).
 
 **Links**: [BODS Feature Tracker](https://github.com/openownership/data-standard/projects/4)
 
 ## Feature development tickets
 
-A ‘feature’ refers to a significant change or revision to the BODS schema or documentation (in contrast to small enhancements and bug fixes). Feature development tickets act as a kind of ‘parent ticket’ for work on a given element of BODS. Broadly, they are in the format of problem statements: they focus on the user-need gaps in BODS which need to be filled, and should not veer into proposing solutions (a template is provided when you add a new ticket to the repository). For example, see this feature development ticket about [representing state-owned enterprises](https://github.com/openownership/data-standard/issues/360).
+A ‘feature’ refers to a significant change or revision to the BODS schema or documentation (in contrast to small enhancements and bug fixes). Before a feature is considered for introduction to BODS, as the pipeline suggests, there has already been a lot of research. This may be requirements gathering, experience from supporting implementation of beneficial ownership registers, and thinking on the part of Open Ownership and others. The feature development ticket is the first time that all of that is gathered and presented as background for new developments in the standard. Feature development tickets will most often be added by the technical maintainer of the data standard, in response to needs expressed by the community. (Anyone may [make a feature request](https://github.com/openownership/data-standard/issues/new/choose) for the initial consideration of the community.)
+
+Feature development tickets act as a kind of ‘parent ticket’ for work on a given element of BODS. Broadly, they are in the format of problem statements: they focus on the user-need gaps in BODS which need to be filled, and should not veer into proposing solutions. To support this focus, a template is provided when you add a new ticket to the repository. For example, see this feature development ticket about [representing state-owned enterprises](https://github.com/openownership/data-standard/issues/360).
 
 It is crucial that feature tickets are written with a broad audience in mind. Those reading and commenting on these tickets may be policy-makers and regulators, beneficial ownership researchers, technical consultants, or developers. These tickets are placed on the [BODS Feature Tracker](https://github.com/openownership/data-standard/projects/4), under the relevant status column. They are moved across the tracker as work proceeds into its different phases.
 
@@ -24,17 +28,23 @@ The title of a feature development ticket should be 'Feature: XXXXX' where XXXXX
 
 ## Implementation proposal tickets
 
-Once the need for a new feature in BODS has been well-described in a feature development ticket, proposals can be made about how to implement the feature.
+Once the need for a new feature in BODS has been well-described in a feature development ticket, anyone can make a proposal about how to implement the feature.
 
-A [template](https://github.com/openownership/data-standard/issues/new/choose) exists for implementation proposals. You can see it in action for [state-owned enterprises here](https://github.com/openownership/data-standard/issues/363). The title of the GitHub ticket should be 'Implementation proposal: XXXXX no.Y' where XXXXX is the feature name in the linked ticket. Y will be 1, if this is the first proposal to address a feature. It is important to link back from the proposal to the ‘parent’ feature development ticket. The rest of the template is only a suggestion - you may need to veer away from it, depending on the feature.
+A [form](https://github.com/openownership/data-standard/discussions/new?category=feature-implementation) exists for implementation proposals. You can see an implementation proposal for [state-owned enterprises here](https://github.com/openownership/data-standard/issues/363). The title of the GitHub discussion should be 'Implementation proposal: XXXXX' where XXXXX is the feature name in the linked ticket. It is important to link back from the proposal to the ‘parent’ feature development ticket.
 
 It is important in a proposal to give enough information for people to understand the gist of the idea and its ramifications so that they can helpfully critique it. But there should not be so much detail that it obscures the salient points or that - in the event that there are flaws in the proposal and it is not implemented - time and effort is wasted.
 
-People can comment on the proposal ticket, questioning, refining and developing the implementation proposal. Interactions and work on this ticket represent a collaborative process. Proposals may be paused, withdrawn, or developed into draft implementation plans. Update the 'Proposal status' as thinking progresses on this thread. Highlight changes or updates to the proposal within thread comments, with a clear 'Updated proposal' heading.
-
-If there is an entirely different approach to implementing a feature in BODS, it may be appropriate to submit an alternative implementation proposal, in which case a new implementation proposal ticket should be created. It should - again - be linked back to the parent feature ticket. The proposal number in the new ticket title, Y, should be incremented to indicate that this is a new and separate implementation idea.
+If there is an entirely different approach to implementing a feature in BODS, it may be appropriate to submit an alternative implementation proposal, in which case a new implementation proposal ticket should be created. It should - again - be linked back to the parent feature ticket. The titles of alternative implementation proposals for the same feature should be edited to clearly distinguish them (for example, by adding the suffixes "(option 1)" and "(option 2)").
 
 **Links**: [Create an implementation proposal ticket](https://github.com/openownership/data-standard/issues/new/choose)  |  [Example of an implementation proposal ticket](https://github.com/openownership/data-standard/issues/363)
+
+## Checking for broad consensus on an implementation proposal
+
+People can comment on proposal tickets, questioning, refining and developing the implementation proposal. Interactions and work on such tickets represent a collaborative process. Proposals may be paused, withdrawn, or developed into rough implementation plans. Update the 'Proposal status' as discussion progresses. Highlight changes or updates to the proposal within thread comments, with a clear 'Updated proposal' heading.
+
+Once refinement of the proposal has taken place, community members should be given at least two weeks to review the updated proposal. This final period of consultation should have a clear deadline.
+
+If responses during this time indicate that there is not broad consensus about proceeding with implementation as proposed, the proposal will be suspended. Otherwise, the consensus will be noted and the implementation phase can begin.
 
 ## Drafting an implementation plan
 
@@ -65,7 +75,7 @@ BODS schema changes:
 BODS documentation. To-do list of edits:
 
 
-## BODS release tracking 
+## BODS release planning and tracking 
 
 Feature development is ongoing, and some features take longer than others to come to fruition. For that reason we have separated [feature development tracking](https://github.com/openownership/data-standard/projects/4) from BODS release tracking.
 
