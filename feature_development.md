@@ -87,10 +87,12 @@ Community members will have at least two weeks to review the release tracker and
 
 This page was first created in October 2021 and revised in March 2026. The Stewarding organisation and Technical maintainer aim to meet the [OpenStand principles of standard development](https://open-stand.org/about-us/principles/).
 
-We refer above to 'broad consensus' amongst the community of BODS users when it comes to decision points in development plans. At the point when the community is large enough to put energy behind a further round of BODS development, this scale will make development of 'broad consensus' in a direct way unmanageable. Further updates to the governance of the standard will be required. These are likely to include:
+As of March 2026, BODS is not in active development.
+
+We refer above to 'broad consensus' amongst the community of BODS users when it comes to decision points in development plans. If the community becomes large enough to warrant a further round of BODS development, this scale will make development of 'broad consensus' in a direct way unmanageable. Further updates to the governance of the standard will be required. These are likely to include:
 
 1. **Developing standard governance roles**. For example, building out a steering committee, responsible for oversight of governance processes and for approving updates and revisions to the standard.
-2. **Updating the revision process**. Evolving and refining the development and decision-making process.
+2. **Updating the revision process**. Evolving and refining this development and decision-making process.
 3. **Developing a contributor code of conduct**. Reviewing the [old Data Standard Working Group Values](https://standard.openownership.org/en/0.3.0/about/governance.html#values) and updating them with a clear scope of application.
 4. **Developing a statement regarding design principles**. Capturing the design principles that have shaped and should shape BODS.
 
