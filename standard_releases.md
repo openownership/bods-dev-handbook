@@ -100,6 +100,17 @@ to wait until a stable version is ready and then translate all at once, just
 prior to a versioned release. This reduces the risk of translators working on
 text that may change again in the near future.
 
+## Supporting tools and releases
+
+The following tools should always be updated as near to release as possible:
+
+- The [Data Review Tool](/data_validation.md#validation-specification)
+
+The following tools may be updated following release
+
+- [BODS visualiser](https://github.com/openownership/visualisation-tool)
+- [Flatten tool](/tools.md#flatten-tool-for-bods)
+
 ## Release processes
 
 How we perform a release depends on what is being released and which
