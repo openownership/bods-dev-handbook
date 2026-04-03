@@ -7,6 +7,7 @@
 * [Normative vs non-normative changes](#normative-vs-non-normative-changes)
 * [Changelog](#changelog)
 * [Translations and releases](#translations-and-releases)
+* [Supporting tools and releases](#supporting-tools-and-releases)
 * [Release processes](#release-processes)
   * [A new release](#a-new-release)
   * [Adding a new language to the current release](#adding-a-new-language-to-the-current-release)
